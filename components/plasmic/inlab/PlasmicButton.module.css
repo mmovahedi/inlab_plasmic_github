@@ -1,0 +1,162 @@
+.root {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  background: var(--token-pRs3-4jrQ4XQ);
+  cursor: pointer;
+  transition-property: background;
+  transition-duration: 0.1s;
+  width: 100%;
+  justify-self: flex-start;
+  height: 100%;
+  grid-column-start: 3 !important;
+  grid-column-end: -3 !important;
+  min-height: 0;
+  -webkit-transition-property: background;
+  -webkit-transition-duration: 0.1s;
+  border-radius: 6px;
+  padding: 7px 10px;
+  border-width: 0px;
+}
+.root > :global(.__wab_flex-container) {
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: center;
+  flex-wrap: nowrap;
+  align-content: stretch;
+  min-height: 0;
+  margin-left: calc(0px - 8px);
+  width: calc(100% + 8px);
+}
+.root > :global(.__wab_flex-container) > *,
+.root > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
+.root > :global(.__wab_flex-container) > picture > img,
+.root > :global(.__wab_flex-container) > :global(.__wab_slot) > picture > img {
+  margin-left: 8px;
+}
+.rootisDisabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+  pointer-events: auto;
+}
+.rootshape_rounded {
+  padding-left: 20px;
+  padding-right: 20px;
+  min-width: 100px;
+  border-radius: 999px;
+}
+.rootshape_round {
+  border-radius: 50%;
+  padding: 12px;
+}
+.rootshape_sharp {
+  border-radius: 0px;
+}
+.rootsize_compact {
+  padding: 6px 16px;
+}
+.rootcolor_blue {
+  background: #0091ff;
+}
+.rootcolor_green {
+  background: #30a46c;
+}
+.rootcolor_red {
+  background: #e54d2e;
+}
+.rootcolor_clear {
+  background: #ffffff00;
+}
+.rootcolor_link {
+  background: #ffffff00;
+}
+.rootshape_round_size_compact {
+  padding: 6px;
+}
+.startIconContainer {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: flex-start;
+}
+.slotTargetStartIcon {
+  color: #ededec;
+}
+.slotTargetStartIconcolor_clear {
+  color: #1b1b18;
+}
+.slotTargetStartIconcolor_link {
+  color: #0091ff;
+}
+.svg__z81Hd {
+  position: relative;
+  object-fit: cover;
+  width: auto;
+  height: 1em;
+}
+.contentContainer {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: flex-start;
+}
+.slotTargetChildren {
+  color: #ededec;
+  font-weight: 500;
+  white-space: pre;
+}
+.slotTargetChildrencolor_blue {
+  color: #ffffff;
+}
+.slotTargetChildrencolor_green {
+  color: #ffffff;
+}
+.slotTargetChildrencolor_red {
+  color: #ffffff;
+}
+.slotTargetChildrencolor_clear {
+  color: #1b1b18;
+}
+.slotTargetChildrencolor_link {
+  color: #0091ff;
+}
+.endIconContainer {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: flex-start;
+}
+.slotTargetEndIcon {
+  color: #ededec;
+}
+.slotTargetEndIconcolor_clear {
+  color: #1b1b18;
+}
+.slotTargetEndIconcolor_link {
+  color: #0091ff;
+}
+.svg__asUxw {
+  position: relative;
+  object-fit: cover;
+  width: auto;
+  height: 1em;
+}
+.text___0K9Kh {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  min-width: 0;
+  display: none;
+}
+.text__cOxxN {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  min-width: 0;
+  display: none;
+}
