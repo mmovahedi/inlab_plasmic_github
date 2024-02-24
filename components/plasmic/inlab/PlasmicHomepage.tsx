@@ -65,7 +65,6 @@ import FavoriteIcon from "../../FavoriteIcon"; // plasmic-import: PK_hwsu90gKT/c
 import Button from "../../Button"; // plasmic-import: IoZvAstVrNqa/component
 import RedirectToLoginPage from "../../RedirectToLoginPage"; // plasmic-import: 0wFpBWYaqpsM/component
 import RedirectToNamespaceSelection from "../../RedirectToNamespaceSelection"; // plasmic-import: aXAcva2etiX1/component
-import { Fetcher } from "@plasmicapp/react-web/lib/data-sources";
 
 import { useScreenVariants as useScreenVariantsjEqVmdAbnKYc } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: jEqVmdAbnKYc/globalVariant
 
@@ -95,7 +94,7 @@ type ArgPropType = keyof PlasmicHomepage__ArgsType;
 export const PlasmicHomepage__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicHomepage__OverridesType = {
-  patientListsearch?: Flex__<"div">;
+  homepage?: Flex__<"div">;
   pageContent?: Flex__<"div">;
   searchsetting?: Flex__<"div">;
   settingIcon?: Flex__<"svg">;
@@ -210,8 +209,8 @@ function PlasmicHomepage__RenderFunc(props: {
       `}</style>
 
       <div
-        data-plasmic-name={"patientListsearch"}
-        data-plasmic-override={overrides.patientListsearch}
+        data-plasmic-name={"homepage"}
+        data-plasmic-override={overrides.homepage}
         data-plasmic-root={true}
         data-plasmic-for-node={forNode}
         className={classNames(
@@ -222,7 +221,7 @@ function PlasmicHomepage__RenderFunc(props: {
           projectcss.plasmic_tokens,
           plasmic_antd_5_hostless_css.plasmic_tokens,
           plasmic_plasmic_rich_components_css.plasmic_tokens,
-          sty.patientListsearch
+          sty.homepage
         )}
       >
         <div
@@ -341,15 +340,10 @@ function PlasmicHomepage__RenderFunc(props: {
                   role={"img"}
                 />
               }
-              onChange={async (...eventArgs: any) => {
-                ((...eventArgs) => {
-                  generateStateOnChangeProp($state, ["searchbar", "value"])(
-                    (e => e.target?.value).apply(null, eventArgs)
-                  );
-                }).apply(null, eventArgs);
-                (async event => {
-                  const $steps = {};
-                }).apply(null, eventArgs);
+              onChange={(...eventArgs) => {
+                generateStateOnChangeProp($state, ["searchbar", "value"])(
+                  (e => e.target?.value).apply(null, eventArgs)
+                );
               }}
               placeholder={
                 "\u0646\u0627\u0645\u060c \u0646\u0627\u0645 \u062e\u0627\u0646\u0648\u0627\u062f\u06af\u06cc\u060c \u0634\u0645\u0627\u0631\u0647 \u067e\u0631\u0648\u0646\u062f\u0647\u060c \u06a9\u062f \u0645\u0644\u06cc\u060c \u06a9\u062f \u067e\u06a9\u0633 \u0631\u0627 \u0648\u0627\u0631\u062f \u06a9\u0646\u06cc\u062f"
@@ -487,7 +481,7 @@ function PlasmicHomepage__RenderFunc(props: {
                       )}
                     >
                       {
-                        "\u0628\u06cc\u0645\u0627\u0631 \u062e\u0648\u062f \u0631\u0627 \u0633\u0631\u0686 \u06a9\u0646\u06cc\u062f\n\u0628\u0631 \u0631\u0648\u06cc \u2b50(\u0633\u062a\u0627\u0631\u0647) \u0628\u0632\u0646\u06cc\u062f\n\u0628\u064a\u0645\u0627\u0631 \u062e\u0648\u062f \u0631\u0627 \u0628\u0647 \u0627\u064a\u0646 \u0635\u0641\u062d\u0647 \u0627\u0636\u0627\u0641\u0647 \u064a\u0627 \u0627\u0632 \u0622\u0646 \u062d\u0630\u0641 \u06a9\u0646\u064a\u062f"
+                        "\u0628\u06cc\u0645\u0627\u0631 \u062e\u0648\u062f \u0631\u0627 \u0633\u0631\u0686 \u06a9\u0646\u06cc\u062f\n\u0628\u0631 \u0631\u0648\u06cc\u2b50(\u0633\u062a\u0627\u0631\u0647) \u0628\u0632\u0646\u06cc\u062f\n\u0628\u064a\u0645\u0627\u0631 \u062e\u0648\u062f \u0631\u0627 \u0628\u0647 \u0627\u064a\u0646 \u0635\u0641\u062d\u0647 \u0627\u0636\u0627\u0641\u0647 \u064a\u0627 \u0627\u0632 \u0622\u0646 \u062d\u0630\u0641 \u06a9\u0646\u064a\u062f"
                       }
                     </div>
                   ) : null}
@@ -1075,8 +1069,8 @@ function PlasmicHomepage__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  patientListsearch: [
-    "patientListsearch",
+  homepage: [
+    "homepage",
     "pageContent",
     "searchsetting",
     "settingIcon",
@@ -1176,7 +1170,7 @@ type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
-  patientListsearch: "div";
+  homepage: "div";
   pageContent: "div";
   searchsetting: "div";
   settingIcon: "svg";
@@ -1246,7 +1240,7 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
       forNode: nodeName
     });
   };
-  if (nodeName === "patientListsearch") {
+  if (nodeName === "homepage") {
     func.displayName = "PlasmicHomepage";
   } else {
     func.displayName = `PlasmicHomepage.${nodeName}`;
@@ -1256,7 +1250,7 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
 
 export const PlasmicHomepage = Object.assign(
   // Top-level PlasmicHomepage renders the root element
-  makeNodeComponent("patientListsearch"),
+  makeNodeComponent("homepage"),
   {
     // Helper components rendering sub-elements
     pageContent: makeNodeComponent("pageContent"),

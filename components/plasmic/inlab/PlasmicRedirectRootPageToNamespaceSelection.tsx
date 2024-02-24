@@ -79,16 +79,19 @@ type VariantPropType =
 export const PlasmicRedirectRootPageToNamespaceSelection__VariantProps =
   new Array<VariantPropType>();
 
-export type PlasmicRedirectRootPageToNamespaceSelection__ArgsType = {};
+export type PlasmicRedirectRootPageToNamespaceSelection__ArgsType = {
+  typeignore?: string;
+};
 type ArgPropType = keyof PlasmicRedirectRootPageToNamespaceSelection__ArgsType;
 export const PlasmicRedirectRootPageToNamespaceSelection__ArgProps =
-  new Array<ArgPropType>();
+  new Array<ArgPropType>("typeignore");
 
 export type PlasmicRedirectRootPageToNamespaceSelection__OverridesType = {
   redirectRootPageToNamespaceSelection?: Flex__<typeof SideEffect>;
 };
 
 export interface DefaultRedirectRootPageToNamespaceSelectionProps {
+  typeignore?: string;
   className?: string;
 }
 

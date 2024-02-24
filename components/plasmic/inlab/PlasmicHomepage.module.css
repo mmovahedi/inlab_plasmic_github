@@ -1,4 +1,4 @@
-.patientListsearch {
+.homepage {
   display: grid;
   flex-direction: column;
   position: relative;
@@ -20,22 +20,22 @@
     )
     minmax(0, var(--plsmc-wide-chunk)) 1fr var(--plsmc-viewport-gap);
 }
-.patientListsearch > * {
+.homepage > * {
   grid-column: 4;
 }
-.patientListsearch > * {
+.homepage > * {
   grid-column: 4;
 }
-.patientListsearch > * {
+.homepage > * {
   grid-column: 4;
 }
 @media (min-width: 0px) and (max-width: 768px) {
-  .patientListsearch {
+  .homepage {
     padding-top: 12px;
   }
 }
 @media (min-width: 0px) and (max-width: 768px) {
-  .patientListsearch > * {
+  .homepage > * {
     grid-column: 4;
   }
 }
@@ -125,15 +125,14 @@
 .svg__kHhsj {
   position: relative;
   object-fit: cover;
-  width: 100%;
+  width: auto;
   height: 17px;
-  color: var(--token-mgmtnHTyq9Ck);
+  color: var(--token-9iYGdL7i3GKE);
   left: auto;
   top: auto;
   z-index: 1;
   align-self: auto;
   max-width: 33px;
-  min-width: 0;
   margin: 0px;
 }
 .favPatients:global(.__wab_instance) {
@@ -240,11 +239,9 @@
   width: 100%;
   height: auto;
   max-width: 100%;
-  padding-left: 8px;
-  padding-bottom: 0px;
-  padding-top: 8px;
   align-self: center;
   min-width: 0;
+  padding: 8px 0px 0px 8px;
 }
 .nameaddToHomeIcon > :global(.__wab_flex-container) {
   flex-direction: row;
@@ -275,6 +272,9 @@
 }
 .searchedPatientFavIcon:global(.__wab_instance) {
   position: relative;
+  width: auto;
+  height: 100%;
+  min-height: 0;
 }
 .wardroom {
   display: flex;

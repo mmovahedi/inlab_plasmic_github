@@ -185,7 +185,7 @@ function PlasmicTextInput__RenderFunc(props: {
     () =>
       Object.assign(
         {
-          placeholder: "Enter something…"
+          placeholder: ``
         },
         props.args
       ),
@@ -285,6 +285,11 @@ function PlasmicTextInput__RenderFunc(props: {
           [sty.root___focusVisibleWithin]: triggers.focusVisibleWithin_root,
           [sty.rootcolor_dark]: hasVariant($state, "color", "dark"),
           [sty.rootisDisabled]: hasVariant($state, "isDisabled", "isDisabled"),
+          [sty.rootshowEndIcon]: hasVariant(
+            $state,
+            "showEndIcon",
+            "showEndIcon"
+          ),
           [sty.rootshowStartIcon]: hasVariant(
             $state,
             "showStartIcon",
@@ -309,6 +314,11 @@ function PlasmicTextInput__RenderFunc(props: {
             $state,
             "isDisabled",
             "isDisabled"
+          ),
+          [sty.startIconContainershowEndIcon]: hasVariant(
+            $state,
+            "showEndIcon",
+            "showEndIcon"
           ),
           [sty.startIconContainershowStartIcon]: hasVariant(
             $state,
