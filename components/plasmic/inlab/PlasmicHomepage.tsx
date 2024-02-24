@@ -156,22 +156,7 @@ function PlasmicHomepage__RenderFunc(props: {
         path: "searchbar.value",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) =>
-          hasVariant(globalVariants, "screen", "mobileFirst")
-            ? ``
-            : (() => {
-                try {
-                  return "چچچچچچچ";
-                } catch (e) {
-                  if (
-                    e instanceof TypeError ||
-                    e?.plasmicType === "PlasmicUndefinedDataError"
-                  ) {
-                    return undefined;
-                  }
-                  throw e;
-                }
-              })()
+        initFunc: ({ $props, $state, $queries, $ctx }) => ""
       },
       {
         path: "commentButton.isDisabled",
