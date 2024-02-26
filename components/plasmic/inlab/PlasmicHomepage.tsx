@@ -77,8 +77,8 @@ import sty from "./PlasmicHomepage.module.css"; // plasmic-import: oQ9IYAdIiE5g/
 
 import MenuIcon from "./icons/PlasmicIcon__Menu"; // plasmic-import: YlP_1riCYk4W/icon
 import SearchsvgIcon from "./icons/PlasmicIcon__Searchsvg"; // plasmic-import: YIqBWKHX3AVs/icon
-import ChecksvgIcon from "./icons/PlasmicIcon__Checksvg"; // plasmic-import: I6pxicA96WJm/icon
 import Icons8ClosesvgIcon from "./icons/PlasmicIcon__Icons8Closesvg"; // plasmic-import: -xG_spDBispP/icon
+import ChecksvgIcon from "./icons/PlasmicIcon__Checksvg"; // plasmic-import: I6pxicA96WJm/icon
 import Icon2Icon from "./icons/PlasmicIcon__Icon2"; // plasmic-import: NFXRoS4oqKav/icon
 import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: vsUaT3pPwdP4/icon
 
@@ -257,71 +257,39 @@ function PlasmicHomepage__RenderFunc(props: {
             <TextInput
               data-plasmic-name={"searchbar"}
               data-plasmic-override={overrides.searchbar}
-              autoFocus={true}
+              autoFocus={false}
               className={classNames("__wab_instance", sty.searchbar)}
-              clearSearchbar={
-                (() => {
-                  try {
-                    return $state.searchbar.value !== "";
-                  } catch (e) {
-                    if (
-                      e instanceof TypeError ||
-                      e?.plasmicType === "PlasmicUndefinedDataError"
-                    ) {
-                      return false;
-                    }
-                    throw e;
-                  }
-                })() ? (
-                  <Icons8ClosesvgIcon
-                    className={classNames(projectcss.all, sty.svg__kHhsj)}
-                    onClick={async event => {
-                      const $steps = {};
-
-                      $steps["updateSearchbarValue"] = true
-                        ? (() => {
-                            const actionArgs = {
-                              variable: {
-                                objRoot: $state,
-                                variablePath: ["searchbar", "value"]
-                              },
-                              operation: 0,
-                              value: ""
-                            };
-                            return (({
-                              variable,
-                              value,
-                              startIndex,
-                              deleteCount
-                            }) => {
-                              if (!variable) {
-                                return;
-                              }
-                              const { objRoot, variablePath } = variable;
-
-                              $stateSet(objRoot, variablePath, value);
-                              return value;
-                            })?.apply(null, [actionArgs]);
-                          })()
-                        : undefined;
-                      if (
-                        $steps["updateSearchbarValue"] != null &&
-                        typeof $steps["updateSearchbarValue"] === "object" &&
-                        typeof $steps["updateSearchbarValue"].then ===
-                          "function"
-                      ) {
-                        $steps["updateSearchbarValue"] = await $steps[
-                          "updateSearchbarValue"
-                        ];
-                      }
-                    }}
-                    role={"img"}
-                  />
-                ) : null
-              }
               endIcon={
-                <ChecksvgIcon
+                <Icons8ClosesvgIcon
                   className={classNames(projectcss.all, sty.svg__mRwyU)}
+                  onClick={async event => {
+                    const $steps = {};
+
+                    $steps["goToHomepage"] = true
+                      ? (() => {
+                          const actionArgs = { destination: `/patients` };
+                          return (({ destination }) => {
+                            if (
+                              typeof destination === "string" &&
+                              destination.startsWith("#")
+                            ) {
+                              document
+                                .getElementById(destination.substr(1))
+                                .scrollIntoView({ behavior: "smooth" });
+                            } else {
+                              __nextRouter?.push(destination);
+                            }
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["goToHomepage"] != null &&
+                      typeof $steps["goToHomepage"] === "object" &&
+                      typeof $steps["goToHomepage"].then === "function"
+                    ) {
+                      $steps["goToHomepage"] = await $steps["goToHomepage"];
+                    }
+                  }}
                   role={"img"}
                 />
               }
@@ -334,6 +302,19 @@ function PlasmicHomepage__RenderFunc(props: {
                 "\u0646\u0627\u0645\u060c \u0646\u0627\u0645 \u062e\u0627\u0646\u0648\u0627\u062f\u06af\u06cc\u060c \u0634\u0645\u0627\u0631\u0647 \u067e\u0631\u0648\u0646\u062f\u0647\u060c \u06a9\u062f \u0645\u0644\u06cc\u060c \u06a9\u062f \u067e\u06a9\u0633 \u0631\u0627 \u0648\u0627\u0631\u062f \u06a9\u0646\u06cc\u062f"
               }
               required={false}
+              showEndIcon={(() => {
+                try {
+                  return $state.searchbar.value !== "";
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return [];
+                  }
+                  throw e;
+                }
+              })()}
               showStartIcon={true}
               startIcon={
                 <SearchsvgIcon
@@ -388,22 +369,8 @@ function PlasmicHomepage__RenderFunc(props: {
                       }
                     </div>
                   ) : null}
-                  {(() => {
-                    try {
-                      return (
-                        $ctx.fetched_data.loading === false &&
-                        $state.searchbar.value === ""
-                      );
-                    } catch (e) {
-                      if (
-                        e instanceof TypeError ||
-                        e?.plasmicType === "PlasmicUndefinedDataError"
-                      ) {
-                        return false;
-                      }
-                      throw e;
-                    }
-                  })() ? (
+                  {$ctx.fetched_data.loading === false &&
+                  $state.searchbar.value === "" ? (
                     <div
                       className={classNames(
                         projectcss.all,
@@ -503,22 +470,10 @@ function PlasmicHomepage__RenderFunc(props: {
                       }
                     </div>
                   ) : null}
-                  {(() => {
-                    try {
-                      return !(
-                        $ctx.fetched_data.loading === false &&
-                        $ctx.fetched_data.data[0].search_response === ""
-                      );
-                    } catch (e) {
-                      if (
-                        e instanceof TypeError ||
-                        e?.plasmicType === "PlasmicUndefinedDataError"
-                      ) {
-                        return true;
-                      }
-                      throw e;
-                    }
-                  })()
+                  {!(
+                    $ctx.fetched_data.loading === false &&
+                    $ctx.fetched_data.data[0].search_response === ""
+                  )
                     ? (_par =>
                         !_par ? [] : Array.isArray(_par) ? _par : [_par])(
                         (() => {
@@ -623,7 +578,40 @@ function PlasmicHomepage__RenderFunc(props: {
                                     "searchedPatientFavIcon",
                                     __plasmic_idx_0,
                                     "selected"
-                                  ])
+                                  ]),
+                                  trigerReload: async () => {
+                                    const $steps = {};
+
+                                    $steps["runActionOnFavPatients"] = true
+                                      ? (() => {
+                                          const actionArgs = {
+                                            tplRef: "favPatients",
+                                            action: "reload"
+                                          };
+                                          return (({
+                                            tplRef,
+                                            action,
+                                            args
+                                          }) => {
+                                            return $refs?.[tplRef]?.[action]?.(
+                                              ...(args ?? [])
+                                            );
+                                          })?.apply(null, [actionArgs]);
+                                        })()
+                                      : undefined;
+                                    if (
+                                      $steps["runActionOnFavPatients"] !=
+                                        null &&
+                                      typeof $steps[
+                                        "runActionOnFavPatients"
+                                      ] === "object" &&
+                                      typeof $steps["runActionOnFavPatients"]
+                                        .then === "function"
+                                    ) {
+                                      $steps["runActionOnFavPatients"] =
+                                        await $steps["runActionOnFavPatients"];
+                                    }
+                                  }
                                 };
 
                                 initializePlasmicStates(

@@ -116,7 +116,6 @@ export type PlasmicTextInput__ArgsType = {
     | "email"
     | "tel";
   autoFocus?: boolean;
-  clearSearchbar?: React.ReactNode;
 };
 type ArgPropType = keyof PlasmicTextInput__ArgsType;
 export const PlasmicTextInput__ArgProps = new Array<ArgPropType>(
@@ -130,8 +129,7 @@ export const PlasmicTextInput__ArgProps = new Array<ArgPropType>(
   "aria-labelledby",
   "onChange",
   "type",
-  "autoFocus",
-  "clearSearchbar"
+  "autoFocus"
 );
 
 export type PlasmicTextInput__OverridesType = {
@@ -160,7 +158,6 @@ export interface DefaultTextInputProps extends pp.BaseTextInputProps {
     | "email"
     | "tel";
   autoFocus?: boolean;
-  clearSearchbar?: React.ReactNode;
   color?: SingleChoiceArg<"dark">;
 }
 
@@ -382,16 +379,6 @@ function PlasmicTextInput__RenderFunc(props: {
         value={generateStateValueProp($state, ["input", "value"]) ?? ""}
       />
 
-      {renderPlasmicSlot({
-        defaultContents: (
-          <SearchsvgIcon
-            className={classNames(projectcss.all, sty.svg__lTYva)}
-            role={"img"}
-          />
-        ),
-
-        value: args.clearSearchbar
-      })}
       <div
         data-plasmic-name={"endIconContainer"}
         data-plasmic-override={overrides.endIconContainer}
@@ -403,6 +390,37 @@ function PlasmicTextInput__RenderFunc(props: {
             "showEndIcon"
           )
         })}
+        onClick={async event => {
+          const $steps = {};
+
+          $steps["updateValue"] = true
+            ? (() => {
+                const actionArgs = {
+                  variable: {
+                    objRoot: $state,
+                    variablePath: ["value"]
+                  },
+                  operation: 0
+                };
+                return (({ variable, value, startIndex, deleteCount }) => {
+                  if (!variable) {
+                    return;
+                  }
+                  const { objRoot, variablePath } = variable;
+
+                  $stateSet(objRoot, variablePath, value);
+                  return value;
+                })?.apply(null, [actionArgs]);
+              })()
+            : undefined;
+          if (
+            $steps["updateValue"] != null &&
+            typeof $steps["updateValue"] === "object" &&
+            typeof $steps["updateValue"].then === "function"
+          ) {
+            $steps["updateValue"] = await $steps["updateValue"];
+          }
+        }}
       >
         {renderPlasmicSlot({
           defaultContents: (

@@ -88,12 +88,14 @@ export type PlasmicFavoriteIcon__ArgsType = {
   selected?: boolean;
   onSelectedChange?: (val: string) => void;
   patientId?: number;
+  trigerReload?: () => void;
 };
 type ArgPropType = keyof PlasmicFavoriteIcon__ArgsType;
 export const PlasmicFavoriteIcon__ArgProps = new Array<ArgPropType>(
   "selected",
   "onSelectedChange",
-  "patientId"
+  "patientId",
+  "trigerReload"
 );
 
 export type PlasmicFavoriteIcon__OverridesType = {
@@ -104,6 +106,7 @@ export interface DefaultFavoriteIconProps {
   selected?: boolean;
   onSelectedChange?: (val: string) => void;
   patientId?: number;
+  trigerReload?: () => void;
   favoriteTest?: SingleBooleanChoiceArg<"favoriteTest">;
   className?: string;
 }

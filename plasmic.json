@@ -1702,6 +1702,11 @@
           "id": "-xG_spDBispP",
           "name": "Icons8ClosesvgIcon",
           "moduleFilePath": "plasmic/inlab/icons/PlasmicIcon__Icons8Closesvg.tsx"
+        },
+        {
+          "id": "2bxvHhfddyLp",
+          "name": "LockPasswordSvgrepoComsvgIcon",
+          "moduleFilePath": "plasmic/inlab/icons/PlasmicIcon__LockPasswordSvgrepoComsvg.tsx"
         }
       ],
       "images": [

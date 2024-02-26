@@ -111,13 +111,6 @@
 .root:focus-within .input::placeholder {
   outline: none;
 }
-.svg__lTYva {
-  position: relative;
-  object-fit: cover;
-  width: var(--token-UEz8jpx4ZeEk);
-  height: 1em;
-  color: #418dff;
-}
 .endIconContainer {
   position: relative;
   flex-direction: row;
