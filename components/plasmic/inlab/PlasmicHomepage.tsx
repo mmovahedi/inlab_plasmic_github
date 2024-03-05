@@ -257,7 +257,6 @@ function PlasmicHomepage__RenderFunc(props: {
             <TextInput
               data-plasmic-name={"searchbar"}
               data-plasmic-override={overrides.searchbar}
-              autoFocus={false}
               className={classNames("__wab_instance", sty.searchbar)}
               endIcon={
                 <Icons8ClosesvgIcon
@@ -301,7 +300,6 @@ function PlasmicHomepage__RenderFunc(props: {
               placeholder={
                 "\u0646\u0627\u0645\u060c \u0646\u0627\u0645 \u062e\u0627\u0646\u0648\u0627\u062f\u06af\u06cc\u060c \u0634\u0645\u0627\u0631\u0647 \u067e\u0631\u0648\u0646\u062f\u0647\u060c \u06a9\u062f \u0645\u0644\u06cc\u060c \u06a9\u062f \u067e\u06a9\u0633 \u0631\u0627 \u0648\u0627\u0631\u062f \u06a9\u0646\u06cc\u062f"
               }
-              required={false}
               showEndIcon={(() => {
                 try {
                   return $state.searchbar.value !== "";
@@ -344,19 +342,7 @@ function PlasmicHomepage__RenderFunc(props: {
             <DataCtxReader__>
               {$ctx => (
                 <React.Fragment>
-                  {(() => {
-                    try {
-                      return $ctx.fetched_data.loading == true;
-                    } catch (e) {
-                      if (
-                        e instanceof TypeError ||
-                        e?.plasmicType === "PlasmicUndefinedDataError"
-                      ) {
-                        return false;
-                      }
-                      throw e;
-                    }
-                  })() ? (
+                  {$ctx.fetched_data.loading === true ? (
                     <div
                       className={classNames(
                         projectcss.all,
@@ -382,7 +368,7 @@ function PlasmicHomepage__RenderFunc(props: {
 
                         $steps["runActionOnSearchedPatients"] = true
                           ? (() => {
-                              const actionArgs = { tplRef: "favPatients" };
+                              const actionArgs = {};
                               return (({ tplRef, action, args }) => {
                                 return $refs?.[tplRef]?.[action]?.(
                                   ...(args ?? [])
@@ -408,23 +394,9 @@ function PlasmicHomepage__RenderFunc(props: {
                       }
                     </div>
                   ) : null}
-                  {(() => {
-                    try {
-                      return (
-                        $ctx.fetched_data.loading === false &&
-                        $ctx.fetched_data.data[0].search_response === "" &&
-                        $state.searchbar.value === ""
-                      );
-                    } catch (e) {
-                      if (
-                        e instanceof TypeError ||
-                        e?.plasmicType === "PlasmicUndefinedDataError"
-                      ) {
-                        return false;
-                      }
-                      throw e;
-                    }
-                  })() ? (
+                  {$ctx.fetched_data.loading === false &&
+                  $state.searchbar.value === "" &&
+                  $ctx.fetched_data.data === "" ? (
                     <div
                       className={classNames(
                         projectcss.all,
@@ -437,23 +409,9 @@ function PlasmicHomepage__RenderFunc(props: {
                       }
                     </div>
                   ) : null}
-                  {(() => {
-                    try {
-                      return (
-                        $ctx.fetched_data.loading === false &&
-                        $ctx.fetched_data.data[0].search_response === "" &&
-                        $state.searchbar.value !== ""
-                      );
-                    } catch (e) {
-                      if (
-                        e instanceof TypeError ||
-                        e?.plasmicType === "PlasmicUndefinedDataError"
-                      ) {
-                        return false;
-                      }
-                      throw e;
-                    }
-                  })() ? (
+                  {$ctx.fetched_data.loading === false &&
+                  $state.searchbar.value !== "" &&
+                  $ctx.fetched_data.data === "" ? (
                     <div
                       data-plasmic-name={
                         "\u0628\u0645\u0627\u0631\u0627\u0641\u062a\u0646\u0634\u062f"
@@ -470,9 +428,13 @@ function PlasmicHomepage__RenderFunc(props: {
                       }
                     </div>
                   ) : null}
-                  {!(
-                    $ctx.fetched_data.loading === false &&
-                    $ctx.fetched_data.data[0].search_response === ""
+                  {(
+                    hasVariant(globalVariants, "screen", "mobileFirst")
+                      ? !(
+                          $ctx.fetched_data.loading === false &&
+                          $ctx.fetched_data.search_response == 0
+                        )
+                      : $ctx.fetched_data.data !== ""
                   )
                     ? (_par =>
                         !_par ? [] : Array.isArray(_par) ? _par : [_par])(

@@ -73,7 +73,9 @@ import plasmic_plasmic_rich_components_css from "../plasmic_rich_components/plas
 import projectcss from "./plasmic_inlab.module.css"; // plasmic-import: wjafXWEvDytFogT7SiMy2v/projectcss
 import sty from "./PlasmicInlabLogin.module.css"; // plasmic-import: J2d--RhwPuEt/css
 
-import SearchsvgIcon from "./icons/PlasmicIcon__Searchsvg"; // plasmic-import: YIqBWKHX3AVs/icon
+import MdiaccountIcon from "./icons/PlasmicIcon__Mdiaccount"; // plasmic-import: mC78MSouMgiO/icon
+import Icons8ClosesvgIcon from "./icons/PlasmicIcon__Icons8Closesvg"; // plasmic-import: -xG_spDBispP/icon
+import LockPasswordSvgrepoComsvgIcon from "./icons/PlasmicIcon__LockPasswordSvgrepoComsvg"; // plasmic-import: 2bxvHhfddyLp/icon
 import ChecksvgIcon from "./icons/PlasmicIcon__Checksvg"; // plasmic-import: I6pxicA96WJm/icon
 import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: vsUaT3pPwdP4/icon
 
@@ -255,14 +257,29 @@ function PlasmicInlabLogin__RenderFunc(props: {
             aria-label={``}
             autoFocus={false}
             className={classNames("__wab_instance", sty.username)}
+            endIcon={
+              <Icons8ClosesvgIcon
+                className={classNames(projectcss.all, sty.svg__sIovl)}
+                role={"img"}
+              />
+            }
             name={``}
             onChange={(...eventArgs) => {
               generateStateOnChangeProp($state, ["username", "value"])(
                 (e => e.target?.value).apply(null, eventArgs)
               );
             }}
-            placeholder={"username"}
+            placeholder={
+              "\u0646\u0627\u0645 \u06a9\u0627\u0631\u0628\u0631\u06cc"
+            }
             required={false}
+            showStartIcon={true}
+            startIcon={
+              <MdiaccountIcon
+                className={classNames(projectcss.all, sty.svg__falId)}
+                role={"img"}
+              />
+            }
             type={"text"}
             value={generateStateValueProp($state, ["username", "value"]) ?? ""}
           />
@@ -273,6 +290,12 @@ function PlasmicInlabLogin__RenderFunc(props: {
             aria-label={``}
             autoFocus={false}
             className={classNames("__wab_instance", sty.password)}
+            endIcon={
+              <Icons8ClosesvgIcon
+                className={classNames(projectcss.all, sty.svg__lOk9F)}
+                role={"img"}
+              />
+            }
             onChange={async (...eventArgs: any) => {
               ((...eventArgs) => {
                 generateStateOnChangeProp($state, ["password", "value"])(
@@ -283,7 +306,14 @@ function PlasmicInlabLogin__RenderFunc(props: {
                 const $steps = {};
               }).apply(null, eventArgs);
             }}
-            placeholder={"password"}
+            placeholder={"\u0631\u0645\u0632 \u0639\u0628\u0648\u0631"}
+            showStartIcon={true}
+            startIcon={
+              <LockPasswordSvgrepoComsvgIcon
+                className={classNames(projectcss.all, sty.svg__fnFNb)}
+                role={"img"}
+              />
+            }
             type={"password"}
             value={generateStateValueProp($state, ["password", "value"]) ?? ""}
           />

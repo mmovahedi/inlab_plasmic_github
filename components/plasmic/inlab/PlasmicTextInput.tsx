@@ -71,7 +71,7 @@ import projectcss from "./plasmic_inlab.module.css"; // plasmic-import: wjafXWEv
 import sty from "./PlasmicTextInput.module.css"; // plasmic-import: WB4OwDxc51ck/css
 
 import SearchsvgIcon from "./icons/PlasmicIcon__Searchsvg"; // plasmic-import: YIqBWKHX3AVs/icon
-import ChecksvgIcon from "./icons/PlasmicIcon__Checksvg"; // plasmic-import: I6pxicA96WJm/icon
+import Icons8ClosesvgIcon from "./icons/PlasmicIcon__Icons8Closesvg"; // plasmic-import: -xG_spDBispP/icon
 
 createPlasmicElementProxy;
 
@@ -350,9 +350,6 @@ function PlasmicTextInput__RenderFunc(props: {
       <input
         data-plasmic-name={"input"}
         data-plasmic-override={overrides.input}
-        aria-label={args["aria-label"]}
-        aria-labelledby={args["aria-labelledby"]}
-        autoFocus={args.autoFocus}
         className={classNames(projectcss.all, projectcss.input, sty.input, {
           [sty.input___focusVisibleWithin]: triggers.focusVisibleWithin_root,
           [sty.inputcolor_dark]: hasVariant($state, "color", "dark"),
@@ -366,7 +363,6 @@ function PlasmicTextInput__RenderFunc(props: {
         disabled={
           hasVariant($state, "isDisabled", "isDisabled") ? true : undefined
         }
-        name={args.name}
         onChange={e => {
           generateStateOnChangeProp($state, ["input", "value"])(e.target.value);
         }}
@@ -374,77 +370,92 @@ function PlasmicTextInput__RenderFunc(props: {
         ref={ref => {
           $refs["input"] = ref;
         }}
-        required={args.required}
         type={args.type}
         value={generateStateValueProp($state, ["input", "value"]) ?? ""}
       />
 
-      <div
-        data-plasmic-name={"endIconContainer"}
-        data-plasmic-override={overrides.endIconContainer}
-        className={classNames(projectcss.all, sty.endIconContainer, {
-          [sty.endIconContainercolor_dark]: hasVariant($state, "color", "dark"),
-          [sty.endIconContainershowEndIcon]: hasVariant(
-            $state,
-            "showEndIcon",
-            "showEndIcon"
-          )
-        })}
-        onClick={async event => {
-          const $steps = {};
-
-          $steps["updateValue"] = true
-            ? (() => {
-                const actionArgs = {
-                  variable: {
-                    objRoot: $state,
-                    variablePath: ["value"]
-                  },
-                  operation: 0
-                };
-                return (({ variable, value, startIndex, deleteCount }) => {
-                  if (!variable) {
-                    return;
-                  }
-                  const { objRoot, variablePath } = variable;
-
-                  $stateSet(objRoot, variablePath, value);
-                  return value;
-                })?.apply(null, [actionArgs]);
-              })()
-            : undefined;
-          if (
-            $steps["updateValue"] != null &&
-            typeof $steps["updateValue"] === "object" &&
-            typeof $steps["updateValue"].then === "function"
-          ) {
-            $steps["updateValue"] = await $steps["updateValue"];
-          }
-        }}
-      >
-        {renderPlasmicSlot({
-          defaultContents: (
-            <ChecksvgIcon
-              className={classNames(projectcss.all, sty.svg__m0Xvn)}
-              role={"img"}
-            />
-          ),
-
-          value: args.endIcon,
-          className: classNames(sty.slotTargetEndIcon, {
-            [sty.slotTargetEndIconcolor_dark]: hasVariant(
+      {(
+        hasVariant($state, "showEndIcon", "showEndIcon")
+          ? true
+          : $state.value !== ""
+      ) ? (
+        <div
+          data-plasmic-name={"endIconContainer"}
+          data-plasmic-override={overrides.endIconContainer}
+          className={classNames(projectcss.all, sty.endIconContainer, {
+            [sty.endIconContainercolor_dark]: hasVariant(
               $state,
               "color",
               "dark"
             ),
-            [sty.slotTargetEndIconshowEndIcon]: hasVariant(
+            [sty.endIconContainerisDisabled]: hasVariant(
+              $state,
+              "isDisabled",
+              "isDisabled"
+            ),
+            [sty.endIconContainershowEndIcon]: hasVariant(
               $state,
               "showEndIcon",
               "showEndIcon"
             )
-          })
-        })}
-      </div>
+          })}
+          onClick={async event => {
+            const $steps = {};
+
+            $steps["updateValue"] = true
+              ? (() => {
+                  const actionArgs = {
+                    variable: {
+                      objRoot: $state,
+                      variablePath: ["value"]
+                    },
+                    operation: 0,
+                    value: ""
+                  };
+                  return (({ variable, value, startIndex, deleteCount }) => {
+                    if (!variable) {
+                      return;
+                    }
+                    const { objRoot, variablePath } = variable;
+
+                    $stateSet(objRoot, variablePath, value);
+                    return value;
+                  })?.apply(null, [actionArgs]);
+                })()
+              : undefined;
+            if (
+              $steps["updateValue"] != null &&
+              typeof $steps["updateValue"] === "object" &&
+              typeof $steps["updateValue"].then === "function"
+            ) {
+              $steps["updateValue"] = await $steps["updateValue"];
+            }
+          }}
+        >
+          {renderPlasmicSlot({
+            defaultContents:
+              $state.value !== "" ? (
+                <Icons8ClosesvgIcon
+                  className={classNames(projectcss.all, sty.svg__m0Xvn)}
+                  role={"img"}
+                />
+              ) : null,
+            value: args.endIcon,
+            className: classNames(sty.slotTargetEndIcon, {
+              [sty.slotTargetEndIconcolor_dark]: hasVariant(
+                $state,
+                "color",
+                "dark"
+              ),
+              [sty.slotTargetEndIconshowEndIcon]: hasVariant(
+                $state,
+                "showEndIcon",
+                "showEndIcon"
+              )
+            })
+          })}
+        </div>
+      ) : null}
     </div>
   ) as React.ReactElement | null;
 }

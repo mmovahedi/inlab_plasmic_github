@@ -12,7 +12,7 @@
     "@ant-design/icons": "^5.3.0",
     "@ant-design/pro-components": "^2.6.4",
     "@plasmicapp/cli": "^0.1.327",
-    "@plasmicapp/react-web": "^0.2.319",
+    "@plasmicapp/react-web": "^0.2.321",
     "@plasmicpkgs/antd": "^2.0.110",
     "@plasmicpkgs/antd5": "^0.0.215",
     "@plasmicpkgs/commerce": "^0.0.188",

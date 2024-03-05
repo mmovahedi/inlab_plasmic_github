@@ -335,21 +335,7 @@ function PlasmicImagingReportDatail__RenderFunc(props: {
                             sty.imagingReport
                           )}
                         >
-                          <React.Fragment>
-                            {(() => {
-                              try {
-                                return currentItem.report;
-                              } catch (e) {
-                                if (
-                                  e instanceof TypeError ||
-                                  e?.plasmicType === "PlasmicUndefinedDataError"
-                                ) {
-                                  return "";
-                                }
-                                throw e;
-                              }
-                            })()}
-                          </React.Fragment>
+                          <React.Fragment>{currentItem.report}</React.Fragment>
                         </div>
                       ) : null}
                     </Stack__>
