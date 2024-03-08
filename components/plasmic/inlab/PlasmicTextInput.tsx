@@ -399,38 +399,6 @@ function PlasmicTextInput__RenderFunc(props: {
               "showEndIcon"
             )
           })}
-          onClick={async event => {
-            const $steps = {};
-
-            $steps["updateValue"] = true
-              ? (() => {
-                  const actionArgs = {
-                    variable: {
-                      objRoot: $state,
-                      variablePath: ["value"]
-                    },
-                    operation: 0,
-                    value: ""
-                  };
-                  return (({ variable, value, startIndex, deleteCount }) => {
-                    if (!variable) {
-                      return;
-                    }
-                    const { objRoot, variablePath } = variable;
-
-                    $stateSet(objRoot, variablePath, value);
-                    return value;
-                  })?.apply(null, [actionArgs]);
-                })()
-              : undefined;
-            if (
-              $steps["updateValue"] != null &&
-              typeof $steps["updateValue"] === "object" &&
-              typeof $steps["updateValue"].then === "function"
-            ) {
-              $steps["updateValue"] = await $steps["updateValue"];
-            }
-          }}
         >
           {renderPlasmicSlot({
             defaultContents:

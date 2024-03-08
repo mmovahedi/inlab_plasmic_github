@@ -264,29 +264,65 @@ function PlasmicHomepage__RenderFunc(props: {
                   onClick={async event => {
                     const $steps = {};
 
-                    $steps["goToHomepage"] = true
+                    $steps["updateSearchbarValue"] = true
                       ? (() => {
-                          const actionArgs = { destination: `/patients` };
-                          return (({ destination }) => {
-                            if (
-                              typeof destination === "string" &&
-                              destination.startsWith("#")
-                            ) {
-                              document
-                                .getElementById(destination.substr(1))
-                                .scrollIntoView({ behavior: "smooth" });
-                            } else {
-                              __nextRouter?.push(destination);
+                          const actionArgs = {
+                            variable: {
+                              objRoot: $state,
+                              variablePath: ["searchbar", "value"]
+                            },
+                            operation: 0,
+                            value: ""
+                          };
+                          return (({
+                            variable,
+                            value,
+                            startIndex,
+                            deleteCount
+                          }) => {
+                            if (!variable) {
+                              return;
                             }
+                            const { objRoot, variablePath } = variable;
+
+                            $stateSet(objRoot, variablePath, value);
+                            return value;
                           })?.apply(null, [actionArgs]);
                         })()
                       : undefined;
                     if (
-                      $steps["goToHomepage"] != null &&
-                      typeof $steps["goToHomepage"] === "object" &&
-                      typeof $steps["goToHomepage"].then === "function"
+                      $steps["updateSearchbarValue"] != null &&
+                      typeof $steps["updateSearchbarValue"] === "object" &&
+                      typeof $steps["updateSearchbarValue"].then === "function"
                     ) {
-                      $steps["goToHomepage"] = await $steps["goToHomepage"];
+                      $steps["updateSearchbarValue"] = await $steps[
+                        "updateSearchbarValue"
+                      ];
+                    }
+
+                    $steps["runActionOnFavPatients"] =
+                      $steps.updateSearchbarValue.status === 200
+                        ? (() => {
+                            const actionArgs = {
+                              tplRef: "favPatients",
+                              action: "reload"
+                            };
+                            return (({ tplRef, action, args }) => {
+                              return $refs?.[tplRef]?.[action]?.(
+                                ...(args ?? [])
+                              );
+                            })?.apply(null, [actionArgs]);
+                          })()
+                        : undefined;
+                    if (
+                      $steps["runActionOnFavPatients"] != null &&
+                      typeof $steps["runActionOnFavPatients"] === "object" &&
+                      typeof $steps["runActionOnFavPatients"].then ===
+                        "function"
+                    ) {
+                      $steps["runActionOnFavPatients"] = await $steps[
+                        "runActionOnFavPatients"
+                      ];
                     }
                   }}
                   role={"img"}
@@ -300,19 +336,6 @@ function PlasmicHomepage__RenderFunc(props: {
               placeholder={
                 "\u0646\u0627\u0645\u060c \u0646\u0627\u0645 \u062e\u0627\u0646\u0648\u0627\u062f\u06af\u06cc\u060c \u0634\u0645\u0627\u0631\u0647 \u067e\u0631\u0648\u0646\u062f\u0647\u060c \u06a9\u062f \u0645\u0644\u06cc\u060c \u06a9\u062f \u067e\u06a9\u0633 \u0631\u0627 \u0648\u0627\u0631\u062f \u06a9\u0646\u06cc\u062f"
               }
-              showEndIcon={(() => {
-                try {
-                  return $state.searchbar.value !== "";
-                } catch (e) {
-                  if (
-                    e instanceof TypeError ||
-                    e?.plasmicType === "PlasmicUndefinedDataError"
-                  ) {
-                    return [];
-                  }
-                  throw e;
-                }
-              })()}
               showStartIcon={true}
               startIcon={
                 <SearchsvgIcon
@@ -489,24 +512,9 @@ function PlasmicHomepage__RenderFunc(props: {
                                 )}
                               >
                                 <React.Fragment>
-                                  {(() => {
-                                    try {
-                                      return (
-                                        currentItem.first_name +
-                                        " " +
-                                        currentItem.last_name
-                                      );
-                                    } catch (e) {
-                                      if (
-                                        e instanceof TypeError ||
-                                        e?.plasmicType ===
-                                          "PlasmicUndefinedDataError"
-                                      ) {
-                                        return "";
-                                      }
-                                      throw e;
-                                    }
-                                  })()}
+                                  {currentItem.first_name +
+                                    " " +
+                                    currentItem.last_name}
                                 </React.Fragment>
                               </div>
                               {(() => {

@@ -258,10 +258,51 @@ function PlasmicInlabLogin__RenderFunc(props: {
             autoFocus={false}
             className={classNames("__wab_instance", sty.username)}
             endIcon={
-              <Icons8ClosesvgIcon
-                className={classNames(projectcss.all, sty.svg__sIovl)}
-                role={"img"}
-              />
+              $state.username.value !== "" ? (
+                <Icons8ClosesvgIcon
+                  className={classNames(projectcss.all, sty.svg__sIovl)}
+                  onClick={async event => {
+                    const $steps = {};
+
+                    $steps["updateUsernameValue"] = true
+                      ? (() => {
+                          const actionArgs = {
+                            variable: {
+                              objRoot: $state,
+                              variablePath: ["username", "value"]
+                            },
+                            operation: 0,
+                            value: ""
+                          };
+                          return (({
+                            variable,
+                            value,
+                            startIndex,
+                            deleteCount
+                          }) => {
+                            if (!variable) {
+                              return;
+                            }
+                            const { objRoot, variablePath } = variable;
+
+                            $stateSet(objRoot, variablePath, value);
+                            return value;
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["updateUsernameValue"] != null &&
+                      typeof $steps["updateUsernameValue"] === "object" &&
+                      typeof $steps["updateUsernameValue"].then === "function"
+                    ) {
+                      $steps["updateUsernameValue"] = await $steps[
+                        "updateUsernameValue"
+                      ];
+                    }
+                  }}
+                  role={"img"}
+                />
+              ) : null
             }
             name={``}
             onChange={(...eventArgs) => {
@@ -291,10 +332,51 @@ function PlasmicInlabLogin__RenderFunc(props: {
             autoFocus={false}
             className={classNames("__wab_instance", sty.password)}
             endIcon={
-              <Icons8ClosesvgIcon
-                className={classNames(projectcss.all, sty.svg__lOk9F)}
-                role={"img"}
-              />
+              $state.password.value !== "" ? (
+                <Icons8ClosesvgIcon
+                  className={classNames(projectcss.all, sty.svg__lOk9F)}
+                  onClick={async event => {
+                    const $steps = {};
+
+                    $steps["updatePasswordValue"] = true
+                      ? (() => {
+                          const actionArgs = {
+                            variable: {
+                              objRoot: $state,
+                              variablePath: ["password", "value"]
+                            },
+                            operation: 0,
+                            value: ""
+                          };
+                          return (({
+                            variable,
+                            value,
+                            startIndex,
+                            deleteCount
+                          }) => {
+                            if (!variable) {
+                              return;
+                            }
+                            const { objRoot, variablePath } = variable;
+
+                            $stateSet(objRoot, variablePath, value);
+                            return value;
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["updatePasswordValue"] != null &&
+                      typeof $steps["updatePasswordValue"] === "object" &&
+                      typeof $steps["updatePasswordValue"].then === "function"
+                    ) {
+                      $steps["updatePasswordValue"] = await $steps[
+                        "updatePasswordValue"
+                      ];
+                    }
+                  }}
+                  role={"img"}
+                />
+              ) : null
             }
             onChange={async (...eventArgs: any) => {
               ((...eventArgs) => {
