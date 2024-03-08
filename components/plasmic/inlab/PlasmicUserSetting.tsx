@@ -780,7 +780,14 @@ function PlasmicUserSetting__RenderFunc(props: {
                   sty.text__zjr24
                 )}
               >
-                {"Log Out"}
+                <React.Fragment>
+                  <span
+                    className={"plasmic_default__all plasmic_default__span"}
+                    style={{ color: "var(--token-jgohepLVeKvh)" }}
+                  >
+                    {"Log Out"}
+                  </span>
+                </React.Fragment>
               </div>
             </Button>
           </Stack__>

@@ -9,7 +9,7 @@
   position: sticky;
   min-width: 0;
   border-radius: 6px;
-  padding: 7px 6px 7px 11px;
+  padding: 8px;
   border: 1px solid var(--token-pRs3-4jrQ4XQ);
 }
 @media (min-width: 0px) and (max-width: 768px) {
@@ -76,11 +76,16 @@
   left: auto;
   top: auto;
   background: #fcfcfc;
-  font-size: 12px;
+  font-size: 10px;
   text-align: right;
   min-width: 0;
   padding: 0px;
   border-width: 0px;
+}
+@media (min-width: 0px) and (max-width: 768px) {
+  .input {
+    font-size: 10px;
+  }
 }
 .inputisDisabled {
   cursor: not-allowed;

@@ -356,7 +356,8 @@ function PlasmicHomepage__RenderFunc(props: {
                     </div>
                   ) : null}
                   {$ctx.fetched_data.loading === false &&
-                  $state.searchbar.value === "" ? (
+                  $state.searchbar.value === "" &&
+                  $ctx.fetched_data.data !== "" ? (
                     <div
                       className={classNames(
                         projectcss.all,

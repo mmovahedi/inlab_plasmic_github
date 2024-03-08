@@ -244,59 +244,21 @@ function PlasmicFavoriteIcon__RenderFunc(props: {
           $steps["toggleFavorite"] = await $steps["toggleFavorite"];
         }
 
-        $steps["updateFavoriteState"] =
+        $steps["runTrigerReload"] =
           $steps.toggleFavorite.status === 200
             ? (() => {
-                const actionArgs = {
-                  variable: {
-                    objRoot: $state,
-                    variablePath: ["selected"]
-                  },
-                  operation: 0
-                };
-                return (({ variable, value, startIndex, deleteCount }) => {
-                  if (!variable) {
-                    return;
-                  }
-                  const { objRoot, variablePath } = variable;
-
-                  $stateSet(objRoot, variablePath, value);
-                  return value;
+                const actionArgs = { eventRef: $props["trigerReload"] };
+                return (({ eventRef, args }) => {
+                  return eventRef?.(...(args ?? []));
                 })?.apply(null, [actionArgs]);
               })()
             : undefined;
         if (
-          $steps["updateFavoriteState"] != null &&
-          typeof $steps["updateFavoriteState"] === "object" &&
-          typeof $steps["updateFavoriteState"].then === "function"
+          $steps["runTrigerReload"] != null &&
+          typeof $steps["runTrigerReload"] === "object" &&
+          typeof $steps["runTrigerReload"].then === "function"
         ) {
-          $steps["updateFavoriteState"] = await $steps["updateFavoriteState"];
-        }
-
-        $steps["goToHomepage"] =
-          $steps.toggleFavorite.status === 200
-            ? (() => {
-                const actionArgs = { destination: `/patients` };
-                return (({ destination }) => {
-                  if (
-                    typeof destination === "string" &&
-                    destination.startsWith("#")
-                  ) {
-                    document
-                      .getElementById(destination.substr(1))
-                      .scrollIntoView({ behavior: "smooth" });
-                  } else {
-                    __nextRouter?.push(destination);
-                  }
-                })?.apply(null, [actionArgs]);
-              })()
-            : undefined;
-        if (
-          $steps["goToHomepage"] != null &&
-          typeof $steps["goToHomepage"] === "object" &&
-          typeof $steps["goToHomepage"].then === "function"
-        ) {
-          $steps["goToHomepage"] = await $steps["goToHomepage"];
+          $steps["runTrigerReload"] = await $steps["runTrigerReload"];
         }
       }}
       role={"img"}
