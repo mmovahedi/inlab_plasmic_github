@@ -79,8 +79,10 @@
   justify-self: center;
   background: #ffffff;
   margin-top: 12px;
+  font-size: var(--token-CdE1_0ZaCyT1);
   grid-column-start: 3 !important;
   grid-column-end: -3 !important;
+  border-radius: 5px;
   padding: 8px;
 }
 .freeBox {
@@ -305,6 +307,56 @@
 .switchingTab:global(.__wab_instance) {
   max-width: 100%;
   position: relative;
+}
+.img__us8Pz {
+  position: relative;
+  object-fit: fill;
+  max-width: 100%;
+  width: 25%;
+  height: 25px;
+  margin: 0;
+  border-right: 1px none #aeaeae;
+}
+.img__us8Pz > picture > img {
+  object-fit: fill;
+}
+.img___3YmrN {
+  position: relative;
+  object-fit: fill;
+  max-width: 100%;
+  width: 25%;
+  height: 25px;
+  margin: 0;
+  border-left: 1px solid #00000045;
+}
+.img___3YmrN > picture > img {
+  object-fit: fill;
+}
+.img__iBmOc {
+  position: relative;
+  object-fit: fill;
+  max-width: 100%;
+  width: 25%;
+  height: 25px;
+  margin: 1px;
+  border-right: 1px solid #00000045;
+  border-left: 1px solid #00000045;
+}
+.img__iBmOc > picture > img {
+  object-fit: fill;
+}
+.img___41Cc {
+  position: relative;
+  object-fit: fill;
+  max-width: 100%;
+  width: 25%;
+  border-right-style: none;
+  border-right-width: 1px;
+  height: 25px;
+  margin: 0;
+}
+.img___41Cc > picture > img {
+  object-fit: fill;
 }
 .redirectToLoginPage:global(.__wab_instance):global(.__wab_instance) {
   max-width: 100%;

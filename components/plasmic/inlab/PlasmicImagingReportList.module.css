@@ -113,7 +113,9 @@
   flex-grow: 0;
   margin-top: 12px;
   background: #ffffff;
+  font-size: var(--token-CdE1_0ZaCyT1);
   min-width: 0;
+  border-radius: 5px;
   padding: 8px;
 }
 .text__scVr8 {
@@ -124,6 +126,7 @@
   margin-top: 12px;
   background: #ffffff;
   min-width: 0;
+  border-radius: 5px;
   padding: 8px;
 }
 .imagingReportList2 {
@@ -225,6 +228,56 @@
 .switchingTab:global(.__wab_instance) {
   max-width: 100%;
   position: relative;
+}
+.img__ccuIt {
+  position: relative;
+  object-fit: fill;
+  max-width: 100%;
+  width: 25%;
+  height: 25px;
+  margin: 0;
+  border-right: 1px none #aeaeae;
+}
+.img__ccuIt > picture > img {
+  object-fit: fill;
+}
+.img__uamjw {
+  position: relative;
+  object-fit: fill;
+  max-width: 100%;
+  width: 25%;
+  height: 25px;
+  margin: 0;
+  border-left: 1px solid #00000045;
+}
+.img__uamjw > picture > img {
+  object-fit: fill;
+}
+.img__sztas {
+  position: relative;
+  object-fit: fill;
+  max-width: 100%;
+  width: 25%;
+  height: 25px;
+  margin: 1px;
+  border-right: 1px solid #00000045;
+  border-left: 1px solid #00000045;
+}
+.img__sztas > picture > img {
+  object-fit: fill;
+}
+.img___8TrdL {
+  position: relative;
+  object-fit: fill;
+  max-width: 100%;
+  width: 25%;
+  border-right-style: none;
+  border-right-width: 1px;
+  height: 25px;
+  margin: 0;
+}
+.img___8TrdL > picture > img {
+  object-fit: fill;
 }
 .redirectToLoginPage:global(.__wab_instance):global(.__wab_instance) {
   max-width: 100%;

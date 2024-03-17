@@ -76,6 +76,7 @@
   background: #ffffff;
   margin-top: 8px;
   min-width: 0;
+  border-radius: 5px;
   padding: 8px;
 }
 .text__woDte {
@@ -86,7 +87,9 @@
   background: #ffffff;
   align-self: center;
   margin-top: 8px;
+  font-size: var(--token-CdE1_0ZaCyT1);
   min-width: 0;
+  border-radius: 5px;
   padding: 8px;
 }
 .laboratoryLists {
@@ -193,7 +196,7 @@
   width: 100%;
   height: auto;
   max-width: 100%;
-  font-size: 12px;
+  font-size: var(--token-sOr3fJ5Up5fq);
   border-bottom-style: solid;
   border-bottom-width: 0.5px;
   margin-bottom: 4px;
@@ -278,17 +281,17 @@
 .factorName {
   width: 100%;
   height: auto;
-  max-width: 300%;
-  font-size: 12px;
-  text-align: justify;
+  max-width: 500%;
+  font-size: var(--token-CdE1_0ZaCyT1);
+  text-align: left;
   min-width: 0;
 }
 .factorValue {
   position: relative;
   width: 100%;
   height: auto;
-  max-width: 100%;
-  font-size: 12px;
+  max-width: 50%;
+  font-size: var(--token-CdE1_0ZaCyT1);
   text-align: center;
   padding-left: 2px;
   min-width: 0;
@@ -315,6 +318,56 @@
 .switchingTab:global(.__wab_instance) {
   max-width: 100%;
   position: relative;
+}
+.img__wWwAg {
+  position: relative;
+  object-fit: fill;
+  max-width: 100%;
+  width: 25%;
+  height: 25px;
+  margin: 0;
+  border-right: 1px none #aeaeae;
+}
+.img__wWwAg > picture > img {
+  object-fit: fill;
+}
+.img__nDkB {
+  position: relative;
+  object-fit: fill;
+  max-width: 100%;
+  width: 25%;
+  height: 25px;
+  margin: 0;
+  border-left: 1px solid #00000045;
+}
+.img__nDkB > picture > img {
+  object-fit: fill;
+}
+.img___0QecG {
+  position: relative;
+  object-fit: fill;
+  max-width: 100%;
+  width: 25%;
+  height: 25px;
+  margin: 1px;
+  border-right: 1px solid #00000045;
+  border-left: 1px solid #00000045;
+}
+.img___0QecG > picture > img {
+  object-fit: fill;
+}
+.img__dBXrs {
+  position: relative;
+  object-fit: fill;
+  max-width: 100%;
+  width: 25%;
+  border-right-style: none;
+  border-right-width: 1px;
+  height: 25px;
+  margin: 0;
+}
+.img__dBXrs > picture > img {
+  object-fit: fill;
 }
 .redirectToLoginPage:global(.__wab_instance):global(.__wab_instance) {
   max-width: 100%;
