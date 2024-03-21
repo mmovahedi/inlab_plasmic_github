@@ -128,7 +128,7 @@
   height: 1em;
 }
 .text__gSrrw {
-  white-space: pre;
+  white-space: pre-wrap;
 }
 .svg__r5Um {
   position: relative;
@@ -140,7 +140,7 @@
   max-width: 60%;
   position: relative;
   height: auto;
-  width: 75vh;
+  width: 11vh;
 }
 .svg__dg3Oe {
   position: relative;

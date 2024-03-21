@@ -596,7 +596,7 @@ function PlasmicInlabLogin__RenderFunc(props: {
               )}
             >
               {hasVariant($state, "disabledLoginButton", "disabledLoginButton")
-                ? "loading..."
+                ? "\u0644\u0637\u0641\u0627 \u0645\u0646\u062a\u0638\u0631 \u0628\u0645\u0627\u0646\u06cc\u062f..."
                 : "\u0648\u0631\u0648\u062f \u0628\u0647 \u0627\u06cc\u0646\u0644\u0628"}
             </div>
           </Button>
@@ -615,6 +615,7 @@ function PlasmicInlabLogin__RenderFunc(props: {
               "resetPassword",
               "isDisabled"
             ])}
+            link={""}
             onClick={async event => {
               const $steps = {};
 
@@ -622,7 +623,7 @@ function PlasmicInlabLogin__RenderFunc(props: {
                 ? (() => {
                     const actionArgs = {
                       destination:
-                        "https://docs.google.com/forms/d/e/1FAIpQLSeVxCqYPfByUBPROGdXtrp3dX10uL6SCMHqNAMy05YBsSgzng/viewform"
+                        "https://docs.google.com/forms/d/e/1FAIpQLSe4wNlYlhx_5dvlGE28gca-nJLO_zxGxiMsvPXEjuDz5Xb1_w/viewform?usp=sf_link"
                     };
                     return (({ destination }) => {
                       if (
@@ -659,6 +660,37 @@ function PlasmicInlabLogin__RenderFunc(props: {
                 projectcss.__wab_text,
                 sty.text__o1JqL
               )}
+              onClick={async event => {
+                const $steps = {};
+
+                $steps["resetPassword"] = true
+                  ? (() => {
+                      const actionArgs = {
+                        destination:
+                          "https://docs.google.com/forms/d/e/1FAIpQLScmvuKNhINyeNxRDBA6NRMSCqzl5NCC60Hbkqa6X42kIhXGKQ/viewform?usp=sf_link"
+                      };
+                      return (({ destination }) => {
+                        if (
+                          typeof destination === "string" &&
+                          destination.startsWith("#")
+                        ) {
+                          document
+                            .getElementById(destination.substr(1))
+                            .scrollIntoView({ behavior: "smooth" });
+                        } else {
+                          __nextRouter?.push(destination);
+                        }
+                      })?.apply(null, [actionArgs]);
+                    })()
+                  : undefined;
+                if (
+                  $steps["resetPassword"] != null &&
+                  typeof $steps["resetPassword"] === "object" &&
+                  typeof $steps["resetPassword"].then === "function"
+                ) {
+                  $steps["resetPassword"] = await $steps["resetPassword"];
+                }
+              }}
             >
               {
                 "\u0628\u0627\u0632\u06cc\u0627\u0628\u06cc \u0631\u0645\u0632 \u0639\u0628\u0648\u0631"

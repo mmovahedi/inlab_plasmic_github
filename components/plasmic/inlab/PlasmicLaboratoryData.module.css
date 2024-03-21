@@ -65,6 +65,7 @@
   max-height: 100%;
   margin-bottom: 8px;
   justify-self: center;
+  font-size: var(--token-CdE1_0ZaCyT1);
   grid-column-start: 1 !important;
   grid-column-end: -1 !important;
   padding: 0% 0% 20%;
@@ -75,6 +76,7 @@
   max-width: 100%;
   background: #ffffff;
   margin-top: 8px;
+  white-space: pre-wrap;
   min-width: 0;
   border-radius: 5px;
   padding: 8px;
@@ -88,6 +90,7 @@
   align-self: center;
   margin-top: 8px;
   font-size: var(--token-CdE1_0ZaCyT1);
+  white-space: pre-wrap;
   min-width: 0;
   border-radius: 5px;
   padding: 8px;
@@ -122,6 +125,7 @@
   align-self: center;
   background: none;
   font-size: var(--token-sOr3fJ5Up5fq);
+  white-space: pre-wrap;
   min-width: 0;
   padding: 4px;
 }
@@ -162,7 +166,7 @@
   display: flex;
   position: relative;
   flex-direction: column;
-  width: 190px;
+  width: 250px;
   height: auto;
   max-width: 100%;
   margin-top: 0px;
@@ -200,6 +204,7 @@
   border-bottom-style: solid;
   border-bottom-width: 0.5px;
   margin-bottom: 4px;
+  white-space: pre-wrap;
   min-width: 0;
 }
 .labLists {
@@ -242,6 +247,7 @@
   margin-top: calc(0px + 0px) !important;
   margin-right: 0px;
   margin-left: 0px;
+  flex-grow: 1;
   min-width: 0;
   min-height: 0;
   padding: 4px;
@@ -270,13 +276,29 @@
   display: flex;
   position: relative;
   flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-  width: 100%;
   height: auto;
   max-width: 100%;
+  width: 100%;
   min-width: 0;
-  padding: 2px 0px;
+  padding: 4px;
+}
+.factorNamevalue2 > :global(.__wab_flex-container) {
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  min-width: 0;
+  margin-left: calc(0px - 0px);
+  width: calc(100% + 0px);
+}
+.factorNamevalue2 > :global(.__wab_flex-container) > *,
+.factorNamevalue2 > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
+.factorNamevalue2 > :global(.__wab_flex-container) > picture > img,
+.factorNamevalue2
+  > :global(.__wab_flex-container)
+  > :global(.__wab_slot)
+  > picture
+  > img {
+  margin-left: 0px;
 }
 .factorName {
   width: 100%;
@@ -284,19 +306,27 @@
   max-width: 500%;
   font-size: var(--token-CdE1_0ZaCyT1);
   text-align: left;
+  border-right-style: none;
+  border-right-width: 0px;
+  white-space: pre-wrap;
   min-width: 0;
+  padding: 0px;
 }
 .factorValue {
   position: relative;
   width: 100%;
   height: auto;
-  max-width: 50%;
+  max-width: 500%;
   font-size: var(--token-CdE1_0ZaCyT1);
   text-align: center;
-  padding-left: 2px;
+  white-space: pre-wrap;
   min-width: 0;
-  border-right: 0.5px none var(--token-IYO13gyYJHXG);
-  border-left: 0.5px solid var(--token-IYO13gyYJHXG);
+  padding: 0px;
+}
+@media (min-width: 0px) and (max-width: 768px) {
+  .factorValue {
+    text-align: center;
+  }
 }
 .switchingTabs {
   display: flex;

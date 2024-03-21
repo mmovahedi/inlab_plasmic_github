@@ -606,12 +606,12 @@ function PlasmicUserSetting__RenderFunc(props: {
                 const $steps = {};
 
                 $steps[
-                  "goToHttpsdocsgooglecomformsde1FaIpQlScmvuKNhINyeNxRdba6NrmsCqzl5Ncc60Hbkqa6X42KIhXgkQviewformuspsfLink"
+                  "goToHttpsdocsgooglecomformsde1FaIpQlSe4WNlYlhx5DvlGe28GcaNJloZxGxiMsvPxEjuDz5Xb1WviewformuspsfLink"
                 ] = true
                   ? (() => {
                       const actionArgs = {
                         destination:
-                          "https://docs.google.com/forms/d/e/1FAIpQLScmvuKNhINyeNxRDBA6NRMSCqzl5NCC60Hbkqa6X42kIhXGKQ/viewform?usp=sf_link"
+                          "https://docs.google.com/forms/d/e/1FAIpQLSe4wNlYlhx_5dvlGE28gca-nJLO_zxGxiMsvPXEjuDz5Xb1_w/viewform?usp=sf_link"
                       };
                       return (({ destination }) => {
                         if (
@@ -629,19 +629,19 @@ function PlasmicUserSetting__RenderFunc(props: {
                   : undefined;
                 if (
                   $steps[
-                    "goToHttpsdocsgooglecomformsde1FaIpQlScmvuKNhINyeNxRdba6NrmsCqzl5Ncc60Hbkqa6X42KIhXgkQviewformuspsfLink"
+                    "goToHttpsdocsgooglecomformsde1FaIpQlSe4WNlYlhx5DvlGe28GcaNJloZxGxiMsvPxEjuDz5Xb1WviewformuspsfLink"
                   ] != null &&
                   typeof $steps[
-                    "goToHttpsdocsgooglecomformsde1FaIpQlScmvuKNhINyeNxRdba6NrmsCqzl5Ncc60Hbkqa6X42KIhXgkQviewformuspsfLink"
+                    "goToHttpsdocsgooglecomformsde1FaIpQlSe4WNlYlhx5DvlGe28GcaNJloZxGxiMsvPxEjuDz5Xb1WviewformuspsfLink"
                   ] === "object" &&
                   typeof $steps[
-                    "goToHttpsdocsgooglecomformsde1FaIpQlScmvuKNhINyeNxRdba6NrmsCqzl5Ncc60Hbkqa6X42KIhXgkQviewformuspsfLink"
+                    "goToHttpsdocsgooglecomformsde1FaIpQlSe4WNlYlhx5DvlGe28GcaNJloZxGxiMsvPxEjuDz5Xb1WviewformuspsfLink"
                   ].then === "function"
                 ) {
                   $steps[
-                    "goToHttpsdocsgooglecomformsde1FaIpQlScmvuKNhINyeNxRdba6NrmsCqzl5Ncc60Hbkqa6X42KIhXgkQviewformuspsfLink"
+                    "goToHttpsdocsgooglecomformsde1FaIpQlSe4WNlYlhx5DvlGe28GcaNJloZxGxiMsvPxEjuDz5Xb1WviewformuspsfLink"
                   ] = await $steps[
-                    "goToHttpsdocsgooglecomformsde1FaIpQlScmvuKNhINyeNxRdba6NrmsCqzl5Ncc60Hbkqa6X42KIhXgkQviewformuspsfLink"
+                    "goToHttpsdocsgooglecomformsde1FaIpQlSe4WNlYlhx5DvlGe28GcaNJloZxGxiMsvPxEjuDz5Xb1WviewformuspsfLink"
                   ];
                 }
               }}
@@ -873,7 +873,9 @@ function PlasmicUserSetting__RenderFunc(props: {
                       className={"plasmic_default__all plasmic_default__span"}
                       style={{ color: "var(--token-jgohepLVeKvh)" }}
                     >
-                      {"loading..."}
+                      {
+                        "\u0644\u0637\u0641\u0627 \u0645\u0646\u062a\u0638\u0631 \u0628\u0645\u0627\u0646\u06cc\u062f..."
+                      }
                     </span>
                   </React.Fragment>
                 ) : (

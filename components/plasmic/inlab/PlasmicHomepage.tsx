@@ -366,9 +366,10 @@ function PlasmicHomepage__RenderFunc(props: {
                 <React.Fragment>
                   {(
                     hasVariant(globalVariants, "screen", "mobileFirst")
-                      ? (() => {
+                      ? $ctx.fetched_data.loading == true
+                      : (() => {
                           try {
-                            return $ctx.fetched_data.loading == true;
+                            return $ctx.fetched_data.loading === true;
                           } catch (e) {
                             if (
                               e instanceof TypeError ||
@@ -379,7 +380,6 @@ function PlasmicHomepage__RenderFunc(props: {
                             throw e;
                           }
                         })()
-                      : $ctx.fetched_data.loading == true
                   ) ? (
                     <div
                       className={classNames(
@@ -402,34 +402,38 @@ function PlasmicHomepage__RenderFunc(props: {
                         projectcss.__wab_text,
                         sty.text__tXFgc
                       )}
-                      onClick={async event => {
-                        const $steps = {};
-
-                        $steps["runActionOnSearchedPatients"] = true
-                          ? (() => {
-                              const actionArgs = {};
-                              return (({ tplRef, action, args }) => {
-                                return $refs?.[tplRef]?.[action]?.(
-                                  ...(args ?? [])
-                                );
-                              })?.apply(null, [actionArgs]);
-                            })()
-                          : undefined;
-                        if (
-                          $steps["runActionOnSearchedPatients"] != null &&
-                          typeof $steps["runActionOnSearchedPatients"] ===
-                            "object" &&
-                          typeof $steps["runActionOnSearchedPatients"].then ===
-                            "function"
-                        ) {
-                          $steps["runActionOnSearchedPatients"] = await $steps[
-                            "runActionOnSearchedPatients"
-                          ];
-                        }
-                      }}
                     >
                       {
                         "\u0628\u06cc\u0645\u0627\u0631\u0627\u0646 \u0645\u0646"
+                      }
+                    </div>
+                  ) : null}
+                  {(() => {
+                    try {
+                      return (
+                        $ctx.fetched_data.loading === false &&
+                        $state.searchbar.value !== "" &&
+                        $ctx.fetched_data.data !== ""
+                      );
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return true;
+                      }
+                      throw e;
+                    }
+                  })() ? (
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__sfj2Z
+                      )}
+                    >
+                      {
+                        "\u0646\u062a\u0627\u06cc\u062c \u062c\u0633\u062a \u0648 \u062c\u0648"
                       }
                     </div>
                   ) : null}
@@ -469,10 +473,7 @@ function PlasmicHomepage__RenderFunc(props: {
                   ) : null}
                   {(
                     hasVariant(globalVariants, "screen", "mobileFirst")
-                      ? !(
-                          $ctx.fetched_data.loading === false &&
-                          $ctx.fetched_data.search_response == 0
-                        )
+                      ? $ctx.fetched_data.data !== ""
                       : $ctx.fetched_data.data !== ""
                   )
                     ? (_par =>
