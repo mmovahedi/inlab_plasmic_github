@@ -72,6 +72,7 @@
   height: auto;
   max-width: 100%;
   text-align: center;
+  white-space: pre-wrap;
 }
 .username:global(.__wab_instance) {
   max-width: 80%;
@@ -140,7 +141,7 @@
   max-width: 60%;
   position: relative;
   height: auto;
-  width: 11vh;
+  width: 15vh;
 }
 .svg__dg3Oe {
   position: relative;
@@ -150,6 +151,7 @@
 }
 .text__o1JqL {
   font-size: 14px;
+  white-space: pre-wrap;
 }
 .svg__zg6Gv {
   position: relative;

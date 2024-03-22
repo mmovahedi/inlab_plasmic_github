@@ -112,13 +112,13 @@ export type PlasmicUserSetting__OverridesType = {
   hospitalIcon?: Flex__<"svg">;
   namespaceTitle?: Flex__<"div">;
   hospital2?: Flex__<"div">;
-  hospitalName?: Flex__<"div">;
+  namespaceName?: Flex__<"div">;
   resetPassword?: Flex__<"div">;
   resetPasswordImage?: Flex__<"svg">;
   resetPassword2?: Flex__<"div">;
   logoutButton?: Flex__<typeof Button>;
   text?: Flex__<"div">;
-  homepageTab?: Flex__<"div">;
+  homepageSwitchingTab?: Flex__<"div">;
   switchingTab?: Flex__<typeof SwitchingTab>;
   redirectToLoginPage?: Flex__<typeof RedirectToLoginPage>;
   redirectToNamespaceSelection?: Flex__<typeof RedirectToNamespaceSelection>;
@@ -569,14 +569,14 @@ function PlasmicUserSetting__RenderFunc(props: {
                   {"\u0628\u06cc\u0645\u0627\u0631\u0633\u062a\u0627\u0646 "}
                 </div>
                 <div
-                  data-plasmic-name={"hospitalName"}
-                  data-plasmic-override={overrides.hospitalName}
+                  data-plasmic-name={"namespaceName"}
+                  data-plasmic-override={overrides.namespaceName}
                   className={classNames(
                     projectcss.all,
                     projectcss.__wab_text,
-                    sty.hospitalName,
+                    sty.namespaceName,
                     {
-                      [sty.hospitalNamedisabledLogoutButton]: hasVariant(
+                      [sty.namespaceNamedisabledLogoutButton]: hasVariant(
                         $state,
                         "disabledLogoutButton",
                         "disabledLogoutButton"
@@ -894,9 +894,9 @@ function PlasmicUserSetting__RenderFunc(props: {
             </Button>
           </Stack__>
           <div
-            data-plasmic-name={"homepageTab"}
-            data-plasmic-override={overrides.homepageTab}
-            className={classNames(projectcss.all, sty.homepageTab)}
+            data-plasmic-name={"homepageSwitchingTab"}
+            data-plasmic-override={overrides.homepageSwitchingTab}
+            className={classNames(projectcss.all, sty.homepageSwitchingTab)}
           >
             <SwitchingTab
               data-plasmic-name={"switchingTab"}
@@ -1208,13 +1208,13 @@ const PlasmicDescendants = {
     "hospitalIcon",
     "namespaceTitle",
     "hospital2",
-    "hospitalName",
+    "namespaceName",
     "resetPassword",
     "resetPasswordImage",
     "resetPassword2",
     "logoutButton",
     "text",
-    "homepageTab",
+    "homepageSwitchingTab",
     "switchingTab",
     "redirectToLoginPage",
     "redirectToNamespaceSelection"
@@ -1233,7 +1233,7 @@ const PlasmicDescendants = {
     "hospitalIcon",
     "namespaceTitle",
     "hospital2",
-    "hospitalName",
+    "namespaceName",
     "resetPassword",
     "resetPasswordImage",
     "resetPassword2",
@@ -1265,18 +1265,18 @@ const PlasmicDescendants = {
     "hospitalIcon",
     "namespaceTitle",
     "hospital2",
-    "hospitalName"
+    "namespaceName"
   ],
   hospitalIcon: ["hospitalIcon"],
-  namespaceTitle: ["namespaceTitle", "hospital2", "hospitalName"],
+  namespaceTitle: ["namespaceTitle", "hospital2", "namespaceName"],
   hospital2: ["hospital2"],
-  hospitalName: ["hospitalName"],
+  namespaceName: ["namespaceName"],
   resetPassword: ["resetPassword", "resetPasswordImage", "resetPassword2"],
   resetPasswordImage: ["resetPasswordImage"],
   resetPassword2: ["resetPassword2"],
   logoutButton: ["logoutButton", "text"],
   text: ["text"],
-  homepageTab: ["homepageTab", "switchingTab"],
+  homepageSwitchingTab: ["homepageSwitchingTab", "switchingTab"],
   switchingTab: ["switchingTab"],
   redirectToLoginPage: ["redirectToLoginPage"],
   redirectToNamespaceSelection: ["redirectToNamespaceSelection"]
@@ -1299,13 +1299,13 @@ type NodeDefaultElementType = {
   hospitalIcon: "svg";
   namespaceTitle: "div";
   hospital2: "div";
-  hospitalName: "div";
+  namespaceName: "div";
   resetPassword: "div";
   resetPasswordImage: "svg";
   resetPassword2: "div";
   logoutButton: typeof Button;
   text: "div";
-  homepageTab: "div";
+  homepageSwitchingTab: "div";
   switchingTab: typeof SwitchingTab;
   redirectToLoginPage: typeof RedirectToLoginPage;
   redirectToNamespaceSelection: typeof RedirectToNamespaceSelection;
@@ -1384,13 +1384,13 @@ export const PlasmicUserSetting = Object.assign(
     hospitalIcon: makeNodeComponent("hospitalIcon"),
     namespaceTitle: makeNodeComponent("namespaceTitle"),
     hospital2: makeNodeComponent("hospital2"),
-    hospitalName: makeNodeComponent("hospitalName"),
+    namespaceName: makeNodeComponent("namespaceName"),
     resetPassword: makeNodeComponent("resetPassword"),
     resetPasswordImage: makeNodeComponent("resetPasswordImage"),
     resetPassword2: makeNodeComponent("resetPassword2"),
     logoutButton: makeNodeComponent("logoutButton"),
     text: makeNodeComponent("text"),
-    homepageTab: makeNodeComponent("homepageTab"),
+    homepageSwitchingTab: makeNodeComponent("homepageSwitchingTab"),
     switchingTab: makeNodeComponent("switchingTab"),
     redirectToLoginPage: makeNodeComponent("redirectToLoginPage"),
     redirectToNamespaceSelection: makeNodeComponent(

@@ -117,7 +117,7 @@
   font-size: var(--token-sOr3fJ5Up5fq);
   font-family: "vazirmatn";
   font-weight: 500;
-  letter-spacing: -0.01em;
+  letter-spacing: normal;
   line-height: 1.2;
   color: rgba(24, 29, 36, 1);
   position: relative;
@@ -125,6 +125,7 @@
   left: auto;
   text-align: right;
   margin-top: calc(3px + 0px) !important;
+  white-space: pre-wrap;
 }
 .userRankTitle {
   position: relative;
@@ -135,6 +136,7 @@
   text-align: right;
   margin-top: calc(5px + 0px) !important;
   font-size: var(--token-sOr3fJ5Up5fq);
+  white-space: pre-wrap;
 }
 .usernameValue {
   position: relative;
@@ -145,6 +147,7 @@
   text-align: right;
   margin-top: calc(5px + 0px) !important;
   font-size: var(--token-sOr3fJ5Up5fq);
+  white-space: pre-wrap;
 }
 .userPicture {
   position: relative;
@@ -292,13 +295,14 @@
   font-size: var(--token-sOr3fJ5Up5fq);
   font-family: "vazirmatn";
   font-weight: 400;
-  letter-spacing: 0em;
+  letter-spacing: normal;
   line-height: 1.2;
   color: rgba(24, 29, 36, 1);
   text-align: right;
   align-self: flex-end;
+  white-space: pre-wrap;
 }
-.hospitalName {
+.namespaceName {
   position: relative;
   width: auto;
   height: auto;
@@ -310,9 +314,10 @@
   text-align: right;
   font-size: var(--token-sOr3fJ5Up5fq);
   color: var(--token-9iYGdL7i3GKE);
+  white-space: pre-wrap;
   padding: 0px;
 }
-.hospitalNamedisabledLogoutButton {
+.namespaceNamedisabledLogoutButton {
   margin-top: calc(0px + 4px) !important;
 }
 .resetPassword {
@@ -369,12 +374,13 @@
   font-size: var(--token-sOr3fJ5Up5fq);
   font-family: "vazirmatn";
   font-weight: 400;
-  letter-spacing: 0em;
+  letter-spacing: normal;
   line-height: 1.2;
   color: rgba(24, 29, 36, 1);
   position: relative;
   text-align: right;
   align-self: flex-end;
+  white-space: pre-wrap;
 }
 .logoutButton:global(.__wab_instance) {
   max-width: 100%;
@@ -405,6 +411,7 @@
   padding-left: 0px;
   padding-right: 0px;
   height: auto;
+  white-space: pre-wrap;
 }
 .svg___3NRjF {
   position: relative;
@@ -412,7 +419,7 @@
   width: auto;
   height: 1em;
 }
-.homepageTab {
+.homepageSwitchingTab {
   display: flex;
   position: fixed;
   flex-direction: row;

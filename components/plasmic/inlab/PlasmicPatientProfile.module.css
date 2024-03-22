@@ -80,12 +80,13 @@
   background: #ffffff;
   margin-top: 12px;
   font-size: var(--token-CdE1_0ZaCyT1);
+  white-space: pre-wrap;
   grid-column-start: 3 !important;
   grid-column-end: -3 !important;
   border-radius: 5px;
   padding: 8px;
 }
-.freeBox {
+.patientProfileBox {
   display: flex;
   position: relative;
   flex-direction: row;
@@ -98,7 +99,7 @@
   border-radius: 5px;
   padding: 4px;
 }
-.freeBox > :global(.__wab_flex-container) {
+.patientProfileBox > :global(.__wab_flex-container) {
   flex-direction: row;
   align-items: center;
   justify-content: center;
@@ -106,10 +107,10 @@
   margin-left: calc(0px - 4px);
   width: calc(100% + 4px);
 }
-.freeBox > :global(.__wab_flex-container) > *,
-.freeBox > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
-.freeBox > :global(.__wab_flex-container) > picture > img,
-.freeBox
+.patientProfileBox > :global(.__wab_flex-container) > *,
+.patientProfileBox > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
+.patientProfileBox > :global(.__wab_flex-container) > picture > img,
+.patientProfileBox
   > :global(.__wab_flex-container)
   > :global(.__wab_slot)
   > picture
@@ -136,6 +137,7 @@
   text-align: left;
   font-size: var(--token-CdE1_0ZaCyT1);
   color: var(--token-8PxxXPNrIohQ);
+  white-space: pre-wrap;
   min-width: 0;
 }
 .nationalId {
@@ -145,6 +147,7 @@
   max-width: 100%;
   text-align: left;
   padding-bottom: 8px;
+  white-space: pre-wrap;
   min-width: 0;
 }
 .text___3OiCc {
@@ -155,6 +158,7 @@
   text-align: left;
   font-size: var(--token-CdE1_0ZaCyT1);
   color: var(--token-8PxxXPNrIohQ);
+  white-space: pre-wrap;
   min-width: 0;
 }
 .admissionDate {
@@ -164,6 +168,7 @@
   max-width: 100%;
   text-align: left;
   padding-bottom: 8px;
+  white-space: pre-wrap;
   min-width: 0;
 }
 .text___17Gib {
@@ -174,6 +179,7 @@
   text-align: left;
   font-size: var(--token-CdE1_0ZaCyT1);
   color: var(--token-8PxxXPNrIohQ);
+  white-space: pre-wrap;
   min-width: 0;
 }
 .patientNo {
@@ -183,6 +189,7 @@
   max-width: 100%;
   text-align: left;
   padding-bottom: 8px;
+  white-space: pre-wrap;
   min-width: 0;
 }
 .text___4ElHr {
@@ -193,6 +200,7 @@
   text-align: left;
   font-size: var(--token-CdE1_0ZaCyT1);
   color: var(--token-8PxxXPNrIohQ);
+  white-space: pre-wrap;
   min-width: 0;
 }
 .pacsNumber {
@@ -201,6 +209,7 @@
   height: auto;
   max-width: 100%;
   text-align: left;
+  white-space: pre-wrap;
   min-width: 0;
 }
 .nameservicewardbed {
@@ -227,6 +236,7 @@
   flex-shrink: 1;
   padding-bottom: 8px;
   font-size: var(--token-sOr3fJ5Up5fq);
+  white-space: pre-wrap;
   min-width: 0;
   min-height: 0;
 }
@@ -238,6 +248,7 @@
   text-align: right;
   font-size: var(--token-CdE1_0ZaCyT1);
   color: var(--token-8PxxXPNrIohQ);
+  white-space: pre-wrap;
   min-width: 0;
 }
 .patientService {
@@ -247,6 +258,7 @@
   position: relative;
   text-align: right;
   padding-bottom: 8px;
+  white-space: pre-wrap;
   min-width: 0;
 }
 .text__gsJjX {
@@ -257,6 +269,7 @@
   text-align: right;
   font-size: var(--token-CdE1_0ZaCyT1);
   color: var(--token-8PxxXPNrIohQ);
+  white-space: pre-wrap;
   min-width: 0;
 }
 .patientWard {
@@ -268,6 +281,7 @@
   font-size: var(--token-sOr3fJ5Up5fq);
   margin-left: 0px;
   align-self: flex-end;
+  white-space: pre-wrap;
   padding: 0px;
 }
 .text__qdn2 {
@@ -278,6 +292,7 @@
   text-align: right;
   font-size: var(--token-CdE1_0ZaCyT1);
   color: var(--token-8PxxXPNrIohQ);
+  white-space: pre-wrap;
   min-width: 0;
 }
 .patientRoomBed {
@@ -286,6 +301,7 @@
   height: auto;
   max-width: 100%;
   text-align: right;
+  white-space: pre-wrap;
   min-width: 0;
 }
 .switchingTabs {
