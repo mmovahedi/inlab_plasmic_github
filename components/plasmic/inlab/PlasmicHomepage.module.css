@@ -225,7 +225,6 @@
 .text__wldne {
   position: relative;
   max-width: 100%;
-  font-size: var(--token-sOr3fJ5Up5fq);
   text-align: center;
   background: #ffffff;
   box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.2);
@@ -239,6 +238,7 @@
   font-weight: 700;
   width: auto;
   white-space: pre-wrap;
+  font-size: 18px;
   border-radius: 10px;
   padding: 8px;
 }

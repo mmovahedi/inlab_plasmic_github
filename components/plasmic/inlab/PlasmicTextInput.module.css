@@ -39,9 +39,13 @@
     border-color: var(--token-9iYGdL7i3GKE);
   }
 }
+.textInputshowStartIcon {
+  width: 250px;
+}
 @media (min-width: 0px) and (max-width: 768px) {
   .textInputshowStartIcon {
     padding-right: 0px;
+    width: 200px;
   }
 }
 .textInput:hover {
@@ -76,6 +80,7 @@
   margin-top: 0px;
   margin-bottom: 0px;
   margin-left: calc(0px + 8px) !important;
+  background: #ffffff;
 }
 .startIconContainershowStartIcon {
   margin-left: calc(0px + 8px) !important;
@@ -87,7 +92,7 @@
   margin-left: calc(0px + 8px) !important;
 }
 .textInput:hover .startIconContainer {
-  background: var(--token-jgohepLVeKvh);
+  background: #ffffff;
   margin-left: calc(0px + 8px) !important;
 }
 .textInput .startIconContainer___focusVisibleWithin {
@@ -163,6 +168,10 @@
   display: flex;
 }
 .endIconContainerisDisabled {
+  margin-left: calc(8px + 8px) !important;
+}
+.textInput:hover .endIconContainer {
+  background: #ffffff;
   margin-left: calc(8px + 8px) !important;
 }
 .slotTargetEndIconshowEndIcon {

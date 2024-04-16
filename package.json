@@ -19,7 +19,7 @@
     "@plasmicpkgs/commerce-shopify": "^0.0.195",
     "@plasmicpkgs/plasmic-basic-components": "^0.0.209",
     "@plasmicpkgs/plasmic-query": "^0.0.208",
-    "@plasmicpkgs/plasmic-rich-components": "^1.0.177",
+    "@plasmicpkgs/plasmic-rich-components": "^1.0.180",
     "@plasmicpkgs/radix-ui": "^0.0.45",
     "@plasmicpkgs/react-awesome-reveal": "^3.8.191",
     "@plasmicpkgs/react-parallax-tilt": "^0.0.191",
