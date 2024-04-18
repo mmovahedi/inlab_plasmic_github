@@ -116,11 +116,12 @@
   left: auto;
   top: auto;
   background: var(--token-O-63NKRcNhLJ);
-  font-size: var(--token-CdE1_0ZaCyT1);
+  font-size: 14px;
   text-align: right;
   cursor: auto;
   pointer-events: auto;
   color: var(--token-IYO13gyYJHXG);
+  font-weight: 700;
   min-width: 0;
   padding: 0px 4px 0px 0px;
   border-width: 0px;
@@ -128,8 +129,13 @@
 }
 @media (min-width: 0px) and (max-width: 768px) {
   .input {
-    font-size: 10px;
     background: var(--token-Yq556PvPjGii);
+    font-size: 10px;
+    text-align: right;
+    max-width: 257px;
+    width: 100%;
+    font-weight: 700;
+    min-width: 0;
   }
 }
 .inputisDisabled {

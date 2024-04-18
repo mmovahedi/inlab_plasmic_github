@@ -121,6 +121,11 @@
   width: 100%;
   min-width: 0;
 }
+@media (min-width: 0px) and (max-width: 768px) {
+  .svg__nPrTh {
+    height: 20px;
+  }
+}
 .svg__mRwyU {
   position: relative;
   object-fit: cover;
