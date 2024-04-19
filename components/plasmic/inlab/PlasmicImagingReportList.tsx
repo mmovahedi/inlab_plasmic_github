@@ -295,22 +295,8 @@ function PlasmicImagingReportList__RenderFunc(props: {
                   hasGap={true}
                   className={classNames(projectcss.all, sty.viewPacsButtons)}
                 >
-                  {(() => {
-                    try {
-                      return (
-                        $ctx.fetched_data.loading == false &&
-                        $ctx.fetched_data.data.pacs_url !== null
-                      );
-                    } catch (e) {
-                      if (
-                        e instanceof TypeError ||
-                        e?.plasmicType === "PlasmicUndefinedDataError"
-                      ) {
-                        return true;
-                      }
-                      throw e;
-                    }
-                  })() ? (
+                  {$ctx.fetched_data.loading == false &&
+                  $ctx.fetched_data.data.pacs_url !== null ? (
                     <Button
                       data-plasmic-name={"activeViewPacsButton"}
                       data-plasmic-override={overrides.activeViewPacsButton}
@@ -392,22 +378,8 @@ function PlasmicImagingReportList__RenderFunc(props: {
                       </div>
                     </Button>
                   ) : null}
-                  {(() => {
-                    try {
-                      return (
-                        $ctx.fetched_data.loading == false &&
-                        $ctx.fetched_data.data.pacs_url == null
-                      );
-                    } catch (e) {
-                      if (
-                        e instanceof TypeError ||
-                        e?.plasmicType === "PlasmicUndefinedDataError"
-                      ) {
-                        return true;
-                      }
-                      throw e;
-                    }
-                  })() ? (
+                  {$ctx.fetched_data.loading == false &&
+                  $ctx.fetched_data.data.pacs_url == null ? (
                     <div
                       data-plasmic-name={"deactivePacsButton"}
                       data-plasmic-override={overrides.deactivePacsButton}
@@ -435,7 +407,7 @@ function PlasmicImagingReportList__RenderFunc(props: {
                   </div>
                 ) : null}
                 {$ctx.fetched_data.loading == false &&
-                $ctx.fetched_data.radiology_service == 0 ? (
+                $ctx.fetched_data.data.radiology_services == "" ? (
                   <div
                     className={classNames(
                       projectcss.all,

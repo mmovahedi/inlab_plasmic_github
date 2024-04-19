@@ -233,65 +233,65 @@ function PlasmicLaboratoryData__RenderFunc(props: {
           >
             {"Enter some text"}
           </div>
-          <Button
-            data-plasmic-name={"normalRangeButton"}
-            data-plasmic-override={overrides.normalRangeButton}
-            className={classNames("__wab_instance", sty.normalRangeButton)}
-            color={"blue"}
-            isDisabled={generateStateValueProp($state, [
+        </div>
+        <Button
+          data-plasmic-name={"normalRangeButton"}
+          data-plasmic-override={overrides.normalRangeButton}
+          className={classNames("__wab_instance", sty.normalRangeButton)}
+          color={"blue"}
+          isDisabled={generateStateValueProp($state, [
+            "normalRangeButton",
+            "isDisabled"
+          ])}
+          onClick={async event => {
+            const $steps = {};
+
+            $steps["updateViewNormalRange"] = true
+              ? (() => {
+                  const actionArgs = {
+                    vgroup: "viewNormalRange",
+                    operation: 2,
+                    value: "viewNormalRange"
+                  };
+                  return (({ vgroup, value }) => {
+                    if (typeof value === "string") {
+                      value = [value];
+                    }
+
+                    const oldValue = $stateGet($state, vgroup);
+                    $stateSet($state, vgroup, !oldValue);
+                    return !oldValue;
+                  })?.apply(null, [actionArgs]);
+                })()
+              : undefined;
+            if (
+              $steps["updateViewNormalRange"] != null &&
+              typeof $steps["updateViewNormalRange"] === "object" &&
+              typeof $steps["updateViewNormalRange"].then === "function"
+            ) {
+              $steps["updateViewNormalRange"] = await $steps[
+                "updateViewNormalRange"
+              ];
+            }
+          }}
+          onIsDisabledChange={(...eventArgs) => {
+            generateStateOnChangeProp($state, [
               "normalRangeButton",
               "isDisabled"
-            ])}
-            onClick={async event => {
-              const $steps = {};
-
-              $steps["updateViewNormalRange"] = true
-                ? (() => {
-                    const actionArgs = {
-                      vgroup: "viewNormalRange",
-                      operation: 2,
-                      value: "viewNormalRange"
-                    };
-                    return (({ vgroup, value }) => {
-                      if (typeof value === "string") {
-                        value = [value];
-                      }
-
-                      const oldValue = $stateGet($state, vgroup);
-                      $stateSet($state, vgroup, !oldValue);
-                      return !oldValue;
-                    })?.apply(null, [actionArgs]);
-                  })()
-                : undefined;
-              if (
-                $steps["updateViewNormalRange"] != null &&
-                typeof $steps["updateViewNormalRange"] === "object" &&
-                typeof $steps["updateViewNormalRange"].then === "function"
-              ) {
-                $steps["updateViewNormalRange"] = await $steps[
-                  "updateViewNormalRange"
-                ];
-              }
-            }}
-            onIsDisabledChange={(...eventArgs) => {
-              generateStateOnChangeProp($state, [
-                "normalRangeButton",
-                "isDisabled"
-              ])(eventArgs[0]);
-            }}
-            shape={"rounded"}
+            ])(eventArgs[0]);
+          }}
+          shape={"rounded"}
+        >
+          <div
+            className={classNames(
+              projectcss.all,
+              projectcss.__wab_text,
+              sty.text___4D8Ob
+            )}
           >
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text___4D8Ob
-              )}
-            >
-              {"Normal Ranges"}
-            </div>
-          </Button>
-        </div>
+            {"Normal Ranges"}
+          </div>
+        </Button>
         <ApiFetcherComponent
           data-plasmic-name={"labData"}
           data-plasmic-override={overrides.labData}
@@ -797,7 +797,7 @@ const PlasmicDescendants = {
     "redirectToNamespaceSelection",
     "onloadUserPatientInteractionCount"
   ],
-  header: ["header", "patientNameage", "normalRangeButton"],
+  header: ["header", "patientNameage"],
   patientNameage: ["patientNameage"],
   normalRangeButton: ["normalRangeButton"],
   labData: [
