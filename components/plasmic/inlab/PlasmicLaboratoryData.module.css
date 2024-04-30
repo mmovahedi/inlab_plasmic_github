@@ -42,6 +42,9 @@
 .laboratoryDatahighlightSpecificLabResult > * {
   grid-column: 4;
 }
+.laboratoryDataviewNormalRange_highlightSpecificLabResult > * {
+  grid-column: 4;
+}
 .header {
   display: flex;
   position: fixed;
@@ -232,6 +235,9 @@
   > img {
   margin-left: 4px;
 }
+.laboratoryResultsPerTitleviewNormalRange {
+  padding: 4px;
+}
 .labPerDate {
   display: flex;
   position: relative;
@@ -266,6 +272,9 @@
   margin-top: 0px;
 }
 .labPerDateviewNormalRange {
+  margin-left: calc(0px + 4px) !important;
+}
+.labPerDatehighlightSpecificLabResult {
   margin-left: calc(0px + 4px) !important;
 }
 .reportDatetime {
@@ -362,6 +371,10 @@
   margin-top: calc(0px + 0px) !important;
 }
 .factorNamevaluehighlightSpecificLabResult {
+  background: none;
+  margin-top: calc(0px + 0px) !important;
+}
+.factorNamevalueviewNormalRange_highlightSpecificLabResult {
   margin-top: calc(0px + 0px) !important;
 }
 .factorNamevalue2 {
@@ -391,6 +404,9 @@
   > picture
   > img {
   margin-left: 0px;
+}
+.factorNamevalue2highlightSpecificLabResult {
+  background: #ffffff;
 }
 .factorName {
   width: 100%;
@@ -438,6 +454,144 @@
     text-align: center;
   }
 }
+.abnormalFactorValueviewNormalRange_highlightSpecificLabResult {
+  display: none;
+}
+.highlightFactorNamevalue3 {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  background: none;
+  margin-bottom: 0px;
+  margin-top: calc(0px + 0px) !important;
+  margin-right: 0px;
+  margin-left: 0px;
+  flex-grow: 1;
+  min-width: 0;
+  min-height: 0;
+  padding: 4px;
+  border-bottom: 0.5px solid var(--token-8PxxXPNrIohQ);
+}
+.highlightFactorNamevalue3 > :global(.__wab_flex-container) {
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: flex-start;
+  min-width: 0;
+  min-height: 0;
+  margin-left: calc(0px - 8px);
+  width: calc(100% + 8px);
+}
+.highlightFactorNamevalue3 > :global(.__wab_flex-container) > *,
+.highlightFactorNamevalue3
+  > :global(.__wab_flex-container)
+  > :global(.__wab_slot)
+  > *,
+.highlightFactorNamevalue3 > :global(.__wab_flex-container) > picture > img,
+.highlightFactorNamevalue3
+  > :global(.__wab_flex-container)
+  > :global(.__wab_slot)
+  > picture
+  > img {
+  margin-left: 8px;
+}
+.highlightFactorNamevalue3viewNormalRange {
+  margin-top: calc(0px + 0px) !important;
+}
+.highlightFactorNamevalue3highlightSpecificLabResult {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  background: #1b90fa4d;
+  margin-bottom: 4px;
+  margin-top: calc(0px + 0px) !important;
+  display: flex;
+}
+.highlightFactorNamevalue3viewNormalRange_highlightSpecificLabResult {
+  margin-top: calc(0px + 0px) !important;
+}
+.factorNamevalue4 {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  height: auto;
+  max-width: 100%;
+  width: 100%;
+  min-width: 0;
+  padding: 4px;
+}
+.factorNamevalue4 > :global(.__wab_flex-container) {
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  min-width: 0;
+  margin-left: calc(0px - 0px);
+  width: calc(100% + 0px);
+}
+.factorNamevalue4 > :global(.__wab_flex-container) > *,
+.factorNamevalue4 > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
+.factorNamevalue4 > :global(.__wab_flex-container) > picture > img,
+.factorNamevalue4
+  > :global(.__wab_flex-container)
+  > :global(.__wab_slot)
+  > picture
+  > img {
+  margin-left: 0px;
+}
+.factorNamevalue4highlightSpecificLabResult {
+  background: #ffffff;
+}
+.factorName3 {
+  width: 100%;
+  height: auto;
+  max-width: 500%;
+  font-size: var(--token-CdE1_0ZaCyT1);
+  text-align: left;
+  border-right-style: none;
+  border-right-width: 0px;
+  white-space: pre-wrap;
+  min-width: 0;
+  padding: 0px;
+}
+.normalFactorValue3 {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 500%;
+  font-size: var(--token-CdE1_0ZaCyT1);
+  text-align: center;
+  white-space: pre-wrap;
+  min-width: 0;
+  padding: 0px;
+}
+@media (min-width: 0px) and (max-width: 768px) {
+  .normalFactorValue3 {
+    text-align: center;
+  }
+}
+.abnormalFactorValue3 {
+  color: var(--token--ypw6enySR1T);
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 500%;
+  font-size: var(--token-CdE1_0ZaCyT1);
+  text-align: center;
+  white-space: pre-wrap;
+  font-weight: 600;
+  min-width: 0;
+  padding: 0px;
+}
+@media (min-width: 0px) and (max-width: 768px) {
+  .abnormalFactorValue3 {
+    text-align: center;
+  }
+}
+.abnormalFactorValue3viewNormalRange_highlightSpecificLabResult {
+  display: none;
+}
 .normalRanged {
   position: relative;
   width: 100%;
@@ -451,53 +605,17 @@
   padding: 2px;
 }
 .normalRangedviewNormalRange {
+  margin-top: calc(4px + 0px) !important;
+  flex-shrink: 1;
+  flex-grow: 1;
   display: block;
 }
-.highlightLabResult {
-  position: absolute;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  left: auto;
-  top: auto;
-  background: #1b90fa40;
-  min-width: 0;
-  display: none;
-  padding: 8px;
+.normalRangedhighlightSpecificLabResult {
+  display: block;
 }
-.highlightLabResulthighlightSpecificLabResult {
-  display: flex;
-}
-.factorName2 {
-  width: 100%;
-  height: auto;
-  max-width: 500%;
-  font-size: var(--token-CdE1_0ZaCyT1);
-  text-align: left;
-  border-right-style: none;
-  border-right-width: 0px;
-  white-space: pre-wrap;
-  min-width: 0;
-  padding: 0px;
-}
-.factorValue {
-  position: relative;
-  width: 100%;
-  height: auto;
-  max-width: 500%;
-  font-size: var(--token-CdE1_0ZaCyT1);
-  text-align: center;
-  white-space: pre-wrap;
-  min-width: 0;
-  padding: 0px;
-}
-@media (min-width: 0px) and (max-width: 768px) {
-  .factorValue {
-    text-align: center;
-  }
+.normalRangedviewNormalRange_highlightSpecificLabResult {
+  margin-top: calc(4px + 0px) !important;
+  display: block;
 }
 .switchingTabs {
   display: flex;

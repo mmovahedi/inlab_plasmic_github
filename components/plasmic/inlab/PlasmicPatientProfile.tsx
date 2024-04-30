@@ -101,12 +101,8 @@ export type PlasmicPatientProfile__OverridesType = {
   patientService?: Flex__<"div">;
   patientWard?: Flex__<"div">;
   patientRoomBed?: Flex__<"div">;
-  patientStatus?: Flex__<"div">;
-  admitdischarge?: Flex__<"div">;
-  discharge?: Flex__<"div">;
-  discharge2?: Flex__<"div">;
-  admit?: Flex__<"div">;
-  admit2?: Flex__<"div">;
+  freeBox?: Flex__<"div">;
+  وضعتبمار?: Flex__<"div">;
   switchingTabs?: Flex__<"div">;
   switchingTab?: Flex__<typeof SwitchingTab>;
   redirectToLoginPage?: Flex__<typeof RedirectToLoginPage>;
@@ -513,110 +509,42 @@ ${ageMonths} months ${
                       </Stack__>
                       <Stack__
                         as={"div"}
-                        data-plasmic-name={"patientStatus"}
-                        data-plasmic-override={overrides.patientStatus}
+                        data-plasmic-name={"freeBox"}
+                        data-plasmic-override={overrides.freeBox}
                         hasGap={true}
-                        className={classNames(
-                          projectcss.all,
-                          sty.patientStatus
-                        )}
+                        className={classNames(projectcss.all, sty.freeBox)}
                       >
+                        {$ctx.fetched_data.data.dismissed == 1 ? (
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text__ivCly
+                            )}
+                          >
+                            {"\u062a\u0631\u062e\u06cc\u0635"}
+                          </div>
+                        ) : null}
+                        {$ctx.fetched_data.data.dismissed == 0 ? (
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text__fpWlo
+                            )}
+                          >
+                            {"\u0628\u0633\u062a\u0631\u06cc "}
+                          </div>
+                        ) : null}
                         <div
-                          data-plasmic-name={"admitdischarge"}
-                          data-plasmic-override={overrides.admitdischarge}
-                          className={classNames(
-                            projectcss.all,
-                            sty.admitdischarge
-                          )}
-                        >
-                          {$ctx.fetched_data.loading == false &&
-                          $ctx.fetched_data.data.dismissed == 1 ? (
-                            <div
-                              data-plasmic-name={"discharge"}
-                              data-plasmic-override={overrides.discharge}
-                              className={classNames(
-                                projectcss.all,
-                                sty.discharge
-                              )}
-                            >
-                              <div
-                                className={classNames(
-                                  projectcss.all,
-                                  projectcss.__wab_text,
-                                  sty.text__tCi9D
-                                )}
-                              >
-                                {
-                                  "\u062a\u0631\u062e\u06cc\u0635 \u0634\u062f\u0647"
-                                }
-                              </div>
-                            </div>
-                          ) : null}
-                          {$ctx.fetched_data.loading == false &&
-                          $ctx.fetched_data.data.dismissed == 0 ? (
-                            <div
-                              data-plasmic-name={"discharge2"}
-                              data-plasmic-override={overrides.discharge2}
-                              className={classNames(
-                                projectcss.all,
-                                sty.discharge2
-                              )}
-                            >
-                              <div
-                                className={classNames(
-                                  projectcss.all,
-                                  projectcss.__wab_text,
-                                  sty.text__foZTi
-                                )}
-                              >
-                                {
-                                  "\u062a\u0631\u062e\u06cc\u0635 \u0634\u062f\u0647"
-                                }
-                              </div>
-                            </div>
-                          ) : null}
-                          {$ctx.fetched_data.loading == false &&
-                          $ctx.fetched_data.data.dismissed == 0 ? (
-                            <div
-                              data-plasmic-name={"admit"}
-                              data-plasmic-override={overrides.admit}
-                              className={classNames(projectcss.all, sty.admit)}
-                            >
-                              <div
-                                className={classNames(
-                                  projectcss.all,
-                                  projectcss.__wab_text,
-                                  sty.text__hw02R
-                                )}
-                              >
-                                {"\u0628\u0633\u062a\u0631\u06cc"}
-                              </div>
-                            </div>
-                          ) : null}
-                          {$ctx.fetched_data.loading == false &&
-                          $ctx.fetched_data.data.dismissed == 1 ? (
-                            <div
-                              data-plasmic-name={"admit2"}
-                              data-plasmic-override={overrides.admit2}
-                              className={classNames(projectcss.all, sty.admit2)}
-                            >
-                              <div
-                                className={classNames(
-                                  projectcss.all,
-                                  projectcss.__wab_text,
-                                  sty.text__pvsww
-                                )}
-                              >
-                                {"\u0628\u0633\u062a\u0631\u06cc"}
-                              </div>
-                            </div>
-                          ) : null}
-                        </div>
-                        <div
+                          data-plasmic-name={
+                            "\u0648\u0636\u0639\u062a\u0628\u0645\u0627\u0631"
+                          }
+                          data-plasmic-override={overrides.وضعتبمار}
                           className={classNames(
                             projectcss.all,
                             projectcss.__wab_text,
-                            sty.text__yCzGp
+                            sty.وضعتبمار
                           )}
                         >
                           {
@@ -700,12 +628,8 @@ const PlasmicDescendants = {
     "patientService",
     "patientWard",
     "patientRoomBed",
-    "patientStatus",
-    "admitdischarge",
-    "discharge",
-    "discharge2",
-    "admit",
-    "admit2",
+    "freeBox",
+    "\u0648\u0636\u0639\u062a\u0628\u0645\u0627\u0631",
     "switchingTabs",
     "switchingTab",
     "redirectToLoginPage",
@@ -727,12 +651,8 @@ const PlasmicDescendants = {
     "patientService",
     "patientWard",
     "patientRoomBed",
-    "patientStatus",
-    "admitdischarge",
-    "discharge",
-    "discharge2",
-    "admit",
-    "admit2"
+    "freeBox",
+    "\u0648\u0636\u0639\u062a\u0628\u0645\u0627\u0631"
   ],
   patientData: [
     "patientData",
@@ -747,12 +667,8 @@ const PlasmicDescendants = {
     "patientService",
     "patientWard",
     "patientRoomBed",
-    "patientStatus",
-    "admitdischarge",
-    "discharge",
-    "discharge2",
-    "admit",
-    "admit2"
+    "freeBox",
+    "\u0648\u0636\u0639\u062a\u0628\u0645\u0627\u0631"
   ],
   patientProfileBox: [
     "patientProfileBox",
@@ -789,25 +705,8 @@ const PlasmicDescendants = {
   patientService: ["patientService"],
   patientWard: ["patientWard"],
   patientRoomBed: ["patientRoomBed"],
-  patientStatus: [
-    "patientStatus",
-    "admitdischarge",
-    "discharge",
-    "discharge2",
-    "admit",
-    "admit2"
-  ],
-  admitdischarge: [
-    "admitdischarge",
-    "discharge",
-    "discharge2",
-    "admit",
-    "admit2"
-  ],
-  discharge: ["discharge"],
-  discharge2: ["discharge2"],
-  admit: ["admit"],
-  admit2: ["admit2"],
+  freeBox: ["freeBox", "\u0648\u0636\u0639\u062a\u0628\u0645\u0627\u0631"],
+  وضعتبمار: ["\u0648\u0636\u0639\u062a\u0628\u0645\u0627\u0631"],
   switchingTabs: ["switchingTabs", "switchingTab"],
   switchingTab: ["switchingTab"],
   redirectToLoginPage: ["redirectToLoginPage"],
@@ -833,12 +732,8 @@ type NodeDefaultElementType = {
   patientService: "div";
   patientWard: "div";
   patientRoomBed: "div";
-  patientStatus: "div";
-  admitdischarge: "div";
-  discharge: "div";
-  discharge2: "div";
-  admit: "div";
-  admit2: "div";
+  freeBox: "div";
+  وضعتبمار: "div";
   switchingTabs: "div";
   switchingTab: typeof SwitchingTab;
   redirectToLoginPage: typeof RedirectToLoginPage;
@@ -922,12 +817,10 @@ export const PlasmicPatientProfile = Object.assign(
     patientService: makeNodeComponent("patientService"),
     patientWard: makeNodeComponent("patientWard"),
     patientRoomBed: makeNodeComponent("patientRoomBed"),
-    patientStatus: makeNodeComponent("patientStatus"),
-    admitdischarge: makeNodeComponent("admitdischarge"),
-    discharge: makeNodeComponent("discharge"),
-    discharge2: makeNodeComponent("discharge2"),
-    admit: makeNodeComponent("admit"),
-    admit2: makeNodeComponent("admit2"),
+    freeBox: makeNodeComponent("freeBox"),
+    وضعتبمار: makeNodeComponent(
+      "\u0648\u0636\u0639\u062a\u0628\u0645\u0627\u0631"
+    ),
     switchingTabs: makeNodeComponent("switchingTabs"),
     switchingTab: makeNodeComponent("switchingTab"),
     redirectToLoginPage: makeNodeComponent("redirectToLoginPage"),
