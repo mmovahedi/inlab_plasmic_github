@@ -411,7 +411,8 @@ ${ageYears} ${
           <DataCtxReader__>
             {$ctx => (
               <React.Fragment>
-                {$ctx.fetched_data.data == 0 ? (
+                {$ctx.fetched_data.loading == false &&
+                $ctx.fetched_data.data.lab_test_groups == 0 ? (
                   <div
                     className={classNames(
                       projectcss.all,

@@ -457,6 +457,7 @@
   max-width: 100%;
   color: var(--token-41VRhDKfihhY);
   font-size: var(--token-CdE1_0ZaCyT1);
+  white-space: pre-wrap;
 }
 .discharge2 {
   display: flex;
@@ -477,6 +478,7 @@
   height: auto;
   max-width: 100%;
   font-size: var(--token-CdE1_0ZaCyT1);
+  white-space: pre-wrap;
 }
 .admit {
   display: flex;
@@ -499,6 +501,7 @@
   max-width: 100%;
   color: var(--token-jgohepLVeKvh);
   font-size: var(--token-CdE1_0ZaCyT1);
+  white-space: pre-wrap;
 }
 .admit2 {
   display: flex;
@@ -519,6 +522,7 @@
   height: auto;
   max-width: 100%;
   font-size: var(--token-CdE1_0ZaCyT1);
+  white-space: pre-wrap;
 }
 .text__yCzGp {
   position: relative;
