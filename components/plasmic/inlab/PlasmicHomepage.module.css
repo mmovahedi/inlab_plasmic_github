@@ -113,8 +113,6 @@
   top: auto;
   z-index: 1;
   align-self: center;
-  right: auto;
-  bottom: auto;
 }
 @media (min-width: 0px) and (max-width: 768px) {
   .searchbar:global(.__wab_instance) {

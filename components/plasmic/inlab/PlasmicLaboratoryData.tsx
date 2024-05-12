@@ -284,8 +284,7 @@ ${ageMonths} months ${
                               : ""
                           }`;
                         } else {
-                          return `${fullName} 
-${ageYears} ${
+                          return `${fullName} ${ageYears}${
                             $ctx.fetched_data.data.gender === "F"
                               ? " ♀️"
                               : $ctx.fetched_data.data.gender === "M"
@@ -303,7 +302,13 @@ ${ageYears} ${
         <Button
           data-plasmic-name={"normalRangeButton"}
           data-plasmic-override={overrides.normalRangeButton}
-          className={classNames("__wab_instance", sty.normalRangeButton)}
+          className={classNames("__wab_instance", sty.normalRangeButton, {
+            [sty.normalRangeButtonviewNormalRange]: hasVariant(
+              $state,
+              "viewNormalRange",
+              "viewNormalRange"
+            )
+          })}
           color={"blue"}
           isDisabled={generateStateValueProp($state, [
             "normalRangeButton",
