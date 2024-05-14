@@ -77,8 +77,7 @@
           "componentImportPath": "@plasmicpkgs/plasmic-basic-components"
         }
       ],
-      "customFunctions": [],
-      "jsBundleThemes": []
+      "customFunctions": []
     },
     {
       "projectId": "jkU633o1Cz7HrJdwdxhVHk",
@@ -132,8 +131,7 @@
           }
         }
       ],
-      "customFunctions": [],
-      "jsBundleThemes": []
+      "customFunctions": []
     },
     {
       "projectId": "28Ba3BDvRe7EiWdfFNnLB6",
@@ -343,8 +341,7 @@
           "componentImportPath": "@plasmicpkgs/antd/skinny/registerTable"
         }
       ],
-      "customFunctions": [],
-      "jsBundleThemes": []
+      "customFunctions": []
     },
     {
       "projectId": "i3z63WaCLuRiSZRBwZC8d1",
@@ -366,8 +363,7 @@
           "componentImportPath": "@plasmicpkgs/commerce-shopify"
         }
       ],
-      "customFunctions": [],
-      "jsBundleThemes": []
+      "customFunctions": []
     },
     {
       "projectId": "xp1p7dmg329XVLHyuEUxD2",
@@ -485,8 +481,7 @@
           "componentImportPath": "@plasmicpkgs/commerce"
         }
       ],
-      "customFunctions": [],
-      "jsBundleThemes": []
+      "customFunctions": []
     },
     {
       "projectId": "58GpZjZCWTaJ8AUhpCwt2K",
@@ -508,8 +503,7 @@
           "componentImportPath": "@plasmicpkgs/react-awesome-reveal"
         }
       ],
-      "customFunctions": [],
-      "jsBundleThemes": []
+      "customFunctions": []
     },
     {
       "projectId": "YUiM7yqBWAqsh8KSnrdj7",
@@ -537,8 +531,7 @@
           "componentImportPath": "@plasmicpkgs/plasmic-query"
         }
       ],
-      "customFunctions": [],
-      "jsBundleThemes": []
+      "customFunctions": []
     },
     {
       "projectId": "ohDidvG9XsCeFumugENU3J",
@@ -938,8 +931,7 @@
           "componentImportPath": "@plasmicpkgs/antd5/skinny/registerBreadcrumb"
         }
       ],
-      "customFunctions": [],
-      "jsBundleThemes": []
+      "customFunctions": []
     },
     {
       "projectId": "wjafXWEvDytFogT7SiMy2v",
@@ -1302,6 +1294,32 @@
         },
         {
           "id": "PK_hwsu90gKT",
+          "name": "BookmarkIcon",
+          "type": "managed",
+          "projectId": "wjafXWEvDytFogT7SiMy2v",
+          "renderModuleFilePath": "plasmic/inlab/PlasmicBookmarkIcon.tsx",
+          "importSpec": {
+            "modulePath": "BookmarkIcon.tsx"
+          },
+          "cssFilePath": "plasmic/inlab/PlasmicBookmarkIcon.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "SeOv9wf5ITYF",
+          "name": "FilterIcon",
+          "type": "managed",
+          "projectId": "wjafXWEvDytFogT7SiMy2v",
+          "renderModuleFilePath": "plasmic/inlab/PlasmicFilterIcon.tsx",
+          "importSpec": {
+            "modulePath": "FilterIcon.tsx"
+          },
+          "cssFilePath": "plasmic/inlab/PlasmicFilterIcon.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "zrroSsNrWnZg",
           "name": "BookmarkIcon",
           "type": "managed",
           "projectId": "wjafXWEvDytFogT7SiMy2v",
@@ -1749,6 +1767,16 @@
           "id": "laC4EyEnFr3s",
           "name": "BookmarkPlusSvgrepoComsvgIcon",
           "moduleFilePath": "plasmic/inlab/icons/PlasmicIcon__BookmarkPlusSvgrepoComsvg.tsx"
+        },
+        {
+          "id": "h3U6GmF6J6H4",
+          "name": "Ellipse4081SvgIcon",
+          "moduleFilePath": "plasmic/inlab/icons/PlasmicIcon__Ellipse4081Svg.tsx"
+        },
+        {
+          "id": "3WLAeBup0ObK",
+          "name": "GearSvgrepoComsvgIcon",
+          "moduleFilePath": "plasmic/inlab/icons/PlasmicIcon__GearSvgrepoComsvg.tsx"
         }
       ],
       "images": [
@@ -2008,8 +2036,7 @@
           "componentImportPath": "@plasmicpkgs/tiptap/skinny/registerToolbarUnderline"
         }
       ],
-      "customFunctions": [],
-      "jsBundleThemes": []
+      "customFunctions": []
     },
     {
       "projectId": "szjgMQpPpxhmkjnaBvZQJG",
@@ -2031,8 +2058,7 @@
           "componentImportPath": "@plasmicpkgs/react-parallax-tilt"
         }
       ],
-      "customFunctions": [],
-      "jsBundleThemes": []
+      "customFunctions": []
     },
     {
       "projectId": "9Vr5YWkf3w7jj6SsTcCEta",
@@ -2054,8 +2080,7 @@
           "componentImportPath": "@plasmicpkgs/plasmic-basic-components"
         }
       ],
-      "customFunctions": [],
-      "jsBundleThemes": []
+      "customFunctions": []
     },
     {
       "projectId": "sqPBLwEBBKHA2WDuGb17eV",
@@ -2145,8 +2170,7 @@
           "componentImportPath": "@plasmicpkgs/radix-ui"
         }
       ],
-      "customFunctions": [],
-      "jsBundleThemes": []
+      "customFunctions": []
     }
   ],
   "globalVariants": {
