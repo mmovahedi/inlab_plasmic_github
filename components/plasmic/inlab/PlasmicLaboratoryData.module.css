@@ -195,13 +195,13 @@
   margin-bottom: 32px;
   justify-self: center;
   font-size: var(--token-CdE1_0ZaCyT1);
-  margin-top: 36px;
+  margin-top: 45px;
   overflow: auto;
   display: flex;
   flex-direction: column;
   grid-column-start: 1 !important;
   grid-column-end: -1 !important;
-  padding: 8px 8px 65px 2px;
+  padding: 10px 8px 65px 2px;
 }
 .text__vcc6L {
   width: 100%;
@@ -254,6 +254,8 @@
   font-size: var(--token-sOr3fJ5Up5fq);
   white-space: pre-wrap;
   text-transform: capitalize;
+  align-self: flex-start;
+  z-index: 0;
   min-width: 0;
   padding: 4px 4px 4px 2px;
 }
