@@ -1301,19 +1301,6 @@
           "path": "/guide_make_new_page"
         },
         {
-          "id": "PK_hwsu90gKT",
-          "name": "BookmarkIcon",
-          "type": "managed",
-          "projectId": "wjafXWEvDytFogT7SiMy2v",
-          "renderModuleFilePath": "plasmic/inlab/PlasmicBookmarkIcon.tsx",
-          "importSpec": {
-            "modulePath": "BookmarkIcon.tsx"
-          },
-          "cssFilePath": "plasmic/inlab/PlasmicBookmarkIcon.module.css",
-          "scheme": "blackbox",
-          "componentType": "component"
-        },
-        {
           "id": "SeOv9wf5ITYF",
           "name": "FilterIcon",
           "type": "managed",
@@ -1327,7 +1314,7 @@
           "componentType": "component"
         },
         {
-          "id": "SI19vnXxxhAM",
+          "id": "PK_hwsu90gKT",
           "name": "BookmarkIcon",
           "type": "managed",
           "projectId": "wjafXWEvDytFogT7SiMy2v",
