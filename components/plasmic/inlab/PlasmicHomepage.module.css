@@ -40,9 +40,6 @@
     grid-column: 4;
   }
 }
-.homepagefilterServiceSelected > * {
-  grid-column: 4;
-}
 .redirectToLoginPage:global(.__wab_instance):global(.__wab_instance) {
   position: relative;
 }
@@ -83,7 +80,7 @@
   right: 0;
   margin-bottom: 0px;
   border-bottom-style: solid;
-  background: #e8ecf2;
+  background: var(--token-jgohepLVeKvh);
   min-height: 0;
   padding: 4px;
   border-width: 0.2px;
@@ -91,7 +88,7 @@
 @media (min-width: 0px) and (max-width: 768px) {
   .header {
     max-height: 25px;
-    background: #e8ecf2;
+    background: var(--token-Yq556PvPjGii);
   }
 }
 .namespaceTitle {
@@ -100,6 +97,7 @@
   height: auto;
   max-width: 100%;
   font-size: var(--token-CdE1_0ZaCyT1);
+  font-family: "Vazirmatn", sans-serif;
   min-width: 0;
 }
 .patients:global(.__wab_instance) {
@@ -383,15 +381,9 @@
   min-width: 0;
   padding: 6px 8px;
 }
-.searchedPatientBookmarkIcon:global(.__wab_instance) {
+.bookmarkIcon:global(.__wab_instance) {
+  max-width: 100%;
   position: relative;
-  width: auto;
-  height: 100%;
-  align-self: center;
-  left: auto;
-  top: auto;
-  right: auto;
-  min-height: 0;
 }
 .wardRoom {
   display: flex;
@@ -561,7 +553,7 @@
   height: auto;
   max-width: 100%;
   min-width: 0;
-  padding: 8px;
+  padding: 8px 10px 8px 8px;
 }
 .settingIcon {
   position: relative;
@@ -672,7 +664,7 @@
 }
 @media (min-width: 0px) and (max-width: 768px) {
   .fliters {
-    padding-right: 0px;
+    padding-right: 8px;
     padding-bottom: 10px;
   }
 }
@@ -729,23 +721,6 @@
   max-width: 100%;
   position: relative;
 }
-.text__utJI {
-  color: #000000;
-  font-family: var(--VazirmatnCustom);
-  font-size: var(--token-sOr3fJ5Up5fq);
-  font-weight: 500;
-  font-style: normal;
-  text-align: center;
-  text-transform: none;
-  line-height: 1.5;
-  letter-spacing: normal;
-  white-space: pre;
-  user-select: none;
-  text-decoration-line: none !important;
-}
-.textfilterServiceSelected__utJI45EAv {
-  color: #ffffff;
-}
 .svg__fhw2 {
   position: relative;
   object-fit: cover;
@@ -790,23 +765,6 @@
 .bookmarked:global(.__wab_instance) {
   max-width: 100%;
   position: relative;
-}
-.text__sj6E7 {
-  color: #ffffff;
-  font-family: var(--VazirmatnCustom);
-  font-size: var(--token-sOr3fJ5Up5fq);
-  font-weight: 500;
-  font-style: normal;
-  text-align: center;
-  text-transform: none;
-  line-height: 1.5;
-  letter-spacing: normal;
-  white-space: pre;
-  user-select: none;
-  text-decoration-line: none !important;
-}
-.textfilterServiceSelected__sj6E745EAv {
-  color: #000000;
 }
 .svg__sKnd0 {
   position: relative;
@@ -976,6 +934,9 @@
   align-self: flex-start;
   height: 25px;
   color: var(--token-RvPI6LyeIPmd);
+  left: auto;
+  top: auto;
+  margin-right: 30px;
   border-radius: 8px;
   border-width: 1px;
   border-style: solid;
