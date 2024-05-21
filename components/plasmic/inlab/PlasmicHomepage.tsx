@@ -488,35 +488,21 @@ function PlasmicHomepage__RenderFunc(props: {
                       </div>
                     </div>
                   ) : null}
-                  {(() => {
-                    try {
-                      return $ctx.fetched_data.loading === true;
-                    } catch (e) {
-                      if (
-                        e instanceof TypeError ||
-                        e?.plasmicType === "PlasmicUndefinedDataError"
-                      ) {
-                        return true;
-                      }
-                      throw e;
+                  <div
+                    data-plasmic-name={
+                      "\u0644\u0637\u0641\u0627\u0645\u0646\u062a\u0638\u0631\u0628\u0645\u0627\u0646\u062f"
                     }
-                  })() ? (
-                    <div
-                      data-plasmic-name={
-                        "\u0644\u0637\u0641\u0627\u0645\u0646\u062a\u0638\u0631\u0628\u0645\u0627\u0646\u062f"
-                      }
-                      data-plasmic-override={overrides.لطفامنتظربماند}
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.لطفامنتظربماند
-                      )}
-                    >
-                      {
-                        "\u0644\u0637\u0641\u0627 \u0645\u0646\u062a\u0638\u0631 \u0628\u0645\u0627\u0646\u06cc\u062f"
-                      }
-                    </div>
-                  ) : null}
+                    data-plasmic-override={overrides.لطفامنتظربماند}
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.لطفامنتظربماند
+                    )}
+                  >
+                    {
+                      "\u0644\u0637\u0641\u0627 \u0645\u0646\u062a\u0638\u0631 \u0628\u0645\u0627\u0646\u06cc\u062f"
+                    }
+                  </div>
                   {(() => {
                     try {
                       return $ctx.fetched_data.data !== "";
@@ -1718,7 +1704,7 @@ function PlasmicHomepage__RenderFunc(props: {
                   sty.text___4EgCq
                 )}
               >
-                {":  \u0641\u06cc\u0644\u062a\u0631"}
+                {"\u0641\u06cc\u0644\u062a\u0631 "}
               </div>
             </Stack__>
           </Stack__>
