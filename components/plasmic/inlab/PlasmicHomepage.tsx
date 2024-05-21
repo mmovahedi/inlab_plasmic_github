@@ -488,21 +488,23 @@ function PlasmicHomepage__RenderFunc(props: {
                       </div>
                     </div>
                   ) : null}
-                  <div
-                    data-plasmic-name={
-                      "\u0644\u0637\u0641\u0627\u0645\u0646\u062a\u0638\u0631\u0628\u0645\u0627\u0646\u062f"
-                    }
-                    data-plasmic-override={overrides.لطفامنتظربماند}
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.لطفامنتظربماند
-                    )}
-                  >
-                    {
-                      "\u0644\u0637\u0641\u0627 \u0645\u0646\u062a\u0638\u0631 \u0628\u0645\u0627\u0646\u06cc\u062f"
-                    }
-                  </div>
+                  {$ctx.fetched_data.loading == true ? (
+                    <div
+                      data-plasmic-name={
+                        "\u0644\u0637\u0641\u0627\u0645\u0646\u062a\u0638\u0631\u0628\u0645\u0627\u0646\u062f"
+                      }
+                      data-plasmic-override={overrides.لطفامنتظربماند}
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.لطفامنتظربماند
+                      )}
+                    >
+                      {
+                        "\u0644\u0637\u0641\u0627 \u0645\u0646\u062a\u0638\u0631 \u0628\u0645\u0627\u0646\u06cc\u062f"
+                      }
+                    </div>
+                  ) : null}
                   {(() => {
                     try {
                       return $ctx.fetched_data.data !== "";
