@@ -193,6 +193,8 @@
 .username:global(.__wab_instance) {
   position: relative;
   width: 350px;
+  height: 60px;
+  flex-shrink: 0;
 }
 @media (min-width: 0px) and (max-width: 760px) {
   .username:global(.__wab_instance) {
@@ -218,6 +220,8 @@
 .password:global(.__wab_instance) {
   position: relative;
   width: 350px;
+  height: 60px;
+  flex-shrink: 0;
 }
 @media (min-width: 0px) and (max-width: 760px) {
   .password:global(.__wab_instance) {
