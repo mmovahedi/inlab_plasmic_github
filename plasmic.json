@@ -969,7 +969,7 @@
           "projectId": "wjafXWEvDytFogT7SiMy2v",
           "renderModuleFilePath": "plasmic/inlab/PlasmicLaboratoryData.tsx",
           "importSpec": {
-            "modulePath": "../pages/patient/[code]/lab.tsx"
+            "modulePath": "../pages/patient/[code]/[bookmarked]/lab.tsx"
           },
           "cssFilePath": "plasmic/inlab/PlasmicLaboratoryData.module.css",
           "scheme": "blackbox",
@@ -983,7 +983,7 @@
           "projectId": "wjafXWEvDytFogT7SiMy2v",
           "renderModuleFilePath": "plasmic/inlab/PlasmicImagingReportList.tsx",
           "importSpec": {
-            "modulePath": "../pages/patient/[code]/report/list.tsx"
+            "modulePath": "../pages/patient/[code]/[bookmarked]/report/list.tsx"
           },
           "cssFilePath": "plasmic/inlab/PlasmicImagingReportList.module.css",
           "scheme": "blackbox",
@@ -997,7 +997,7 @@
           "projectId": "wjafXWEvDytFogT7SiMy2v",
           "renderModuleFilePath": "plasmic/inlab/PlasmicPatientProfile.tsx",
           "importSpec": {
-            "modulePath": "../pages/patient/[code]/profile.tsx"
+            "modulePath": "../pages/patient/[code]/[bookmarked]/profile.tsx"
           },
           "cssFilePath": "plasmic/inlab/PlasmicPatientProfile.module.css",
           "scheme": "blackbox",
@@ -1130,19 +1130,6 @@
           "path": "/user/setting/namespace"
         },
         {
-          "id": "0wFpBWYaqpsM",
-          "name": "RedirectToLoginPage",
-          "type": "managed",
-          "projectId": "wjafXWEvDytFogT7SiMy2v",
-          "renderModuleFilePath": "plasmic/inlab/PlasmicRedirectToLoginPage.tsx",
-          "importSpec": {
-            "modulePath": "RedirectToLoginPage.tsx"
-          },
-          "cssFilePath": "plasmic/inlab/PlasmicRedirectToLoginPage.module.css",
-          "scheme": "blackbox",
-          "componentType": "component"
-        },
-        {
           "id": "-ckcELWzdUW7",
           "name": "Header",
           "type": "managed",
@@ -1165,19 +1152,6 @@
             "modulePath": "Report.tsx"
           },
           "cssFilePath": "plasmic/inlab/PlasmicReport.module.css",
-          "scheme": "blackbox",
-          "componentType": "component"
-        },
-        {
-          "id": "aXAcva2etiX1",
-          "name": "RedirectToNamespaceSelection",
-          "type": "managed",
-          "projectId": "wjafXWEvDytFogT7SiMy2v",
-          "renderModuleFilePath": "plasmic/inlab/PlasmicRedirectToNamespaceSelection.tsx",
-          "importSpec": {
-            "modulePath": "RedirectToNamespaceSelection.tsx"
-          },
-          "cssFilePath": "plasmic/inlab/PlasmicRedirectToNamespaceSelection.module.css",
           "scheme": "blackbox",
           "componentType": "component"
         },
@@ -1207,84 +1181,6 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/"
-        },
-        {
-          "id": "dnRUnqur1vWa",
-          "name": "RedirectRootPageToInlabLogin",
-          "type": "managed",
-          "projectId": "wjafXWEvDytFogT7SiMy2v",
-          "renderModuleFilePath": "plasmic/inlab/PlasmicRedirectRootPageToInlabLogin.tsx",
-          "importSpec": {
-            "modulePath": "RedirectRootPageToInlabLogin.tsx"
-          },
-          "cssFilePath": "plasmic/inlab/PlasmicRedirectRootPageToInlabLogin.module.css",
-          "scheme": "blackbox",
-          "componentType": "component"
-        },
-        {
-          "id": "x1Fxn6tnPsJ0",
-          "name": "RedirectRootPageToHomepage",
-          "type": "managed",
-          "projectId": "wjafXWEvDytFogT7SiMy2v",
-          "renderModuleFilePath": "plasmic/inlab/PlasmicRedirectRootPageToHomepage.tsx",
-          "importSpec": {
-            "modulePath": "RedirectRootPageToHomepage.tsx"
-          },
-          "cssFilePath": "plasmic/inlab/PlasmicRedirectRootPageToHomepage.module.css",
-          "scheme": "blackbox",
-          "componentType": "component"
-        },
-        {
-          "id": "rhyWwtv3sPGn",
-          "name": "RedirectRootPageToNamespaceSelection",
-          "type": "managed",
-          "projectId": "wjafXWEvDytFogT7SiMy2v",
-          "renderModuleFilePath": "plasmic/inlab/PlasmicRedirectRootPageToNamespaceSelection.tsx",
-          "importSpec": {
-            "modulePath": "RedirectRootPageToNamespaceSelection.tsx"
-          },
-          "cssFilePath": "plasmic/inlab/PlasmicRedirectRootPageToNamespaceSelection.module.css",
-          "scheme": "blackbox",
-          "componentType": "component"
-        },
-        {
-          "id": "Y1uAoiZCKyAg",
-          "name": "RedirectInlabLoginToNamespaceSelection",
-          "type": "managed",
-          "projectId": "wjafXWEvDytFogT7SiMy2v",
-          "renderModuleFilePath": "plasmic/inlab/PlasmicRedirectInlabLoginToNamespaceSelection.tsx",
-          "importSpec": {
-            "modulePath": "RedirectInlabLoginToNamespaceSelection.tsx"
-          },
-          "cssFilePath": "plasmic/inlab/PlasmicRedirectInlabLoginToNamespaceSelection.module.css",
-          "scheme": "blackbox",
-          "componentType": "component"
-        },
-        {
-          "id": "VQNRVvXObcnc",
-          "name": "RedirectInlabLoginToHomepage",
-          "type": "managed",
-          "projectId": "wjafXWEvDytFogT7SiMy2v",
-          "renderModuleFilePath": "plasmic/inlab/PlasmicRedirectInlabLoginToHomepage.tsx",
-          "importSpec": {
-            "modulePath": "RedirectInlabLoginToHomepage.tsx"
-          },
-          "cssFilePath": "plasmic/inlab/PlasmicRedirectInlabLoginToHomepage.module.css",
-          "scheme": "blackbox",
-          "componentType": "component"
-        },
-        {
-          "id": "PfCRFyUxWRzS",
-          "name": "RedirectNamespaceSelectionToHomepage",
-          "type": "managed",
-          "projectId": "wjafXWEvDytFogT7SiMy2v",
-          "renderModuleFilePath": "plasmic/inlab/PlasmicRedirectNamespaceSelectionToHomepage.tsx",
-          "importSpec": {
-            "modulePath": "RedirectNamespaceSelectionToHomepage.tsx"
-          },
-          "cssFilePath": "plasmic/inlab/PlasmicRedirectNamespaceSelectionToHomepage.module.css",
-          "scheme": "blackbox",
-          "componentType": "component"
         },
         {
           "id": "lSZzDzmRkcIg",
@@ -1336,6 +1232,45 @@
             "modulePath": "ShareTool.tsx"
           },
           "cssFilePath": "plasmic/inlab/PlasmicShareTool.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "dnRUnqur1vWa",
+          "name": "RedirectToInlabLogin",
+          "type": "managed",
+          "projectId": "wjafXWEvDytFogT7SiMy2v",
+          "renderModuleFilePath": "plasmic/inlab/PlasmicRedirectToInlabLogin.tsx",
+          "importSpec": {
+            "modulePath": "RedirectToInlabLogin.tsx"
+          },
+          "cssFilePath": "plasmic/inlab/PlasmicRedirectToInlabLogin.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "x1Fxn6tnPsJ0",
+          "name": "RedirectToHomepage",
+          "type": "managed",
+          "projectId": "wjafXWEvDytFogT7SiMy2v",
+          "renderModuleFilePath": "plasmic/inlab/PlasmicRedirectToHomepage.tsx",
+          "importSpec": {
+            "modulePath": "RedirectToHomepage.tsx"
+          },
+          "cssFilePath": "plasmic/inlab/PlasmicRedirectToHomepage.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "rhyWwtv3sPGn",
+          "name": "RedirectToNamespaceSelection",
+          "type": "managed",
+          "projectId": "wjafXWEvDytFogT7SiMy2v",
+          "renderModuleFilePath": "plasmic/inlab/PlasmicRedirectToNamespaceSelection.tsx",
+          "importSpec": {
+            "modulePath": "RedirectToNamespaceSelection.tsx"
+          },
+          "cssFilePath": "plasmic/inlab/PlasmicRedirectToNamespaceSelection.module.css",
           "scheme": "blackbox",
           "componentType": "component"
         }

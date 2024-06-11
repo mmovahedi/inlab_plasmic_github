@@ -59,10 +59,9 @@ import {
   useGlobalActions
 } from "@plasmicapp/react-web/lib/host";
 
+import RedirectToInlabLogin from "../../RedirectToInlabLogin"; // plasmic-import: dnRUnqur1vWa/component
+import RedirectToHomepage from "../../RedirectToHomepage"; // plasmic-import: x1Fxn6tnPsJ0/component
 import { ApiFetcherComponent } from "../../../utils/ApiFetcherComponent"; // plasmic-import: kxxsrihQ2d7W/codeComponent
-import ShareTool from "../../ShareTool"; // plasmic-import: B3T4IwC_PpNX/component
-import RedirectToLoginPage from "../../RedirectToLoginPage"; // plasmic-import: 0wFpBWYaqpsM/component
-import RedirectNamespaceSelectionToHomepage from "../../RedirectNamespaceSelectionToHomepage"; // plasmic-import: PfCRFyUxWRzS/component
 
 import { useScreenVariants as useScreenVariantsjEqVmdAbnKYc } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: jEqVmdAbnKYc/globalVariant
 
@@ -87,16 +86,13 @@ export const PlasmicNamespaceSelection__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicNamespaceSelection__OverridesType = {
   namespaceSelection?: Flex__<"div">;
+  redirectToInlabLogin?: Flex__<typeof RedirectToInlabLogin>;
+  redirectToHomepage?: Flex__<typeof RedirectToHomepage>;
   namespaces2?: Flex__<"div">;
   text?: Flex__<"div">;
   namespaces?: Flex__<typeof ApiFetcherComponent>;
   namespacesList?: Flex__<"div">;
   namespaceName?: Flex__<"div">;
-  shareTool?: Flex__<typeof ShareTool>;
-  redirectToLoginPage?: Flex__<typeof RedirectToLoginPage>;
-  redirectNamespaceSelectionToHomepage?: Flex__<
-    typeof RedirectNamespaceSelectionToHomepage
-  >;
 };
 
 export interface DefaultNamespaceSelectionProps {}
@@ -130,8 +126,6 @@ function PlasmicNamespaceSelection__RenderFunc(props: {
   const refsRef = React.useRef({});
   const $refs = refsRef.current;
 
-  const currentUser = useCurrentUser?.() || {};
-
   const globalVariants = ensureGlobalVariants({
     screen: useScreenVariantsjEqVmdAbnKYc()
   });
@@ -163,6 +157,18 @@ function PlasmicNamespaceSelection__RenderFunc(props: {
             sty.namespaceSelection
           )}
         >
+          <RedirectToInlabLogin
+            data-plasmic-name={"redirectToInlabLogin"}
+            data-plasmic-override={overrides.redirectToInlabLogin}
+            className={classNames("__wab_instance", sty.redirectToInlabLogin)}
+          />
+
+          <RedirectToHomepage
+            data-plasmic-name={"redirectToHomepage"}
+            data-plasmic-override={overrides.redirectToHomepage}
+            className={classNames("__wab_instance", sty.redirectToHomepage)}
+          />
+
           <Stack__
             as={"div"}
             data-plasmic-name={"namespaces2"}
@@ -325,28 +331,7 @@ function PlasmicNamespaceSelection__RenderFunc(props: {
                 )}
               </DataCtxReader__>
             </ApiFetcherComponent>
-            <ShareTool
-              data-plasmic-name={"shareTool"}
-              data-plasmic-override={overrides.shareTool}
-              className={classNames("__wab_instance", sty.shareTool)}
-            />
           </Stack__>
-          <RedirectToLoginPage
-            data-plasmic-name={"redirectToLoginPage"}
-            data-plasmic-override={overrides.redirectToLoginPage}
-            className={classNames("__wab_instance", sty.redirectToLoginPage)}
-          />
-
-          <RedirectNamespaceSelectionToHomepage
-            data-plasmic-name={"redirectNamespaceSelectionToHomepage"}
-            data-plasmic-override={
-              overrides.redirectNamespaceSelectionToHomepage
-            }
-            className={classNames(
-              "__wab_instance",
-              sty.redirectNamespaceSelectionToHomepage
-            )}
-          />
         </div>
       </div>
     </React.Fragment>
@@ -356,44 +341,40 @@ function PlasmicNamespaceSelection__RenderFunc(props: {
 const PlasmicDescendants = {
   namespaceSelection: [
     "namespaceSelection",
+    "redirectToInlabLogin",
+    "redirectToHomepage",
     "namespaces2",
     "text",
     "namespaces",
     "namespacesList",
-    "namespaceName",
-    "shareTool",
-    "redirectToLoginPage",
-    "redirectNamespaceSelectionToHomepage"
+    "namespaceName"
   ],
+  redirectToInlabLogin: ["redirectToInlabLogin"],
+  redirectToHomepage: ["redirectToHomepage"],
   namespaces2: [
     "namespaces2",
     "text",
     "namespaces",
     "namespacesList",
-    "namespaceName",
-    "shareTool"
+    "namespaceName"
   ],
   text: ["text"],
   namespaces: ["namespaces", "namespacesList", "namespaceName"],
   namespacesList: ["namespacesList", "namespaceName"],
-  namespaceName: ["namespaceName"],
-  shareTool: ["shareTool"],
-  redirectToLoginPage: ["redirectToLoginPage"],
-  redirectNamespaceSelectionToHomepage: ["redirectNamespaceSelectionToHomepage"]
+  namespaceName: ["namespaceName"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   namespaceSelection: "div";
+  redirectToInlabLogin: typeof RedirectToInlabLogin;
+  redirectToHomepage: typeof RedirectToHomepage;
   namespaces2: "div";
   text: "div";
   namespaces: typeof ApiFetcherComponent;
   namespacesList: "div";
   namespaceName: "div";
-  shareTool: typeof ShareTool;
-  redirectToLoginPage: typeof RedirectToLoginPage;
-  redirectNamespaceSelectionToHomepage: typeof RedirectNamespaceSelectionToHomepage;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -456,16 +437,13 @@ export const PlasmicNamespaceSelection = Object.assign(
   makeNodeComponent("namespaceSelection"),
   {
     // Helper components rendering sub-elements
+    redirectToInlabLogin: makeNodeComponent("redirectToInlabLogin"),
+    redirectToHomepage: makeNodeComponent("redirectToHomepage"),
     namespaces2: makeNodeComponent("namespaces2"),
     text: makeNodeComponent("text"),
     namespaces: makeNodeComponent("namespaces"),
     namespacesList: makeNodeComponent("namespacesList"),
     namespaceName: makeNodeComponent("namespaceName"),
-    shareTool: makeNodeComponent("shareTool"),
-    redirectToLoginPage: makeNodeComponent("redirectToLoginPage"),
-    redirectNamespaceSelectionToHomepage: makeNodeComponent(
-      "redirectNamespaceSelectionToHomepage"
-    ),
 
     // Metadata about props expected for PlasmicNamespaceSelection
     internalVariantProps: PlasmicNamespaceSelection__VariantProps,

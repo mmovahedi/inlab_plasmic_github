@@ -59,11 +59,11 @@ import {
   useGlobalActions
 } from "@plasmicapp/react-web/lib/host";
 
+import RedirectToInlabLogin from "../../RedirectToInlabLogin"; // plasmic-import: dnRUnqur1vWa/component
+import RedirectToNamespaceSelection from "../../RedirectToNamespaceSelection"; // plasmic-import: rhyWwtv3sPGn/component
 import ShareTool from "../../ShareTool"; // plasmic-import: B3T4IwC_PpNX/component
 import Button from "../../Button"; // plasmic-import: IoZvAstVrNqa/component
 import SwitchingTab from "../../SwitchingTab"; // plasmic-import: 9Hr8d57xz9H9/component
-import RedirectToLoginPage from "../../RedirectToLoginPage"; // plasmic-import: 0wFpBWYaqpsM/component
-import RedirectToNamespaceSelection from "../../RedirectToNamespaceSelection"; // plasmic-import: aXAcva2etiX1/component
 
 import { useScreenVariants as useScreenVariantsjEqVmdAbnKYc } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: jEqVmdAbnKYc/globalVariant
 
@@ -100,6 +100,8 @@ export const PlasmicUserSetting__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicUserSetting__OverridesType = {
   userSetting?: Flex__<"div">;
+  redirectToInlabLogin?: Flex__<typeof RedirectToInlabLogin>;
+  redirectToNamespaceSelection?: Flex__<typeof RedirectToNamespaceSelection>;
   pageContent?: Flex__<"div">;
   pictureAndName?: Flex__<"div">;
   nameRankUsername?: Flex__<"div">;
@@ -117,13 +119,12 @@ export type PlasmicUserSetting__OverridesType = {
   resetPassword?: Flex__<"div">;
   resetPasswordImage?: Flex__<"svg">;
   resetPassword2?: Flex__<"div">;
+  shareToolContent?: Flex__<"div">;
   shareTool?: Flex__<typeof ShareTool>;
   logoutButton?: Flex__<typeof Button>;
   text?: Flex__<"div">;
   homepageSwitchingTab?: Flex__<"div">;
   switchingTab?: Flex__<typeof SwitchingTab>;
-  redirectToLoginPage?: Flex__<typeof RedirectToLoginPage>;
-  redirectToNamespaceSelection?: Flex__<typeof RedirectToNamespaceSelection>;
 };
 
 export interface DefaultUserSettingProps {}
@@ -158,8 +159,6 @@ function PlasmicUserSetting__RenderFunc(props: {
   const $refs = refsRef.current;
 
   const $globalActions = useGlobalActions?.();
-
-  const currentUser = useCurrentUser?.() || {};
 
   const stateSpecs: Parameters<typeof useDollarState>[0] = React.useMemo(
     () => [
@@ -251,6 +250,21 @@ function PlasmicUserSetting__RenderFunc(props: {
             }
           )}
         >
+          <RedirectToInlabLogin
+            data-plasmic-name={"redirectToInlabLogin"}
+            data-plasmic-override={overrides.redirectToInlabLogin}
+            className={classNames("__wab_instance", sty.redirectToInlabLogin)}
+          />
+
+          <RedirectToNamespaceSelection
+            data-plasmic-name={"redirectToNamespaceSelection"}
+            data-plasmic-override={overrides.redirectToNamespaceSelection}
+            className={classNames(
+              "__wab_instance",
+              sty.redirectToNamespaceSelection
+            )}
+          />
+
           <Stack__
             as={"div"}
             data-plasmic-name={"pageContent"}
@@ -729,12 +743,25 @@ function PlasmicUserSetting__RenderFunc(props: {
                 }
               </div>
             </Stack__>
-            <ShareTool
-              data-plasmic-name={"shareTool"}
-              data-plasmic-override={overrides.shareTool}
-              className={classNames("__wab_instance", sty.shareTool)}
-            />
-
+            <Stack__
+              as={"div"}
+              data-plasmic-name={"shareToolContent"}
+              data-plasmic-override={overrides.shareToolContent}
+              hasGap={true}
+              className={classNames(projectcss.all, sty.shareToolContent, {
+                [sty.shareToolContentdisabledLogoutButton]: hasVariant(
+                  $state,
+                  "disabledLogoutButton",
+                  "disabledLogoutButton"
+                )
+              })}
+            >
+              <ShareTool
+                data-plasmic-name={"shareTool"}
+                data-plasmic-override={overrides.shareTool}
+                className={classNames("__wab_instance", sty.shareTool)}
+              />
+            </Stack__>
             <Button
               data-plasmic-name={"logoutButton"}
               data-plasmic-override={overrides.logoutButton}
@@ -1034,7 +1061,7 @@ function PlasmicUserSetting__RenderFunc(props: {
                               }
                               throw e;
                             }
-                          })()}/profile`
+                          })()}/[bookmarked]/profile`
                         };
                         return (({ destination }) => {
                           if (
@@ -1096,7 +1123,7 @@ function PlasmicUserSetting__RenderFunc(props: {
                               }
                               throw e;
                             }
-                          })()}/report/list`
+                          })()}/[bookmarked]/report/list`
                         };
                         return (({ destination }) => {
                           if (
@@ -1158,7 +1185,7 @@ function PlasmicUserSetting__RenderFunc(props: {
                               }
                               throw e;
                             }
-                          })()}/lab`
+                          })()}/[bookmarked]/lab`
                         };
                         return (({ destination }) => {
                           if (
@@ -1193,20 +1220,6 @@ function PlasmicUserSetting__RenderFunc(props: {
               />
             </SwitchingTab>
           </div>
-          <RedirectToLoginPage
-            data-plasmic-name={"redirectToLoginPage"}
-            data-plasmic-override={overrides.redirectToLoginPage}
-            className={classNames("__wab_instance", sty.redirectToLoginPage)}
-          />
-
-          <RedirectToNamespaceSelection
-            data-plasmic-name={"redirectToNamespaceSelection"}
-            data-plasmic-override={overrides.redirectToNamespaceSelection}
-            className={classNames(
-              "__wab_instance",
-              sty.redirectToNamespaceSelection
-            )}
-          />
         </div>
       </div>
     </React.Fragment>
@@ -1216,6 +1229,8 @@ function PlasmicUserSetting__RenderFunc(props: {
 const PlasmicDescendants = {
   userSetting: [
     "userSetting",
+    "redirectToInlabLogin",
+    "redirectToNamespaceSelection",
     "pageContent",
     "pictureAndName",
     "nameRankUsername",
@@ -1233,14 +1248,15 @@ const PlasmicDescendants = {
     "resetPassword",
     "resetPasswordImage",
     "resetPassword2",
+    "shareToolContent",
     "shareTool",
     "logoutButton",
     "text",
     "homepageSwitchingTab",
-    "switchingTab",
-    "redirectToLoginPage",
-    "redirectToNamespaceSelection"
+    "switchingTab"
   ],
+  redirectToInlabLogin: ["redirectToInlabLogin"],
+  redirectToNamespaceSelection: ["redirectToNamespaceSelection"],
   pageContent: [
     "pageContent",
     "pictureAndName",
@@ -1259,6 +1275,7 @@ const PlasmicDescendants = {
     "resetPassword",
     "resetPasswordImage",
     "resetPassword2",
+    "shareToolContent",
     "shareTool",
     "logoutButton",
     "text"
@@ -1297,19 +1314,20 @@ const PlasmicDescendants = {
   resetPassword: ["resetPassword", "resetPasswordImage", "resetPassword2"],
   resetPasswordImage: ["resetPasswordImage"],
   resetPassword2: ["resetPassword2"],
+  shareToolContent: ["shareToolContent", "shareTool"],
   shareTool: ["shareTool"],
   logoutButton: ["logoutButton", "text"],
   text: ["text"],
   homepageSwitchingTab: ["homepageSwitchingTab", "switchingTab"],
-  switchingTab: ["switchingTab"],
-  redirectToLoginPage: ["redirectToLoginPage"],
-  redirectToNamespaceSelection: ["redirectToNamespaceSelection"]
+  switchingTab: ["switchingTab"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   userSetting: "div";
+  redirectToInlabLogin: typeof RedirectToInlabLogin;
+  redirectToNamespaceSelection: typeof RedirectToNamespaceSelection;
   pageContent: "div";
   pictureAndName: "div";
   nameRankUsername: "div";
@@ -1327,13 +1345,12 @@ type NodeDefaultElementType = {
   resetPassword: "div";
   resetPasswordImage: "svg";
   resetPassword2: "div";
+  shareToolContent: "div";
   shareTool: typeof ShareTool;
   logoutButton: typeof Button;
   text: "div";
   homepageSwitchingTab: "div";
   switchingTab: typeof SwitchingTab;
-  redirectToLoginPage: typeof RedirectToLoginPage;
-  redirectToNamespaceSelection: typeof RedirectToNamespaceSelection;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -1396,6 +1413,10 @@ export const PlasmicUserSetting = Object.assign(
   makeNodeComponent("userSetting"),
   {
     // Helper components rendering sub-elements
+    redirectToInlabLogin: makeNodeComponent("redirectToInlabLogin"),
+    redirectToNamespaceSelection: makeNodeComponent(
+      "redirectToNamespaceSelection"
+    ),
     pageContent: makeNodeComponent("pageContent"),
     pictureAndName: makeNodeComponent("pictureAndName"),
     nameRankUsername: makeNodeComponent("nameRankUsername"),
@@ -1413,15 +1434,12 @@ export const PlasmicUserSetting = Object.assign(
     resetPassword: makeNodeComponent("resetPassword"),
     resetPasswordImage: makeNodeComponent("resetPasswordImage"),
     resetPassword2: makeNodeComponent("resetPassword2"),
+    shareToolContent: makeNodeComponent("shareToolContent"),
     shareTool: makeNodeComponent("shareTool"),
     logoutButton: makeNodeComponent("logoutButton"),
     text: makeNodeComponent("text"),
     homepageSwitchingTab: makeNodeComponent("homepageSwitchingTab"),
     switchingTab: makeNodeComponent("switchingTab"),
-    redirectToLoginPage: makeNodeComponent("redirectToLoginPage"),
-    redirectToNamespaceSelection: makeNodeComponent(
-      "redirectToNamespaceSelection"
-    ),
 
     // Metadata about props expected for PlasmicUserSetting
     internalVariantProps: PlasmicUserSetting__VariantProps,

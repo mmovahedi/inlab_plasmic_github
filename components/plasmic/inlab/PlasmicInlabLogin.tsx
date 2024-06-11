@@ -59,11 +59,11 @@ import {
   useGlobalActions
 } from "@plasmicapp/react-web/lib/host";
 
+import RedirectToNamespaceSelection from "../../RedirectToNamespaceSelection"; // plasmic-import: rhyWwtv3sPGn/component
+import RedirectToHomepage from "../../RedirectToHomepage"; // plasmic-import: x1Fxn6tnPsJ0/component
 import TextInput from "../../TextInput"; // plasmic-import: WB4OwDxc51ck/component
 import Button from "../../Button"; // plasmic-import: IoZvAstVrNqa/component
 import ShareTool from "../../ShareTool"; // plasmic-import: B3T4IwC_PpNX/component
-import RedirectInlabLoginToNamespaceSelection from "../../RedirectInlabLoginToNamespaceSelection"; // plasmic-import: Y1uAoiZCKyAg/component
-import RedirectInlabLoginToHomepage from "../../RedirectInlabLoginToHomepage"; // plasmic-import: VQNRVvXObcnc/component
 
 import { useScreenVariants as useScreenVariantsjEqVmdAbnKYc } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: jEqVmdAbnKYc/globalVariant
 
@@ -102,6 +102,8 @@ export const PlasmicInlabLogin__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicInlabLogin__OverridesType = {
   inlabLogin?: Flex__<"div">;
+  redirectToNamespaceSelection?: Flex__<typeof RedirectToNamespaceSelection>;
+  redirectToHomepage?: Flex__<typeof RedirectToHomepage>;
   wrongUserAnnouncement?: Flex__<"div">;
   inlabInlabPlusAccountSimilarityAnnouncement?: Flex__<"div">;
   pageContent?: Flex__<"div">;
@@ -112,10 +114,6 @@ export type PlasmicInlabLogin__OverridesType = {
   resetPassword?: Flex__<typeof Button>;
   createAccount?: Flex__<typeof Button>;
   shareTool?: Flex__<typeof ShareTool>;
-  redirectInlabLoginToNamespaceSelection?: Flex__<
-    typeof RedirectInlabLoginToNamespaceSelection
-  >;
-  redirectInlabLoginToHomepage?: Flex__<typeof RedirectInlabLoginToHomepage>;
 };
 
 export interface DefaultInlabLoginProps {}
@@ -150,8 +148,6 @@ function PlasmicInlabLogin__RenderFunc(props: {
   const $refs = refsRef.current;
 
   const $globalActions = useGlobalActions?.();
-
-  const currentUser = useCurrentUser?.() || {};
 
   const stateSpecs: Parameters<typeof useDollarState>[0] = React.useMemo(
     () => [
@@ -328,6 +324,21 @@ function PlasmicInlabLogin__RenderFunc(props: {
           }
         )}
       >
+        <RedirectToNamespaceSelection
+          data-plasmic-name={"redirectToNamespaceSelection"}
+          data-plasmic-override={overrides.redirectToNamespaceSelection}
+          className={classNames(
+            "__wab_instance",
+            sty.redirectToNamespaceSelection
+          )}
+        />
+
+        <RedirectToHomepage
+          data-plasmic-name={"redirectToHomepage"}
+          data-plasmic-override={overrides.redirectToHomepage}
+          className={classNames("__wab_instance", sty.redirectToHomepage)}
+        />
+
         <div
           data-plasmic-name={"wrongUserAnnouncement"}
           data-plasmic-override={overrides.wrongUserAnnouncement}
@@ -1044,25 +1055,6 @@ function PlasmicInlabLogin__RenderFunc(props: {
             className={classNames("__wab_instance", sty.shareTool)}
           />
         </Stack__>
-        <RedirectInlabLoginToNamespaceSelection
-          data-plasmic-name={"redirectInlabLoginToNamespaceSelection"}
-          data-plasmic-override={
-            overrides.redirectInlabLoginToNamespaceSelection
-          }
-          className={classNames(
-            "__wab_instance",
-            sty.redirectInlabLoginToNamespaceSelection
-          )}
-        />
-
-        <RedirectInlabLoginToHomepage
-          data-plasmic-name={"redirectInlabLoginToHomepage"}
-          data-plasmic-override={overrides.redirectInlabLoginToHomepage}
-          className={classNames(
-            "__wab_instance",
-            sty.redirectInlabLoginToHomepage
-          )}
-        />
       </div>
     </React.Fragment>
   ) as React.ReactElement | null;
@@ -1071,6 +1063,8 @@ function PlasmicInlabLogin__RenderFunc(props: {
 const PlasmicDescendants = {
   inlabLogin: [
     "inlabLogin",
+    "redirectToNamespaceSelection",
+    "redirectToHomepage",
     "wrongUserAnnouncement",
     "inlabInlabPlusAccountSimilarityAnnouncement",
     "pageContent",
@@ -1080,10 +1074,10 @@ const PlasmicDescendants = {
     "createAccountResetPassword",
     "resetPassword",
     "createAccount",
-    "shareTool",
-    "redirectInlabLoginToNamespaceSelection",
-    "redirectInlabLoginToHomepage"
+    "shareTool"
   ],
+  redirectToNamespaceSelection: ["redirectToNamespaceSelection"],
+  redirectToHomepage: ["redirectToHomepage"],
   wrongUserAnnouncement: ["wrongUserAnnouncement"],
   inlabInlabPlusAccountSimilarityAnnouncement: [
     "inlabInlabPlusAccountSimilarityAnnouncement"
@@ -1108,17 +1102,15 @@ const PlasmicDescendants = {
   ],
   resetPassword: ["resetPassword"],
   createAccount: ["createAccount"],
-  shareTool: ["shareTool"],
-  redirectInlabLoginToNamespaceSelection: [
-    "redirectInlabLoginToNamespaceSelection"
-  ],
-  redirectInlabLoginToHomepage: ["redirectInlabLoginToHomepage"]
+  shareTool: ["shareTool"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   inlabLogin: "div";
+  redirectToNamespaceSelection: typeof RedirectToNamespaceSelection;
+  redirectToHomepage: typeof RedirectToHomepage;
   wrongUserAnnouncement: "div";
   inlabInlabPlusAccountSimilarityAnnouncement: "div";
   pageContent: "div";
@@ -1129,8 +1121,6 @@ type NodeDefaultElementType = {
   resetPassword: typeof Button;
   createAccount: typeof Button;
   shareTool: typeof ShareTool;
-  redirectInlabLoginToNamespaceSelection: typeof RedirectInlabLoginToNamespaceSelection;
-  redirectInlabLoginToHomepage: typeof RedirectInlabLoginToHomepage;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -1193,6 +1183,10 @@ export const PlasmicInlabLogin = Object.assign(
   makeNodeComponent("inlabLogin"),
   {
     // Helper components rendering sub-elements
+    redirectToNamespaceSelection: makeNodeComponent(
+      "redirectToNamespaceSelection"
+    ),
+    redirectToHomepage: makeNodeComponent("redirectToHomepage"),
     wrongUserAnnouncement: makeNodeComponent("wrongUserAnnouncement"),
     inlabInlabPlusAccountSimilarityAnnouncement: makeNodeComponent(
       "inlabInlabPlusAccountSimilarityAnnouncement"
@@ -1205,12 +1199,6 @@ export const PlasmicInlabLogin = Object.assign(
     resetPassword: makeNodeComponent("resetPassword"),
     createAccount: makeNodeComponent("createAccount"),
     shareTool: makeNodeComponent("shareTool"),
-    redirectInlabLoginToNamespaceSelection: makeNodeComponent(
-      "redirectInlabLoginToNamespaceSelection"
-    ),
-    redirectInlabLoginToHomepage: makeNodeComponent(
-      "redirectInlabLoginToHomepage"
-    ),
 
     // Metadata about props expected for PlasmicInlabLogin
     internalVariantProps: PlasmicInlabLogin__VariantProps,
