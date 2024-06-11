@@ -1108,7 +1108,7 @@
           "projectId": "wjafXWEvDytFogT7SiMy2v",
           "renderModuleFilePath": "plasmic/inlab/PlasmicImagingReportDatail.tsx",
           "importSpec": {
-            "modulePath": "../pages/patient/[code]/report/detail/[reportID].tsx"
+            "modulePath": "../pages/patient/[code]/[bookmarked]/report/detail/[reportID].tsx"
           },
           "cssFilePath": "plasmic/inlab/PlasmicImagingReportDatail.module.css",
           "scheme": "blackbox",

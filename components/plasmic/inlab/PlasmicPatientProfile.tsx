@@ -878,7 +878,21 @@ function PlasmicPatientProfile__RenderFunc(props: {
                               }
                               throw e;
                             }
-                          })()}/[bookmarked]/report/list`
+                          })()}/${(() => {
+                            try {
+                              return $ctx.params.bookmarked === "true"
+                                ? true
+                                : false;
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return undefined;
+                              }
+                              throw e;
+                            }
+                          })()}/report/list`
                         };
                         return (({ destination }) => {
                           if (
@@ -942,7 +956,21 @@ function PlasmicPatientProfile__RenderFunc(props: {
                               }
                               throw e;
                             }
-                          })()}/[bookmarked]/lab`
+                          })()}/${(() => {
+                            try {
+                              return $ctx.params.bookmarked === "true"
+                                ? true
+                                : false;
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return undefined;
+                              }
+                              throw e;
+                            }
+                          })()}/lab`
                         };
                         return (({ destination }) => {
                           if (
@@ -978,6 +1006,7 @@ function PlasmicPatientProfile__RenderFunc(props: {
 
               {(() => {
                 const child$Props = {
+                  bookmarked: undefined,
                   className: classNames("__wab_instance", sty.bookmarkIcon),
                   onSelectedChange: generateStateOnChangeProp($state, [
                     "bookmarkIcon",
@@ -999,7 +1028,39 @@ function PlasmicPatientProfile__RenderFunc(props: {
                   selected: generateStateValueProp($state, [
                     "bookmarkIcon",
                     "selected"
-                  ])
+                  ]),
+                  trigerReload: async () => {
+                    const $steps = {};
+
+                    $steps["updateBookmarkedPatient"] = true
+                      ? (() => {
+                          const actionArgs = {
+                            vgroup: "bookmarkedPatient",
+                            operation: 2,
+                            value: "bookmarkedPatient"
+                          };
+                          return (({ vgroup, value }) => {
+                            if (typeof value === "string") {
+                              value = [value];
+                            }
+
+                            const oldValue = $stateGet($state, vgroup);
+                            $stateSet($state, vgroup, !oldValue);
+                            return !oldValue;
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["updateBookmarkedPatient"] != null &&
+                      typeof $steps["updateBookmarkedPatient"] === "object" &&
+                      typeof $steps["updateBookmarkedPatient"].then ===
+                        "function"
+                    ) {
+                      $steps["updateBookmarkedPatient"] = await $steps[
+                        "updateBookmarkedPatient"
+                      ];
+                    }
+                  }
                 };
 
                 initializePlasmicStates(

@@ -782,6 +782,22 @@ ${ageMonths} months ${
                                           }
                                           throw e;
                                         }
+                                      })()}/${(() => {
+                                        try {
+                                          return $ctx.params.bookmarked ===
+                                            "true"
+                                            ? true
+                                            : false;
+                                        } catch (e) {
+                                          if (
+                                            e instanceof TypeError ||
+                                            e?.plasmicType ===
+                                              "PlasmicUndefinedDataError"
+                                          ) {
+                                            return undefined;
+                                          }
+                                          throw e;
+                                        }
                                       })()}/report/detail/${(() => {
                                         try {
                                           return currentItem.id;
@@ -1003,7 +1019,21 @@ ${ageMonths} months ${
                             }
                             throw e;
                           }
-                        })()}/[bookmarked]/profile`
+                        })()}/${(() => {
+                          try {
+                            return $ctx.params.bookmarked === "true"
+                              ? true
+                              : false;
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return undefined;
+                            }
+                            throw e;
+                          }
+                        })()}/profile`
                       };
                       return (({ destination }) => {
                         if (
@@ -1067,7 +1097,21 @@ ${ageMonths} months ${
                             }
                             throw e;
                           }
-                        })()}/[bookmarked]/lab`
+                        })()}/${(() => {
+                          try {
+                            return $ctx.params.bookmarked === "true"
+                              ? true
+                              : false;
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return undefined;
+                            }
+                            throw e;
+                          }
+                        })()}/lab`
                       };
                       return (({ destination }) => {
                         if (
@@ -1124,7 +1168,38 @@ ${ageMonths} months ${
                 selected: generateStateValueProp($state, [
                   "bookmarkIcon",
                   "selected"
-                ])
+                ]),
+                trigerReload: async () => {
+                  const $steps = {};
+
+                  $steps["updateBookmarked"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          vgroup: "bookmarked",
+                          operation: 2,
+                          value: "bookmarked"
+                        };
+                        return (({ vgroup, value }) => {
+                          if (typeof value === "string") {
+                            value = [value];
+                          }
+
+                          const oldValue = $stateGet($state, vgroup);
+                          $stateSet($state, vgroup, !oldValue);
+                          return !oldValue;
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["updateBookmarked"] != null &&
+                    typeof $steps["updateBookmarked"] === "object" &&
+                    typeof $steps["updateBookmarked"].then === "function"
+                  ) {
+                    $steps["updateBookmarked"] = await $steps[
+                      "updateBookmarked"
+                    ];
+                  }
+                }
               };
 
               initializePlasmicStates(

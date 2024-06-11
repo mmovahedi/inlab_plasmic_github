@@ -350,7 +350,8 @@ ${ageMonths} months ${
             <DataCtxReader__>
               {$ctx => (
                 <React.Fragment>
-                  {$ctx.fetched_data.data.pacs_url !== null ? (
+                  {$ctx.fetched_data.loading == false &&
+                  $ctx.fetched_data.data.pacs_url !== null ? (
                     <Button
                       data-plasmic-name={"button"}
                       data-plasmic-override={overrides.button}
@@ -645,7 +646,21 @@ ${ageMonths} months ${
                               }
                               throw e;
                             }
-                          })()}/[bookmarked]/profile`
+                          })()}/${(() => {
+                            try {
+                              return $ctx.params.bookmarked === "true"
+                                ? true
+                                : false;
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return undefined;
+                              }
+                              throw e;
+                            }
+                          })()}/profile`
                         };
                         return (({ destination }) => {
                           if (
@@ -709,7 +724,21 @@ ${ageMonths} months ${
                               }
                               throw e;
                             }
-                          })()}/[bookmarked]/report/list`
+                          })()}/${(() => {
+                            try {
+                              return $ctx.params.bookmarked === "true"
+                                ? true
+                                : false;
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return undefined;
+                              }
+                              throw e;
+                            }
+                          })()}/report/list`
                         };
                         return (({ destination }) => {
                           if (
@@ -773,7 +802,21 @@ ${ageMonths} months ${
                               }
                               throw e;
                             }
-                          })()}/[bookmarked]/lab`
+                          })()}/${(() => {
+                            try {
+                              return $ctx.params.bookmarked === "true"
+                                ? true
+                                : false;
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return undefined;
+                              }
+                              throw e;
+                            }
+                          })()}/lab`
                         };
                         return (({ destination }) => {
                           if (

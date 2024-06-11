@@ -286,7 +286,7 @@ function PlasmicReport__RenderFunc(props: {
                                 }
                                 throw e;
                               }
-                            })()}/report/detail/${(() => {
+                            })()}/[bookmarked]/report/detail/${(() => {
                               try {
                                 return currentItem.id;
                               } catch (e) {
