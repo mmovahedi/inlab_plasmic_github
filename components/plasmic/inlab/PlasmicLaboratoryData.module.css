@@ -512,7 +512,7 @@
   width: 100%;
   height: 35px;
   max-width: 100%;
-  font-size: var(--token-sOr3fJ5Up5fq);
+  font-size: var(--token-CdE1_0ZaCyT1);
   border-bottom-width: 0px;
   margin-bottom: 0px;
   white-space: pre-wrap;
@@ -532,6 +532,11 @@
   flex-shrink: 0;
   padding: 2px;
   border-style: none;
+}
+@media (min-width: 0px) and (max-width: 760px) {
+  .issuedDatetime {
+    margin-top: calc(0px + 0px) !important;
+  }
 }
 .issuedDatetimeviewNormalRange {
   margin-top: calc(0px + 0px) !important;
