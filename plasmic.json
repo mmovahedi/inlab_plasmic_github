@@ -1273,6 +1273,19 @@
           "cssFilePath": "plasmic/inlab/PlasmicRedirectToNamespaceSelection.module.css",
           "scheme": "blackbox",
           "componentType": "component"
+        },
+        {
+          "id": "3tcwCShdS0g0",
+          "name": "NewFeatureBanner",
+          "type": "managed",
+          "projectId": "wjafXWEvDytFogT7SiMy2v",
+          "renderModuleFilePath": "plasmic/inlab/PlasmicNewFeatureBanner.tsx",
+          "importSpec": {
+            "modulePath": "NewFeatureBanner.tsx"
+          },
+          "cssFilePath": "plasmic/inlab/PlasmicNewFeatureBanner.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
         }
       ],
       "icons": [
