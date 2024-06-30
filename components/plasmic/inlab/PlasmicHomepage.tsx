@@ -184,7 +184,7 @@ function PlasmicHomepage__RenderFunc(props: {
       Object.assign(
         {
           open: false,
-          newVersionDatetime: "06/04/1403"
+          newVersionDatetime: "10/04/1403"
         },
         props.args
       ),
@@ -506,7 +506,7 @@ function PlasmicHomepage__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) =>
           (() => {
             try {
-              return localStorage.getItem("bookmarks_sort") === "تخت"
+              return localStorage.getItem("bookmarks_sort") === "ward"
                 ? true
                 : false;
             } catch (e) {
@@ -2075,7 +2075,7 @@ function PlasmicHomepage__RenderFunc(props: {
                                     return $state.bookmarksSort2
                                       ? localStorage.setItem(
                                           "bookmarks_sort",
-                                          "تخت"
+                                          "ward"
                                         )
                                       : localStorage.setItem(
                                           "bookmarks_sort",
@@ -2236,7 +2236,7 @@ function PlasmicHomepage__RenderFunc(props: {
                           <React.Fragment>
                             {(() => {
                               try {
-                                return "مرتب سازی : تخت";
+                                return "مرتب سازی : بخش";
                               } catch (e) {
                                 if (
                                   e instanceof TypeError ||
