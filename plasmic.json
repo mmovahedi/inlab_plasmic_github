@@ -969,7 +969,7 @@
           "projectId": "wjafXWEvDytFogT7SiMy2v",
           "renderModuleFilePath": "plasmic/inlab/PlasmicLaboratoryData.tsx",
           "importSpec": {
-            "modulePath": "../pages/patient/[code]/[bookmarked]/lab.tsx"
+            "modulePath": "../pages/patient/[code]/lab.tsx"
           },
           "cssFilePath": "plasmic/inlab/PlasmicLaboratoryData.module.css",
           "scheme": "blackbox",
@@ -983,7 +983,7 @@
           "projectId": "wjafXWEvDytFogT7SiMy2v",
           "renderModuleFilePath": "plasmic/inlab/PlasmicImagingReportList.tsx",
           "importSpec": {
-            "modulePath": "../pages/patient/[code]/[bookmarked]/report/list.tsx"
+            "modulePath": "../pages/patient/[code]/report/list.tsx"
           },
           "cssFilePath": "plasmic/inlab/PlasmicImagingReportList.module.css",
           "scheme": "blackbox",
@@ -997,7 +997,7 @@
           "projectId": "wjafXWEvDytFogT7SiMy2v",
           "renderModuleFilePath": "plasmic/inlab/PlasmicPatientProfile.tsx",
           "importSpec": {
-            "modulePath": "../pages/patient/[code]/[bookmarked]/profile.tsx"
+            "modulePath": "../pages/patient/[code]/profile.tsx"
           },
           "cssFilePath": "plasmic/inlab/PlasmicPatientProfile.module.css",
           "scheme": "blackbox",
@@ -1108,7 +1108,7 @@
           "projectId": "wjafXWEvDytFogT7SiMy2v",
           "renderModuleFilePath": "plasmic/inlab/PlasmicImagingReportDatail.tsx",
           "importSpec": {
-            "modulePath": "../pages/patient/[code]/[bookmarked]/report/detail/[reportID].tsx"
+            "modulePath": "../pages/patient/[code]/report/detail/[reportID].tsx"
           },
           "cssFilePath": "plasmic/inlab/PlasmicImagingReportDatail.module.css",
           "scheme": "blackbox",
@@ -2292,6 +2292,6 @@
   "nextjsConfig": {
     "pagesDir": "../pages"
   },
-  "cliVersion": "0.1.330",
-  "$schema": "https://unpkg.com/@plasmicapp/cli@0.1.330/dist/plasmic.schema.json"
+  "cliVersion": "0.1.331",
+  "$schema": "https://unpkg.com/@plasmicapp/cli@0.1.331/dist/plasmic.schema.json"
 }
