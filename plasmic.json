@@ -969,7 +969,7 @@
           "projectId": "wjafXWEvDytFogT7SiMy2v",
           "renderModuleFilePath": "plasmic/inlab/PlasmicLaboratoryData.tsx",
           "importSpec": {
-            "modulePath": "../pages/patient/[code]/lab.tsx"
+            "modulePath": "../pages/patient/[code]/lab/[adm_id].tsx"
           },
           "cssFilePath": "plasmic/inlab/PlasmicLaboratoryData.module.css",
           "scheme": "blackbox",
