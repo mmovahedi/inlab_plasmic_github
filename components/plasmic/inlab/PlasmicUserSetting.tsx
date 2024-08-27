@@ -737,6 +737,9 @@ function PlasmicUserSetting__RenderFunc(props: {
                 )}
                 hideFooter={true}
                 maskClosable={true}
+                modalContentClassName={classNames({
+                  [sty["pcls_VyKcQQz6TGrW"]]: true
+                })}
                 modalScopeClassName={sty["modalChangePassword__modal"]}
                 onOpenChange={generateStateOnChangeProp($state, [
                   "modalChangePassword",
@@ -894,6 +897,7 @@ function PlasmicUserSetting__RenderFunc(props: {
                     </div>
                   </AntdButton>
                 }
+                wrapClassName={classNames({ [sty["pcls_mE8Tgpm2y9Lm"]]: true })}
               >
                 <div
                   data-plasmic-name={"modalContent"}
