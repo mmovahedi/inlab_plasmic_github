@@ -137,6 +137,7 @@ function PlasmicSwitchingTab__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) => ""
       }
     ],
+
     [$props, $ctx, $refs]
   );
   const $state = useDollarState(stateSpecs, {
@@ -178,7 +179,7 @@ function PlasmicSwitchingTab__RenderFunc(props: {
               displayMaxWidth={"100%"}
               displayMinHeight={"0"}
               displayMinWidth={"0"}
-              displayWidth={"25%"}
+              displayWidth={"20%"}
               loading={"lazy"}
               src={{
                 src: "/plasmic/inlab/images/icons8Home1Svg.svg",
@@ -196,7 +197,7 @@ function PlasmicSwitchingTab__RenderFunc(props: {
               displayMaxWidth={"100%"}
               displayMinHeight={"0"}
               displayMinWidth={"0"}
-              displayWidth={"25%"}
+              displayWidth={"20%"}
               loading={"lazy"}
               src={{
                 src: "/plasmic/inlab/images/group2063.svg",
@@ -208,13 +209,31 @@ function PlasmicSwitchingTab__RenderFunc(props: {
 
             <PlasmicImg__
               alt={""}
+              className={classNames(sty.img__qxjU8)}
+              displayHeight={"25px"}
+              displayMaxHeight={"none"}
+              displayMaxWidth={"100%"}
+              displayMinHeight={"0"}
+              displayMinWidth={"0"}
+              displayWidth={"20%"}
+              loading={"lazy"}
+              src={{
+                src: "/plasmic/inlab/images/group381.svg",
+                fullWidth: 14.041,
+                fullHeight: 13.25,
+                aspectRatio: 1.066667
+              }}
+            />
+
+            <PlasmicImg__
+              alt={""}
               className={classNames(sty.img__q56Vi)}
               displayHeight={"25px"}
               displayMaxHeight={"none"}
               displayMaxWidth={"100%"}
               displayMinHeight={"0"}
               displayMinWidth={"0"}
-              displayWidth={"25%"}
+              displayWidth={"20%"}
               loading={"lazy"}
               src={{
                 src: "/plasmic/inlab/images/group376.svg",
@@ -232,7 +251,7 @@ function PlasmicSwitchingTab__RenderFunc(props: {
               displayMaxWidth={"100%"}
               displayMinHeight={"0"}
               displayMinWidth={"0"}
-              displayWidth={"25%"}
+              displayWidth={"20%"}
               loading={"lazy"}
               src={{
                 src: "/plasmic/inlab/images/group384.svg",
@@ -243,6 +262,7 @@ function PlasmicSwitchingTab__RenderFunc(props: {
             />
           </React.Fragment>
         ),
+
         value: args.children
       })}
     </div>
@@ -264,6 +284,7 @@ type NodeOverridesType<T extends NodeNameType> = Pick<
   PlasmicSwitchingTab__OverridesType,
   DescendantsType<T>
 >;
+
 type NodeComponentProps<T extends NodeNameType> =
   // Explicitly specify variants, args, and overrides as objects
   {
