@@ -2172,10 +2172,7 @@ function PlasmicHomepage__RenderFunc(props: {
                 >
                   {(() => {
                     try {
-                      return (
-                        localStorage.getItem("consult_filter_type") !==
-                        (null || undefined || "" || "null" || "undefined")
-                      );
+                      return localStorage.getItem("consult_filter_type");
                     } catch (e) {
                       if (
                         e instanceof TypeError ||
@@ -2297,10 +2294,7 @@ function PlasmicHomepage__RenderFunc(props: {
                       <React.Fragment>
                         {(() => {
                           try {
-                            return localStorage.getItem(
-                              "filter_service_name"
-                            ) !==
-                              (null || undefined || "" || "null" || "undefined")
+                            return localStorage.getItem("filter_service_name")
                               ? localStorage.getItem("filter_service_name")
                               : "-";
                           } catch (e) {
@@ -2368,8 +2362,7 @@ function PlasmicHomepage__RenderFunc(props: {
                     <React.Fragment>
                       {(() => {
                         try {
-                          return localStorage.getItem("consult_filter_type") !==
-                            (null || undefined || "" || "null" || "undefined")
+                          return localStorage.getItem("consult_filter_type")
                             ? localStorage.getItem("consult_filter_type")
                             : "تعیین نشده";
                         } catch (e) {
@@ -2419,8 +2412,7 @@ function PlasmicHomepage__RenderFunc(props: {
                 })()}
                 method={"GET"}
                 path={`/api/v2/consult?${
-                  localStorage.getItem("GET_V2_consult_query_param") !==
-                  (null || undefined || "" || "null" || "undefined")
+                  localStorage.getItem("GET_V2_consult_query_param")
                     ? localStorage.getItem("GET_V2_consult_query_param")
                     : "offset=0&limit=10"
                 }`}
@@ -5060,8 +5052,7 @@ function PlasmicHomepage__RenderFunc(props: {
                     {(() => {
                       try {
                         return (
-                          $state.searchbar.value == "" &&
-                          $state.patientNumber === ""
+                          $state.searchbar.value == "" && !$state.patientNumber
                         );
                       } catch (e) {
                         if (
@@ -9303,6 +9294,7 @@ function PlasmicHomepage__RenderFunc(props: {
                       )}
                     >
                       <ConditionGuard
+                        children={null}
                         className={classNames(
                           "__wab_instance",
                           sty.conditionGuard___60Nkj
@@ -9366,112 +9358,110 @@ function PlasmicHomepage__RenderFunc(props: {
                           }
                         }}
                         skipPaths={[]}
-                      >
-                        {(_par =>
-                          !_par ? [] : Array.isArray(_par) ? _par : [_par])(
-                          (() => {
-                            try {
-                              return localStorage.getItem(
-                                "consult_receiver_service_list_for_filter"
-                              )
-                                ? JSON.parse(
-                                    localStorage.getItem(
-                                      "consult_receiver_service_list_for_filter"
-                                    )
+                      />
+
+                      {(_par =>
+                        !_par ? [] : Array.isArray(_par) ? _par : [_par])(
+                        (() => {
+                          try {
+                            return localStorage.getItem(
+                              "consult_receiver_service_list_for_filter"
+                            )
+                              ? JSON.parse(
+                                  localStorage.getItem(
+                                    "consult_receiver_service_list_for_filter"
                                   )
-                                : $ctx.fetched_data.data.services;
-                            } catch (e) {
-                              if (
-                                e instanceof TypeError ||
-                                e?.plasmicType === "PlasmicUndefinedDataError"
-                              ) {
-                                return [];
-                              }
-                              throw e;
+                                )
+                              : $ctx.fetched_data.data.services;
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return [];
                             }
-                          })()
-                        ).map((__plasmic_item_0, __plasmic_idx_0) => {
-                          const currentItem = __plasmic_item_0;
-                          const currentIndex = __plasmic_idx_0;
-                          return (
-                            <div
-                              data-plasmic-name={"servicesName2"}
-                              data-plasmic-override={overrides.servicesName2}
-                              className={classNames(
-                                projectcss.all,
-                                projectcss.__wab_text,
-                                sty.servicesName2
-                              )}
-                              key={currentIndex}
-                              onClick={async event => {
-                                const $steps = {};
+                            throw e;
+                          }
+                        })()
+                      ).map((__plasmic_item_0, __plasmic_idx_0) => {
+                        const currentItem = __plasmic_item_0;
+                        const currentIndex = __plasmic_idx_0;
+                        return (
+                          <div
+                            data-plasmic-name={"servicesName2"}
+                            data-plasmic-override={overrides.servicesName2}
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.servicesName2
+                            )}
+                            key={currentIndex}
+                            onClick={async event => {
+                              const $steps = {};
 
-                                $steps["localStorageSetFilterServiceId"] = true
-                                  ? (() => {
-                                      const actionArgs = {
-                                        customFunction: async () => {
-                                          return localStorage.setItem(
-                                            "filter_service_id",
-                                            currentItem.id
-                                          );
-                                        }
-                                      };
-                                      return (({ customFunction }) => {
-                                        return customFunction();
-                                      })?.apply(null, [actionArgs]);
-                                    })()
-                                  : undefined;
-                                if (
-                                  $steps["localStorageSetFilterServiceId"] !=
-                                    null &&
-                                  typeof $steps[
+                              $steps["localStorageSetFilterServiceId"] = true
+                                ? (() => {
+                                    const actionArgs = {
+                                      customFunction: async () => {
+                                        return localStorage.setItem(
+                                          "filter_service_id",
+                                          currentItem.id
+                                        );
+                                      }
+                                    };
+                                    return (({ customFunction }) => {
+                                      return customFunction();
+                                    })?.apply(null, [actionArgs]);
+                                  })()
+                                : undefined;
+                              if (
+                                $steps["localStorageSetFilterServiceId"] !=
+                                  null &&
+                                typeof $steps[
+                                  "localStorageSetFilterServiceId"
+                                ] === "object" &&
+                                typeof $steps["localStorageSetFilterServiceId"]
+                                  .then === "function"
+                              ) {
+                                $steps["localStorageSetFilterServiceId"] =
+                                  await $steps[
                                     "localStorageSetFilterServiceId"
-                                  ] === "object" &&
-                                  typeof $steps[
-                                    "localStorageSetFilterServiceId"
-                                  ].then === "function"
-                                ) {
-                                  $steps["localStorageSetFilterServiceId"] =
-                                    await $steps[
-                                      "localStorageSetFilterServiceId"
-                                    ];
-                                }
+                                  ];
+                              }
 
+                              $steps["localStorageSetFilterServiceName"] = true
+                                ? (() => {
+                                    const actionArgs = {
+                                      customFunction: async () => {
+                                        return localStorage.setItem(
+                                          "filter_service_name",
+                                          currentItem.name
+                                        );
+                                      }
+                                    };
+                                    return (({ customFunction }) => {
+                                      return customFunction();
+                                    })?.apply(null, [actionArgs]);
+                                  })()
+                                : undefined;
+                              if (
+                                $steps["localStorageSetFilterServiceName"] !=
+                                  null &&
+                                typeof $steps[
+                                  "localStorageSetFilterServiceName"
+                                ] === "object" &&
+                                typeof $steps[
+                                  "localStorageSetFilterServiceName"
+                                ].then === "function"
+                              ) {
                                 $steps["localStorageSetFilterServiceName"] =
-                                  true
-                                    ? (() => {
-                                        const actionArgs = {
-                                          customFunction: async () => {
-                                            return localStorage.setItem(
-                                              "filter_service_name",
-                                              currentItem.name
-                                            );
-                                          }
-                                        };
-                                        return (({ customFunction }) => {
-                                          return customFunction();
-                                        })?.apply(null, [actionArgs]);
-                                      })()
-                                    : undefined;
-                                if (
-                                  $steps["localStorageSetFilterServiceName"] !=
-                                    null &&
-                                  typeof $steps[
+                                  await $steps[
                                     "localStorageSetFilterServiceName"
-                                  ] === "object" &&
-                                  typeof $steps[
-                                    "localStorageSetFilterServiceName"
-                                  ].then === "function"
-                                ) {
-                                  $steps["localStorageSetFilterServiceName"] =
-                                    await $steps[
-                                      "localStorageSetFilterServiceName"
-                                    ];
-                                }
+                                  ];
+                              }
 
-                                $steps[
-                                  "localStorageSetGetV2ConsultQueryParam"
-                                ] = true
+                              $steps["localStorageSetGetV2ConsultQueryParam"] =
+                                true
                                   ? (() => {
                                       const actionArgs = {
                                         customFunction: async () => {
@@ -9488,119 +9478,115 @@ function PlasmicHomepage__RenderFunc(props: {
                                       })?.apply(null, [actionArgs]);
                                     })()
                                   : undefined;
-                                if (
-                                  $steps[
-                                    "localStorageSetGetV2ConsultQueryParam"
-                                  ] != null &&
-                                  typeof $steps[
-                                    "localStorageSetGetV2ConsultQueryParam"
-                                  ] === "object" &&
-                                  typeof $steps[
-                                    "localStorageSetGetV2ConsultQueryParam"
-                                  ].then === "function"
-                                ) {
-                                  $steps[
-                                    "localStorageSetGetV2ConsultQueryParam"
-                                  ] = await $steps[
-                                    "localStorageSetGetV2ConsultQueryParam"
-                                  ];
-                                }
-
-                                $steps["consoleLogFilterServiceId"] = true
-                                  ? (() => {
-                                      const actionArgs = {
-                                        customFunction: async () => {
-                                          return console.log(
-                                            "filter_service_id: ",
-                                            localStorage.getItem(
-                                              "filter_service_id"
-                                            )
-                                          );
-                                        }
-                                      };
-                                      return (({ customFunction }) => {
-                                        return customFunction();
-                                      })?.apply(null, [actionArgs]);
-                                    })()
-                                  : undefined;
-                                if (
-                                  $steps["consoleLogFilterServiceId"] != null &&
-                                  typeof $steps["consoleLogFilterServiceId"] ===
-                                    "object" &&
-                                  typeof $steps["consoleLogFilterServiceId"]
-                                    .then === "function"
-                                ) {
-                                  $steps["consoleLogFilterServiceId"] =
-                                    await $steps["consoleLogFilterServiceId"];
-                                }
-
-                                $steps["consoleLogFilterServiceName"] = true
-                                  ? (() => {
-                                      const actionArgs = {
-                                        customFunction: async () => {
-                                          return console.log(
-                                            "filter_service_name: ",
-                                            localStorage.getItem(
-                                              "filter_service_name"
-                                            )
-                                          );
-                                        }
-                                      };
-                                      return (({ customFunction }) => {
-                                        return customFunction();
-                                      })?.apply(null, [actionArgs]);
-                                    })()
-                                  : undefined;
-                                if (
-                                  $steps["consoleLogFilterServiceName"] !=
-                                    null &&
-                                  typeof $steps[
-                                    "consoleLogFilterServiceName"
-                                  ] === "object" &&
-                                  typeof $steps["consoleLogFilterServiceName"]
-                                    .then === "function"
-                                ) {
-                                  $steps["consoleLogFilterServiceName"] =
-                                    await $steps["consoleLogFilterServiceName"];
-                                }
-
-                                $steps["consoleLogGetV2ConsultQueryParam"] =
-                                  true
-                                    ? (() => {
-                                        const actionArgs = {
-                                          customFunction: async () => {
-                                            return console.log(
-                                              "GET_V2_consult_query_param:",
-                                              localStorage.getItem(
-                                                "GET_V2_consult_query_param"
-                                              )
-                                            );
-                                          }
-                                        };
-                                        return (({ customFunction }) => {
-                                          return customFunction();
-                                        })?.apply(null, [actionArgs]);
-                                      })()
-                                    : undefined;
-                                if (
-                                  $steps["consoleLogGetV2ConsultQueryParam"] !=
-                                    null &&
-                                  typeof $steps[
-                                    "consoleLogGetV2ConsultQueryParam"
-                                  ] === "object" &&
-                                  typeof $steps[
-                                    "consoleLogGetV2ConsultQueryParam"
-                                  ].then === "function"
-                                ) {
-                                  $steps["consoleLogGetV2ConsultQueryParam"] =
-                                    await $steps[
-                                      "consoleLogGetV2ConsultQueryParam"
-                                    ];
-                                }
-
+                              if (
                                 $steps[
-                                  "updateModalConsultReceiverServiceOpen"
-                                ] = true
+                                  "localStorageSetGetV2ConsultQueryParam"
+                                ] != null &&
+                                typeof $steps[
+                                  "localStorageSetGetV2ConsultQueryParam"
+                                ] === "object" &&
+                                typeof $steps[
+                                  "localStorageSetGetV2ConsultQueryParam"
+                                ].then === "function"
+                              ) {
+                                $steps[
+                                  "localStorageSetGetV2ConsultQueryParam"
+                                ] = await $steps[
+                                  "localStorageSetGetV2ConsultQueryParam"
+                                ];
+                              }
+
+                              $steps["consoleLogFilterServiceId"] = true
+                                ? (() => {
+                                    const actionArgs = {
+                                      customFunction: async () => {
+                                        return console.log(
+                                          "filter_service_id: ",
+                                          localStorage.getItem(
+                                            "filter_service_id"
+                                          )
+                                        );
+                                      }
+                                    };
+                                    return (({ customFunction }) => {
+                                      return customFunction();
+                                    })?.apply(null, [actionArgs]);
+                                  })()
+                                : undefined;
+                              if (
+                                $steps["consoleLogFilterServiceId"] != null &&
+                                typeof $steps["consoleLogFilterServiceId"] ===
+                                  "object" &&
+                                typeof $steps["consoleLogFilterServiceId"]
+                                  .then === "function"
+                              ) {
+                                $steps["consoleLogFilterServiceId"] =
+                                  await $steps["consoleLogFilterServiceId"];
+                              }
+
+                              $steps["consoleLogFilterServiceName"] = true
+                                ? (() => {
+                                    const actionArgs = {
+                                      customFunction: async () => {
+                                        return console.log(
+                                          "filter_service_name: ",
+                                          localStorage.getItem(
+                                            "filter_service_name"
+                                          )
+                                        );
+                                      }
+                                    };
+                                    return (({ customFunction }) => {
+                                      return customFunction();
+                                    })?.apply(null, [actionArgs]);
+                                  })()
+                                : undefined;
+                              if (
+                                $steps["consoleLogFilterServiceName"] != null &&
+                                typeof $steps["consoleLogFilterServiceName"] ===
+                                  "object" &&
+                                typeof $steps["consoleLogFilterServiceName"]
+                                  .then === "function"
+                              ) {
+                                $steps["consoleLogFilterServiceName"] =
+                                  await $steps["consoleLogFilterServiceName"];
+                              }
+
+                              $steps["consoleLogGetV2ConsultQueryParam"] = true
+                                ? (() => {
+                                    const actionArgs = {
+                                      customFunction: async () => {
+                                        return console.log(
+                                          "GET_V2_consult_query_param:",
+                                          localStorage.getItem(
+                                            "GET_V2_consult_query_param"
+                                          )
+                                        );
+                                      }
+                                    };
+                                    return (({ customFunction }) => {
+                                      return customFunction();
+                                    })?.apply(null, [actionArgs]);
+                                  })()
+                                : undefined;
+                              if (
+                                $steps["consoleLogGetV2ConsultQueryParam"] !=
+                                  null &&
+                                typeof $steps[
+                                  "consoleLogGetV2ConsultQueryParam"
+                                ] === "object" &&
+                                typeof $steps[
+                                  "consoleLogGetV2ConsultQueryParam"
+                                ].then === "function"
+                              ) {
+                                $steps["consoleLogGetV2ConsultQueryParam"] =
+                                  await $steps[
+                                    "consoleLogGetV2ConsultQueryParam"
+                                  ];
+                              }
+
+                              $steps["updateModalConsultReceiverServiceOpen"] =
+                                true
                                   ? (() => {
                                       const actionArgs = {
                                         variable: {
@@ -9637,32 +9623,29 @@ function PlasmicHomepage__RenderFunc(props: {
                                       })?.apply(null, [actionArgs]);
                                     })()
                                   : undefined;
-                                if (
-                                  $steps[
-                                    "updateModalConsultReceiverServiceOpen"
-                                  ] != null &&
-                                  typeof $steps[
-                                    "updateModalConsultReceiverServiceOpen"
-                                  ] === "object" &&
-                                  typeof $steps[
-                                    "updateModalConsultReceiverServiceOpen"
-                                  ].then === "function"
-                                ) {
-                                  $steps[
-                                    "updateModalConsultReceiverServiceOpen"
-                                  ] = await $steps[
-                                    "updateModalConsultReceiverServiceOpen"
-                                  ];
-                                }
-                              }}
-                            >
-                              <React.Fragment>
-                                {currentItem.name}
-                              </React.Fragment>
-                            </div>
-                          );
-                        })}
-                      </ConditionGuard>
+                              if (
+                                $steps[
+                                  "updateModalConsultReceiverServiceOpen"
+                                ] != null &&
+                                typeof $steps[
+                                  "updateModalConsultReceiverServiceOpen"
+                                ] === "object" &&
+                                typeof $steps[
+                                  "updateModalConsultReceiverServiceOpen"
+                                ].then === "function"
+                              ) {
+                                $steps[
+                                  "updateModalConsultReceiverServiceOpen"
+                                ] = await $steps[
+                                  "updateModalConsultReceiverServiceOpen"
+                                ];
+                              }
+                            }}
+                          >
+                            <React.Fragment>{currentItem.name}</React.Fragment>
+                          </div>
+                        );
+                      })}
                     </Stack__>
                   </AntdModal>
                 </React.Fragment>

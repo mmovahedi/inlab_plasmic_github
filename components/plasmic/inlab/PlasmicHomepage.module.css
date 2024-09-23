@@ -468,17 +468,14 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  width: 200px;
+  width: 50%;
   height: auto;
   max-width: 100%;
   align-self: flex-end;
-  flex-shrink: 0;
   padding: 0px;
 }
 @media (min-width: 0px) and (max-width: 760px) {
   .consultButtonStack {
-    width: 100px;
-    flex-shrink: 0;
     padding: 0px;
   }
 }
@@ -499,12 +496,6 @@
   position: relative;
   width: 100%;
   min-width: 0;
-}
-@media (min-width: 0px) and (max-width: 760px) {
-  .consult:global(.__wab_instance) {
-    width: 100px;
-    flex-shrink: 0;
-  }
 }
 .bookmarkedPatientNumber2 {
   position: relative;
@@ -577,7 +568,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  width: auto;
+  width: 50%;
   height: auto;
   max-width: 100%;
   align-self: flex-end;
@@ -603,14 +594,8 @@
 .patientsTab:global(.__wab_instance) {
   max-width: 100%;
   position: relative;
-  width: 200px;
-  flex-shrink: 0;
-}
-@media (min-width: 0px) and (max-width: 760px) {
-  .patientsTab:global(.__wab_instance) {
-    width: 100px;
-    flex-shrink: 0;
-  }
+  width: 100%;
+  min-width: 0;
 }
 .text___3BwK4 {
   font-size: var(--token-hYndcje43OGL);
@@ -759,7 +744,6 @@
   line-height: 1.5;
   letter-spacing: normal;
   user-select: none;
-  text-decoration-line: none !important;
   left: auto;
   top: auto;
   box-shadow: 0px 2px 5px 0px var(--token-zeOmhvqK1boB);
@@ -821,11 +805,11 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: auto;
   max-width: 100%;
   background: #ffffff;
   margin-bottom: 5px;
   box-shadow: 2px 2px 5px 0px var(--token-WxvvgatuPYoJ);
+  height: auto;
   min-width: 0;
   border-radius: 9px;
   border: 0.5px solid var(--token-8PxxXPNrIohQ);
@@ -863,7 +847,7 @@
   display: block;
   position: relative;
   width: 10px;
-  height: 212px;
+  height: 211px;
   max-width: 100%;
   background: var(--token-b7Myz3RtiwPQ);
   border-top-left-radius: 10px;
@@ -874,7 +858,7 @@
   display: block;
   position: relative;
   width: 10px;
-  height: 212px;
+  height: 211px;
   max-width: 100%;
   background: var(--token-F0UhOcqDIzJI);
   border-top-left-radius: 10px;
@@ -1191,7 +1175,10 @@
 }
 @media (min-width: 0px) and (max-width: 760px) {
   .patientsControlpanel {
-    padding: 0px 0px 8px;
+    background: var(--token-DbGdjBpQ6R_X);
+    margin-bottom: 5px;
+    border-radius: 5px;
+    padding: 0px;
   }
 }
 .patientsTabs {
@@ -1202,8 +1189,8 @@
   background: var(--token-DbGdjBpQ6R_X);
   align-self: flex-end;
   border-radius: 5px;
-  padding: 8px 8px 5px;
-  margin: 0px;
+  padding: 0px;
+  margin: 0px 0px 5px;
 }
 .patientsTabs > :global(.__wab_flex-container) {
   flex-direction: row;
@@ -1224,16 +1211,17 @@
 }
 @media (min-width: 0px) and (max-width: 760px) {
   .patientsTabs {
+    background: none;
+    width: 100%;
     overflow: auto;
-    align-self: flex-end;
-    padding: 2px;
+    padding: 0px;
     margin: 0px;
   }
 }
 @media (min-width: 0px) and (max-width: 760px) {
   .patientsTabs > :global(.__wab_flex-container) {
     justify-content: flex-end;
-    align-items: center;
+    align-items: stretch;
     margin-left: calc(0px - 5px);
     width: calc(100% + 5px);
     margin-top: calc(0px - 0px);
@@ -3046,6 +3034,10 @@
   width: 270px;
   height: auto;
   max-width: 100%;
+  margin-top: calc(0px + 6px) !important;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
   text-align: center;
   font-size: var(--token-CdE1_0ZaCyT1);
   box-shadow: 0px 4px 16px 0px #0706066b;
@@ -3059,13 +3051,19 @@
   line-height: 1.5;
   letter-spacing: normal;
   user-select: none;
-  text-decoration-line: none !important;
+  text-decoration-line: none;
   left: auto;
   top: auto;
   border-radius: 5px;
   padding: 8px;
-  margin: 0px;
   border: 1px solid var(--token-9iYGdL7i3GKE);
+}
+@media (min-width: 0px) and (max-width: 760px) {
+  .servicesName2 {
+    left: auto;
+    top: auto;
+    margin-top: calc(0px + 6px) !important;
+  }
 }
 .text__cRpHl {
   width: 100%;

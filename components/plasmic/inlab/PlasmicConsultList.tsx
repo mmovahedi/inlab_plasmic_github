@@ -623,7 +623,10 @@ ${ageMonths} months ${
                             ) : null}
                             {(() => {
                               try {
-                                return currentItem.priority === 1;
+                                return (
+                                  currentItem.priority === 1 ||
+                                  currentItem.priority === 2
+                                );
                               } catch (e) {
                                 if (
                                   e instanceof TypeError ||
