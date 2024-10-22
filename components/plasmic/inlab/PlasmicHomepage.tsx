@@ -9847,7 +9847,7 @@ function PlasmicHomepage__RenderFunc(props: {
                           const actionArgs = {
                             args: [
                               "POST",
-                              `/api/v2/consult/${$state.inboxConsultCardId}/reply`,
+                              `/api/v3/consult/${$state.inboxConsultCardId}/reply`,
                               (() => {
                                 try {
                                   return {
