@@ -514,7 +514,7 @@ function PlasmicLaboratoryData__RenderFunc(props: {
               }
             })()}
             method={"GET"}
-            path={`/api/v3/patient/${$ctx.params.code}`}
+            path={`/api/v2/patient/${$ctx.params.code}`}
             ref={ref => {
               $refs["patientDataApiFetcher"] = ref;
             }}
@@ -1011,23 +1011,14 @@ ${ageMonths} months ${
                 "viewNormalRange"
               )
             })}
-            headers={(() => {
-              try {
-                return {
-                  "X-Namespace": localStorage.getItem("inlab_user_namespace_id")
-                };
-              } catch (e) {
-                if (
-                  e instanceof TypeError ||
-                  e?.plasmicType === "PlasmicUndefinedDataError"
-                ) {
-                  return undefined;
-                }
-                throw e;
-              }
-            })()}
             method={"GET"}
-            path={`/api/v3/remote_his/labs?patient_id=${$ctx.params.code}&admission_id=${$ctx.params.adm_id}&all_admissions=${$state.allAdmissions}`}
+            path={`/api/v3/patient/lab/${
+              $ctx.params.code
+            }?namespace_id=${localStorage.getItem(
+              "inlab_user_namespace_id"
+            )}&admission_id=${
+              $ctx.params.adm_id
+            }&type=laboratory&highlighted=false`}
             ref={ref => {
               $refs["labData"] = ref;
             }}
@@ -1051,28 +1042,32 @@ ${ageMonths} months ${
                   <div
                     className={classNames(projectcss.all, sty.freeBox__dqfaG)}
                   >
-                    <div
-                      data-plasmic-name={"newFeatureTag"}
-                      data-plasmic-override={overrides.newFeatureTag}
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.newFeatureTag
-                      )}
-                    >
-                      {"New"}
-                    </div>
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__cnNnE
-                      )}
-                    >
-                      {
-                        "\u0628\u0627 \u06a9\u0644\u06cc\u06a9 \u0628\u0631 \u0631\u0648\u06cc \u26aa\ufe0f \u0645\u06cc \u062a\u0648\u0627\u0646\u06cc\u062f \u0627\u0632\u0645\u0627\u06cc\u0634 \u0647\u0627\u06cc \u0645\u0647\u0645 \u0628\u06cc\u0645\u0627\u0631 \u0631\u0627 \u0628\u0631\u0627\u06cc \u062e\u0648\u062f \u0648 \u062f\u06cc\u06af\u0631 \u0647\u0645\u06a9\u0627\u0631\u0627\u0646 \u0645\u0634\u062e\u0635 \u06a9\u0646\u06cc\u062f"
-                      }
-                    </div>
+                    {false ? (
+                      <div
+                        data-plasmic-name={"newFeatureTag"}
+                        data-plasmic-override={overrides.newFeatureTag}
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.newFeatureTag
+                        )}
+                      >
+                        {"New"}
+                      </div>
+                    ) : null}
+                    {false ? (
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__cnNnE
+                        )}
+                      >
+                        {
+                          "\u0628\u0627 \u06a9\u0644\u06cc\u06a9 \u0628\u0631 \u0631\u0648\u06cc \u26aa\ufe0f \u0645\u06cc \u062a\u0648\u0627\u0646\u06cc\u062f \u0627\u0632\u0645\u0627\u06cc\u0634 \u0647\u0627\u06cc \u0645\u0647\u0645 \u0628\u06cc\u0645\u0627\u0631 \u0631\u0627 \u0628\u0631\u0627\u06cc \u062e\u0648\u062f \u0648 \u062f\u06cc\u06af\u0631 \u0647\u0645\u06a9\u0627\u0631\u0627\u0646 \u0645\u0634\u062e\u0635 \u06a9\u0646\u06cc\u062f"
+                        }
+                      </div>
+                    ) : null}
                   </div>
                   {$ctx.fetched_data.loading == false &&
                   $ctx.fetched_data.data.lab_test_groups == 0 ? (
@@ -2221,7 +2216,7 @@ ${ageMonths} months ${
               }
             })()}
             method={"GET"}
-            path={`/api/v3/remote_his/lab_factors?admission_id=${$ctx.params.adm_id}`}
+            path={`/api/v3/patient/lab_factors/${$ctx.params.adm_id}`}
             ref={ref => {
               $refs["checkedFactorsApiFetcher"] = ref;
             }}
